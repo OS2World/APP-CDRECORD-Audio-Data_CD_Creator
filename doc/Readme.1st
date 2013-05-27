@@ -1,0 +1,87 @@
+Audio/Data-CD-Creator (GPL freeware)
+(C) Chris Wohlgemuth 1999-2005
+http://www.geocities.com/SiliconValley/Sector/5785/
+http://www.os2world.com/cdwriting
+
+This version replaces all previous releases
+(V0.2 - V0.55)
+--------------------------------------------
+These are folder classes for the WPS which work as
+frontends for cdrecord/2, cdrdao/2 for creating of Audio- and
+Data-CDs.
+Just put files/folders or shadows of files/folders into
+the Creator-folder and press 'write'. Full WPS aware.
+MP3 writing support.
+MP3 encoding support.
+
+Prerequisites:
+-Warp 4, eCS
+-A filesystem supporting long filenames
+-EMX runtime libraries 0.9d fix4
+-MMOS2 installed
+-WPS-wizard (http://www.os2world.com/cdwriting)
+-CDRecord/2, mkisofs, cdda2wav (http://www.os2world.com/cdwriting)
+-optionally: z!, MMIOMP3, LAME, dvddao, CW-multimedia classes
+
+License:
+
+This package is provided 'as is' under the
+Gnu public Licence (GPL). 
+All files must be kept together.
+Read the file 'Copying' for further information.
+
+Add ons:
+
+This release contains Batchburn 2.0 (c) Martin Vieregg for
+the command line addicts. Be aware that Batchburn is covered
+by its own license. See the readme coming for it for more
+information and updates.
+ 
+
+Installation:
+-------------
+
+DEINSTALL ANY OLDER RELEASE BEFORE INSTALLING
+THIS PACKAGE AND RESTART THE WPS. YOU CAN'T
+JUST UPDATE AN OLDER VERSION!
+
+Start the script HowTo-install.cmd which will in turn open the
+topic in the tutorial describing the installation process.
+
+
+-------------
+Note:
+
+Do not try to install the package in the source folder. If you
+want to keep your settings create a folder, put your old
+cdrecord.ini in it and install into this folder that should
+do the job.
+
+-------------
+
+DVD writing:
+
+DVD support is preliminary. Use dvddao.exe V0.0.8. Any older
+release wont work.
+
+Writing may return an error code. This doesn't always mean, the
+disk is corrupted. It seems this also happens if a buffer underrun
+occured. On current drives with buffer underrun protection such
+an underrun is properly handled and the disk is ok. Deselect
+"Close window on exit" in the settings to read any error messages
+(these wont be in the log).
+
+Speed setting may not work. This is a limitation of dvddao.exe.
+At least with my NEC ND 2500-A always max speed is chosen.
+
+The speed selection box always shows the maximum speed for
+CD writing, not DVD writing.
+
+--------------
+
+MP3 encoding:
+
+Setting of ID3 tags for newly created MP3 files only works if the CW-multimedia
+classes are installed or you use at least eCS 1.2.
+
+

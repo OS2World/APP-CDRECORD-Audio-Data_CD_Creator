@@ -1,0 +1,128 @@
+A./D.-Cd-Creator users: Request for help
+
+Hi everyone,
+
+This posting is directed to current users of the
+Audio/Data-CD-Creator package for writing CD-R/RWs.
+
+It's known that setting the right options for the various
+helper programs may be a difficult process especially
+for users new to CD writing. Main problem is probably
+finding the right driver for Cdrdao/2.
+To make things easier in the future I'm trying to create
+a database containing the necessary information so
+options may be set automatically when a writer is known.
+For this I need your help. If your CD writer (or CD-ROM,
+DVD writer) works with cdrecord and/or cdrdao/2 please
+gather the information specified below and send it to
+<adc-os2@cityweb.de>.
+Note that this will help you and every OS/2 user in the
+future so please take the few minutes.
+
+
+Your privacy
+------------
+Well, it's sad that today one has to state the obvious
+because of the ill-minded spammers out there, so here
+it comes:
+
+All the information you send in will only be used for
+building the database and for nothing else. Your name
+and email address will not be included in any document
+or file and the sent in mail destroyed after processing.
+
+Note that I will not answer to any of these mails so if
+you have any questions/ideas/whatever use the contact
+info contained in the Audio/Data-CD-Creator docs.
+
+
+About Audio/Data-CD-Creator
+---------------------------
+ADC is a WPS integrated frontend to cdrecord, mkisofs,
+VIO mode grabbers and cdrdao for creating all kinds of
+CDs. MP3 encoding and decoding support.
+ 
+Find more information here:
+
+    <http://www.os2world.com/cdwriting>
+
+
+Thanks in advance for your help.
+
+Regards Chris Wohlgemuth 
+
+
+PS: followup set to comp.os.os2.multimedia
+
+---------------------------------------------------------
+
+
+Gather the information
+----------------------
+The following bits of information are necessary. You may
+just insert it here when replying to this posting. If you
+have several working devices or a dedicated CD-ROM for
+grabbing include the information for all of your devices
+by duplicating the template below.
+
+
+1. The name of your writer as used in advertising.
+   
+   Example: AOPEN CRW9624, Ricoh MP6200, Teac CD-532-E
+
+   Your writers name: 
+
+
+2. The features of your writer/CD-ROM. Use the following command to
+   capture the information (be sure to adapt the dev=... setting) in a
+   temporary file.
+
+           'cdrecord dev=x,y,z -prcap > out.txt'
+
+
+3. Does your writer support buffer underrun protection
+   (burnproof/burnsave/just-link/...)?
+
+
+4. Does your writer need the 'Sony multisession fix'? (Setting on the General page 2)
+
+
+5. Additional needed options for cdrecord when writing audio CDs (if any).
+
+
+6. Additional needed options for cdrecord when writing data CDs (if any).
+
+
+7. Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+
+   Example: (driver) cdd2600, AOPEN CRW9624
+
+   Your driver:  
+
+
+8. Additional options for cdrdao (if any). (cdrdao/2 page 1)
+
+
+9. Are you using cdrdao.exe coming with CD-Creator? If no please
+   specify the release you're using.
+
+
+10. If you use different settings for 1:1 copy (source) please specify them
+    here. Include everything you find on that page and the cdrdao release
+    you're using. (cdrdao/2 page 2)
+
+
+11. If you use different settings for 1:1 copy (target) please specify them
+    here. Include everything you find on that page and the cdrdao release
+    you're using. (cdrdao/2 page 3)
+
+
+12. If you use mpg123 or MMIOMP3 for MP3 decoding, do you have to specify
+    'Swap bytes when writing'? (MP3 decoding page)
+
+
+13. Send the information to
+
+                 <adc-os2@cityweb.de>
+
+

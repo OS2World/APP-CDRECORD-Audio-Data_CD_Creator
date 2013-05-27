@@ -1,0 +1,30 @@
+You need:
+
+-A filesystem supporting longnames
+-IBM VAC++ V3.08
+-EMX 0.9d fix 4 development distribution
+-Gnu make 3.76.1
+-Gnu rm, cp (You should install all the gnu file utils)
+-a *nix compatible make shell 
+-Set the following ENV var: SET MAKE_SHELL=i:/unix_stuff/bin/bash.exe (insert your shell here)
+-If you use another make version the folllowing line may be necessary:
+   SET MAKESHELL=i:/unix_stuff/bin/bash.exe (insert your shell here)
+
+1. Cd into the source directory
+2. On a command line type 'make'
+
+
+If you want to create the distribution package:
+
+1. Cd into the source directory
+2. 'make distribution'
+
+
+For the source distribution:
+
+'make sourcedistribution'
+
+In the directory \source\mpg123 you find the changed source files
+of mpg123. Use these files together with the mpg123_011 distribution
+compiled by Samuel Audet to compile mpg123.
+

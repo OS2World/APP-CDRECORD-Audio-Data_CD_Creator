@@ -1,0 +1,70 @@
+0.56:
+-CD size query for on the fly data writing was broken. Even ignoring wasn't possible.
+-If free space is to small for grabbing to wave files show an informational box. 
+-CD-R/W Tools dialog added to switch list.
+-Added *.iso to search list when opening an image file in a data folder
+-Dropping of disk objects on creator folders no longer possible
+-DVD-Tools dialog
+-Preliminary DVD writing (needs Dvddao 0.0.8)
+-Code changes for better support of other languages
+-Codepage conversion for tracknames derived from CDDB data (only CP850 so far).
+-Codepage conversion for MP3 data derived from CDDB (CP850 only) 
+-Some settings weren't shown without WPS-wizard installed
+-Addon scripts weren't installed
+
+0.55:
+-Fixed folder scripts (for the toolbars) so they work with ORexx.
+-One of the installation skripts was broken.
+
+
+0.54:
+-WPS-wizard V0.5.0 or above is now a prerequisite for using the CD-Creator classes.
+-Introduction of "Expert" and "normal" mode with different amount of settings and choices to make the start for new users easier.
+-Check installation: ASPIROUT.SYS check failed if parameters were given.
+-One of the "User menu" menu items was broken.
+-User defined MP3 encoding settings didn't work.
+-Resized dialogs of helper applications.
+-Reworked settings pages.
+-New 'About' settings page.
+-Sometimes carriage returns in object names truncated flyover help for launchpad buttons
+-Scanning the SCSI bus sometimes resulted in bogus entries in the listbox.
+-updated installer to V0.1.7
+-Priority setting for MP3 encoder
+-M_CW*Folder class was unloaded (at least on eCS 1.01) by the system even if still in use by some
+ awake objects leading to WPS freeze on next access of a CW*Folder object. This was for example triggered
+ by deleting a CD-Creator folder. The reason is not clear but some hopefully successful workarounds were added.
+-Percent bar for audio folders showing the occupied space on a CD-R.
+-Message boxes now are modal to the window they belong to. This prevents that error messages are popping
+ up in the background.
+-About dialog is modal now.
+-Added setup strings for MP3 encoder.
+-Enabled metall look for some more dialogs (On the fly writing, image writing, track grabbing, TAO audio writing).
+-'&' characters in FreeDB track names chrashed the on-the-fly MP3 encoder.
+
+
+0.53:
+-Support for CW-MM classes V0.2.4 and above
+-Fix for the "incorrect call to routine: call wait.Position x+20, y+dy/2" problem. Thanks to Kris Buelens for the patch.
+-Write DAO: always used the settings from the main options not the specified ones from the dialog.
+-Write DAO: better handling of write errors.
+-Decode MP3: added error handling for missing MP3 player.
+-Data and audio folder: added even more error handling for bad setup. Does anybody read the documentation at all?!?
+-Added help pages for cdrdao settings page 2 and 3
+-Mp3 decoding with MMIOMP3 works now when selected from folder menu
+-ID3 tags are preserved when decoding to wave (saved in EAs). You need CW-MM 0.2.5 or higher
+-New installation checker for those refusing to read help pages, tutorials or Readme files.
+-MP3 encoding using LAME.
+-On the fly MP3 encoding directly from CD.
+
+0.52:
+-Writing of certain MP3 files with MMIOMP3 failed due to wrong time calculation
+-Wrong setup page for cdrdao (target)
+-cdcopy fixed. Failed when two devices were used.
+-On the fly frontend crashed when image calculation failed.
+-MP3 decoding frontend tried to decode wave-files when using z!.
+-CD-size menu was broken.
+-If volume name was too long writing failed.
+-Fixed background painting for empty folder launchpads.
+-Preparation for use of CW-MM classes v0.2.3 and above.
+-'Create shadows' is default after initial installation
+

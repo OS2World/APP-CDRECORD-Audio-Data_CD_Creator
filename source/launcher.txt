@@ -1,0 +1,32 @@
+All:
+cdsize.exe           Gets the free space of a CD
+
+Audio:
+pmwrtaudio:	PM frontend for TAO writing (including MP3 and OGG) (used as of V0.54) 
+writeaud.exe:	TAO write helper launching cdrecord
+
+MP3:
+mp3decode.exe:	Decode an MP3 for TAO writing or when user selected it.
+mp3size:	Helper to get the playtime etc. of MP3s from Z!, MMIOMP3 or mp3info. 
+
+Write image:
+Pwrtimg.exe:	PM frontend for writing image files. (used as of V0.54) 
+writeimg.exe
+
+On the fly:
+prntsize.exe:	Get the estimated size of an mkisofs image.
+Pmthefly.exe:	PM frontend for on the fly writing of data CDs (used as of V0.54)
+onthefly.exe:	VIO program starting mkisofs and cdrecord. Launched by Pmthefly.exe.
+
+Grab:
+Pacdgrab.exe:	Statusdialog without percent bar for unknown grabbers (used as of V0.54)
+pacdgrab2.exe:	Statusdialog with percentbar for known grabbers       (used as of V0.54)
+
+wrapper.exe
+
+pmwvinfo.exe:	Shows dialog with audio information of waves and mp3  (used as of V0.54)
+
+DVD:
+dvdsize.exe:	Get free space of inserted DVD (used as of V0.56)
+dvdthefly:	Helper for on the fly DVD writing (V0.56)
+pmdvdfly:	PM frontend for DVD writing (V0.56)

@@ -1,0 +1,30 @@
+-Normalize when writing audio files
+
+-I am using ver .52 and testing .53 and have a request for a feature. I wanted
+to copy some CDs and found that after copying one that I could not copy any
+others until I went and manually deleted the TOC and Data Images that were
+created on the first copy. Would it be possible to have an option on the CD
+1:1 COPY dialog page to allow overwriting of the existing image data? That
+would make it a really smooth operation. It would allow multiple copies of
+one CD if one desired to write from the existing image or to Grab a new CD
+without the manual intervention to get rid of the old image data first.
+
+Problems:
+
+-No time refresh after MP3 grab.
+-How to... in info window funktioniert nicht mit newview
+-the fly encoding: Check auf HD-Gr”áe sonst bleibt der Prozeá einfach stehen.
+-On the fly encoding: Error, wenn Zielverzeichnis nicht angelegt werden kann (FAT32 dirty)
+-cddb: Mehrere Ergebnisse parallel darstellen.
+-cddb: Jahr aus Daten extrahieren. Siehe M. Nyman/Piano
+-1:1-Copy. Fehlermeldung, wenn Source/Target nicht selektiert in den Settings.
+-Tracklength in grab listbox
+
+DVD:
+
+[J:\]E:\CD-WRITING\CDR2_00\mkisofs.exe -graft-points -l -J -jcharset cp850 -D -r -T -hide-joliet-trans-tbl
+-path-list "E:\CD-WRITING\ADC_054\temp\_filelist.006" "cwmm-29_10_03-src.zip=J:/Desktop/cwmm-29_10_03-src.zip"
+ | E:\DVDDAO-0.0.5\dvddao.exe -d 0,1,0 -D -
+
+KEIN DUMMY gewesen!!!
+
