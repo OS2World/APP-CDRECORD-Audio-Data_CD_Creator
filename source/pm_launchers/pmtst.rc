@@ -1,0 +1,8 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "pmtst.h"
+
+;BITMAP IDBMP_BOTTOM           "bottom.bmp"
+
+rcinclude "pmtst.dlg"

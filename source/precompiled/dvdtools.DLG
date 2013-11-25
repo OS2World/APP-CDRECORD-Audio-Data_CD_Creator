@@ -1,0 +1,21 @@
+#include "OS2.H"
+
+DLGTEMPLATE 100 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "DVD Tools", 100, 106, 102, 180, 89, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE,
+           FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTOCHECKBOX    "Test only", 104, 90, 70, 80, 10, WS_GROUP
+        AUTORADIOBUTTON "Fast blanking", 102, 8, 61, 108, 9
+        AUTORADIOBUTTON "Full", 103, 8, 53, 108, 8
+        PUSHBUTTON      "Blank", 105, 138, 56, 32, 11
+        AUTOCHECKBOX    "Test only", 109, 90, 34, 80, 9, WS_GROUP
+        AUTORADIOBUTTON "Quick format", 107, 8, 25, 109, 9
+        AUTORADIOBUTTON "Full", 108, 8, 16, 109, 8
+        PUSHBUTTON      "Format", 110, 138, 19, 32, 11
+        DEFPUSHBUTTON   "Close", 111, 138, 0, 32, 11, WS_GROUP
+        GROUPBOX        "DVD Blanking", 101, 2, 50, 175, 37
+        GROUPBOX        "Format", 106, 2, 13, 175, 37
+    END
+END

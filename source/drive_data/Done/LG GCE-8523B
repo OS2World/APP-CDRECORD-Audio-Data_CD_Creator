@@ -1,0 +1,102 @@
+#################
+
+cdrecord -prcap fehlt
+
+#################
+Dear Chris:
+
+I am replying to your request for information on 
+Audio/Data-CD-Creator. I use the complete package obtained from 
+your website, with the exception of the Workplace Wizard.
+Everything works well and I can successfully burn both audio and 
+data CDs. The only problem I have found is that the audio CDs will 
+not play on a CD player. They play prefectly well on a DVD player. 
+Its an impressive and well-designed product - congratulations.
+
+Gather the information
+----------------------
+The following bits of information are necessary. You may just insert 
+it here when replying to this posting. If you have several working 
+devices or a dedicated CD-ROM for
+grabbing include the information for all of your devices by 
+duplicating the template below.
+
+
+1. The name of your writer as used in advertising.
+
+    Example: AOPEN CRW9624, Ricoh MP6200, Teac CD-532-E
+
+    Your writers name: LG GCE-8523B
+
+
+2. The features of your writer/CD-ROM. Use the following command 
+to capture the information (be sure to adapt the dev=... setting) in a
+    temporary file.
+
+            'cdrecord dev=x,y,z -prcap > out.txt'
+
+	Couldn't get this command to work. The CD burner is an 
+EIDE-IDE/ATAPI device (52X max Writing, 24X max Rewriting, 
+52X max reading. Buffer capacity is 2MB. 
+
+
+3. Does your writer support buffer underrun protection
+    (burnproof/burnsave/just-link/...)?
+	
+	YES
+
+4. Does your writer need the 'Sony multisession fix'? (Setting on the 
+General page 2)
+
+	NO
+
+5. Additional needed options for cdrecord when writing audio CDs (if 
+any).
+
+	NONE
+
+6. Additional needed options for cdrecord when writing data CDs (if 
+any).
+
+	NONE
+
+7. Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+
+    Example: (driver) cdd2600, AOPEN CRW9624
+
+    Your driver: generic-mmc
+
+
+8. Additional options for cdrdao (if any). (cdrdao/2 page 1)
+
+	NONE
+
+9. Are you using cdrdao.exe coming with CD-Creator? If no please 
+specify the release you're using.
+
+	YES
+
+
+10. If you use different settings for 1:1 copy (source) please specify 
+them here. Include everything you find on that page and the cdrdao
+     release you're using. (cdrdao/2 page 2)
+
+	USING CDRDAO VERSION THAT SHIPS WITH ADC053. 
+NO OPTIONS.
+
+
+11. If you use different settings for 1:1 copy (target) please specify 
+them here. Include everything you find on that page and the cdrdao
+     release you're using. (cdrdao/2 page 3)
+
+	USING CDRDAO VERSION THAT SHIPS WITH ADC053. 
+NO OPTIONS.
+
+12. If you use mpg123 or MMIOMP3 for MP3 decoding, do you have 
+to specify
+     'Swap bytes when writing'? (MP3 decoding page)
+
+	DON'T USE
+
+
+

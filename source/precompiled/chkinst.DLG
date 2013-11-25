@@ -1,0 +1,32 @@
+#include "OS2.H"
+
+DLGTEMPLATE 500 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "", 500, 145, 115, 312, 199, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER, 
+    BEGIN
+        LTEXT           "EMX.DLL", 503, 12, 160, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "EMXIO.DLL", 504, 12, 145, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "EMXLIBC.DLL", 505, 12, 130, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "EMXLIBCM.DLL", 506, 12, 114, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "EMXLIBCS.DLL", 507, 12, 99, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "EMXWRAP.DLL", 508, 12, 84, 95, 12,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 513, 115, 160, 115, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 514, 115, 145, 115, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 515, 115, 130, 116, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 516, 115, 114, 115, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 517, 115, 99, 115, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 518, 115, 84, 115, 12, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "The EMX runtime libraries are not in your libpath. Correct this error before proceding.", 521, 13, 29, 284, 49,
+                        NOT WS_VISIBLE | NOT WS_GROUP | DT_WORDBREAK
+        PUSHBUTTON      "Prev", 519, 184, 10, 53, 14, WS_GROUP
+        PUSHBUTTON      "Next", 520, 247, 10, 54, 14
+        GROUPBOX        "Check EMX runtime library path", 501, 5, 5, 300, 187
+    END
+END

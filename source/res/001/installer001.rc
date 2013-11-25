@@ -1,0 +1,201 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "installer.h"
+
+DLGTEMPLATE IDDLG_MAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_MAIN, 47, 14, 298, 212, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+    END
+END
+
+DLGTEMPLATE IDDLG_LICENCE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_LICENCE, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14, WS_GROUP
+        DEFPUSHBUTTON   "Agree", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        LTEXT           "License", 202, 12, 178, 55, 8
+        MLE             "", IDMLE_LICENCE, 9, 28, 270, 145, MLS_WORDWRAP | 
+                        MLS_HSCROLL | MLS_VSCROLL | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDDLG_FINISHPAGE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Inatallation", IDDLG_FINISHPAGE, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "The following helper programs are avaiable:", 104, 
+                        13, 159, 255, 18, DT_WORDBREAK
+        DEFPUSHBUTTON   "Finish", IDPB_FINISH, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14
+        LTEXT           "cdrdao/2:", 601, 13, 132, 74, 8
+        LTEXT           "", IDST_CDRDAOPATH, 89, 132, 197, 8
+        LTEXT           "Grabber:", 603, 13, 118, 74, 8
+        LTEXT           "", IDST_GRABBERPATH, 89, 118, 197, 8
+        LTEXT           "Mkisofs:", 605, 13, 104, 74, 8
+        LTEXT           "", IDST_MKISOFSPATH, 89, 104, 197, 8
+        LTEXT           "", IDST_CDRECORDPATH, 89, 144, 197, 8
+        LTEXT           "CDRecord/2:", 608, 13, 144, 74, 8
+        LTEXT           "The new folder classes will be registered now. Befo"
+                        "re using Audio/Data-CD-Creator you have to select y"
+                        "our writer on the 'General' settings page. If you w"
+                        "ant to grab audio tracks you have to add the apropr"
+                        "iate options on the 'Grabber' settings page.", 610, 
+                        13, 29, 255, 59, DT_WORDBREAK
+    END
+END
+
+ICON 2000 "audiofolder1.ico"
+ICON 2001 "datafolder1.ico"
+
+DLGTEMPLATE IDDLG_PAGE1 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_PAGE1, 36, 32, 288, 188, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        CTEXT           "Audio/Data-CD-Creator V0.49", 101, 15, 156, 255, 27
+                        PRESPARAMS PP_FONTNAMESIZE, "14.Helv"
+        CTEXT           "(C) Chris Wohlgemuth 1999-2001", 102, 15, 141, 255, 
+                        8
+        CTEXT           "http://www.geocities.com/SiliconValley/Sector/5785/", 
+                        103, 15, 123, 255, 8
+        ICON            2000, 2000, 110, 88, 21, 16, WS_GROUP
+        ICON            2001, 2001, 160, 88, 21, 16, WS_GROUP
+
+        LTEXT           "This program will install Audio/Data-CD-Creator on "
+                        "your system.", 104, 15, 39, 255, 30, DT_WORDBREAK
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+    END
+END
+
+DLGTEMPLATE IDDLG_PAGE2 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_PAGE2, 36, 32, 288, 188, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        LTEXT           "Please enter the path to CDRecord/2 into the entry "
+                        "field below. You may skip this page and insert the "
+                        "path later in the notebook of the CD-Creat"
+                        "or settings. Keep in mind that Audio/Data-CD-Creator "
+                        "will not function without CDRecord/2.", 104, 13, 
+                        134, 255, 54, DT_WORDBREAK | NOT WS_GROUP
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14, WS_GROUP
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        LTEXT           "Path to CDRecord/2:", 202, 15, 117, 114, 8
+        ENTRYFIELD      "", IDEF_CDRECORDPATH, 15, 99, 253, 8, ES_MARGIN
+        PUSHBUTTON      "Browse...", IDPB_BROWSE, 213, 80, 58, 14
+        RTEXT           "Max speed:", 205, 15, 56, 55, 8, DT_VCENTER
+        RTEXT           "Fifo:", 206, 139, 56, 48, 8, DT_VCENTER | NOT 
+                        WS_GROUP
+        SPINBUTTON      IDSB_SPEED, 78, 54, 31, 12, SPBS_MASTER
+        SPINBUTTON      IDSB_FIFO, 194, 54, 31, 12, SPBS_MASTER
+        LTEXT           "MB", 209, 227, 56, 20, 8, NOT WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDDLG_PAGECDRDAO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_PAGECDRDAO, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "Please enter the path to cdrdao/2 into the entry fi"
+                        "eld below. You may skip this page and insert the pa"
+                        "th later in the notebook of the CD-Creator"
+                        " settings. Cdrdao is only necessary if you want to wr"
+                        "ite audio CDs in DAO mode.", 104, 13, 134, 255, 49, 
+                        DT_WORDBREAK
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        LTEXT           "Path to cdrdao/2:", 202, 15, 117, 114, 8
+        ENTRYFIELD      "", IDEF_CDRDAOPATH, 15, 99, 253, 8, ES_MARGIN
+        PUSHBUTTON      "Browse...", IDPB_BROWSE, 213, 80, 58, 14
+        LTEXT           "Select your writer or a generic driver. If you're n"
+                        "ot sure read the documentation coming with cdrdao/2"
+                        " or visit the cdrdao homepage.", 304, 13, 25, 113, 
+                        57, DT_WORDBREAK
+        LTEXT           "CD-writer or driver:", 303, 147, 63, 116, 8, NOT 
+                        WS_GROUP
+        CONTROL         "", IDLB_CDRDAODRIVER, 151, 9, 117, 50, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | LS_HORZSCROLL | WS_TABSTOP | 
+                        WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDDLG_MKISOFS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_MKISOFS, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "Please enter the path to mkisofs into the entry fie"
+                        "ld below. You may skip this page and insert the pat"
+                        "h later in the notebook of the CD-Creator settings."
+                        " This path information is mandatory for creating da"
+                        "ta CDs.", 104, 13, 134, 255, 54, DT_WORDBREAK
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14
+        LTEXT           "Path to mkisofs:", 202, 15, 117, 114, 8
+        ENTRYFIELD      "", IDEF_MKISOFSPATH, 15, 99, 254, 8, ES_MARGIN
+        PUSHBUTTON      "Browse...", IDPB_BROWSE, 213, 80, 58, 14
+        LTEXT           "Note: If you use mkisofs from a cdrecord distributi"
+                        "on newer than V1.9a02 you must insert -graft-points"
+                        " into the mkisofs-options field of the main settings "
+                        "notebook!", 502, 13, 22, 255, 49, DT_WORDBREAK
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+    END
+END
+
+
+DLGTEMPLATE IDDLG_PAGEGRABBER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_PAGEGRABBER, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "Please enter the path to your grabber into the entr"
+                        "y field below. You may skip this page and insert th"
+                        "e path later in the notebook of the CD-Cre"
+                        "ator settings.", 104, 13, 134, 255, 54, DT_WORDBREAK
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        LTEXT           "Path to audio grabber:", 202, 15, 117, 114, 8
+        ENTRYFIELD      "", IDEF_GRABBER, 15, 99, 253, 8, ES_MARGIN
+        PUSHBUTTON      "Browse...", IDPB_BROWSE, 213, 80, 58, 14
+        LTEXT           "You have to provide some options on the Grabber set"
+                        "tings page later to make sure grabbing works.", 
+                        IDST_OPTIONTEXT, 13, 31, 255, 38, DT_WORDBREAK
+    END
+END
+DLGTEMPLATE IDDLG_INSTRUCTION LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installation", IDDLG_INSTRUCTION, 36, 32, 288, 188, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT          "On the following pages you may enter the paths to"
+                        " the various helper applications like CDRecord/2, "
+                        "cdrdao/2 etc. You may skip any page and insert the pat"
+                        "h later in the notebook of the CD-Creator settings object."
+                        , 104, 13,118, 255, 40, 
+                        DT_WORDBREAK
+        LTEXT          "If you upgrade from an older version of "
+                        "Audio/Data-CD-Creator you may first copy your old CDRECORD.INI "
+                        "file to the installation directory and restart this installer."
+                        " All the settings will be preserved then."
+                        , 1104, 13, 58, 255, 50, 
+                        DT_WORDBREAK
+        DEFPUSHBUTTON   "Next >", IDPB_NEXT, 175, 5, 40, 14
+        PUSHBUTTON      "Exit", IDPB_EXIT, 231, 5, 40, 14
+        PUSHBUTTON      "< Back", IDPB_BACK, 132, 5, 40, 14
+    END
+END
+

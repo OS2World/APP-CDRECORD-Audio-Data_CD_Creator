@@ -1,0 +1,501 @@
+; audiofolder.rc: Resource file for aucdfldr.dll (Audio-CD-Creator)
+;
+;                    (C) Chris Wohlgemuth 1999-2005
+;/*
+; * Copyright (c) Chris Wohlgemuth 1999-2005
+; * All rights reserved.
+; *
+; * http://www.geocities.com/SiliconValley/Sector/5785/
+; * http://www.os2world.com/cdwriting
+; *
+; * Redistribution and use in source and binary forms, with or without
+; * modification, are permitted provided that the following conditions
+; * are met:
+; * 1. Redistributions of source code must retain the above copyright
+; *    notice, this list of conditions and the following disclaimer.
+; * 2. Redistributions in binary form must reproduce the above copyright
+; *    notice, this list of conditions and the following disclaimer in the
+; *    documentation and/or other materials provided with the distribution.
+; * 3. The authors name may not be used to endorse or promote products
+; *    derived from this software without specific prior written permission.
+; *
+; * THIS SOFTWARE IS PROVIDED ``AS IS'' AND
+; * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+; * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+; * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+; * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+; * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+; * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+; * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+; * SUCH DAMAGE.
+; *
+; */
+
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "audiofolderres.h"
+
+; ******* These are needed for the about dialog
+ICON ID_ICONAUDIOFOLDER "../icons/audiofolder1.ico"
+ICON ID_ICONDATAFOLDER "../icons/datafolder1.ico"
+
+; ******* These are the popup menues for the data-cd-creator
+; * image name dialog
+
+MENU IDM_IMAGENAME
+BEGIN
+        MENUITEM "Help for image name...",IDM_IMAGENAME       
+END
+
+MENU IDM_IMAGEBROWSE
+BEGIN
+        MENUITEM "Help for browse button...",IDM_IMAGEBROWSE       
+END
+
+; ******* These are the popup menues for the data-cd-creator
+; * main create dialog (frame extension)
+
+MENU IDM_IMAGEONLY
+BEGIN
+        MENUITEM "Help for image only...",IDM_IMAGEONLY       
+END
+
+MENU IDM_WRITEIMAGE
+BEGIN
+        MENUITEM "Help for write image...",IDM_WRITEIMAGE       
+END
+
+MENU IDM_ONTHEFLY
+BEGIN
+        MENUITEM "Help for on the fly...",IDM_ONTHEFLY       
+END
+
+MENU IDM_CHECKSIZE
+BEGIN
+        MENUITEM "Help for check size...",IDM_CHECKSIZE       
+END
+
+MENU IDM_MKISOFSSETTINGS
+BEGIN
+        MENUITEM "Help for CD-settings...",IDM_MKISOFSSETTINGS       
+END
+
+MENU IDM_WRITECD
+BEGIN
+        MENUITEM "Help for write CD...",IDM_WRITECD       
+END
+
+MENU IDM_CREATE
+BEGIN
+        MENUITEM "Help for create...",IDM_CREATE       
+END
+
+MENU IDM_MKISOFSDUMMY
+BEGIN
+        MENUITEM "Help for Test only...",IDM_MKISOFSDUMMY       
+END
+
+MENU IDM_DATADEFAULT
+BEGIN
+        MENUITEM "Help for main window...",IDM_DATADEFAULT       
+END
+
+;Item for WPS popup menu
+MENU ID_MENUTOOLS
+BEGIN
+   MENUITEM  "" , ID_MENUTOOLS+5, MIS_SEPARATOR
+   MENUITEM "CD-R/W ~Tools...",ID_TOOLSITEM   
+   MENUITEM  "" , ID_MENUTOOLS+11, MIS_SEPARATOR
+END
+
+MENU ID_MENUABOUT
+BEGIN
+   MENUITEM  "" , ID_MENUSEPARATOR, MIS_SEPARATOR
+   MENUITEM "~About CD-Creator...",ID_ABOUTITEM   
+END
+
+;Toolbarmenu for data folders
+MENU ID_TBMENUTOOLS
+BEGIN
+        MENUITEM "CD-R/W ~Tools...",ID_TOOLSITEM
+        MENUITEM "Check CD/DVD ~space",ID_CDSIZEITEM
+        SUBMENU "~ISOFS",ID_ISOFSITEM
+	BEGIN
+        MENUITEM "~Mount imagefile...", ID_MOUNTISOFILE
+        MENUITEM "~Unmount imagefile...", ID_UNMOUNTISOFILE
+	END
+END
+
+MENU ID_AUDIOTBMENUTOOLS
+BEGIN
+        MENUITEM "CD-R/W ~Tools...",ID_TOOLSITEM
+        MENUITEM "~Create cover",ID_CREATECOVERITEM       
+	MENUITEM "~Decode MP3 files...", ID_MP3DECODEITEM
+	MENUITEM "~Encode wave files...", ID_MP3ENCODEITEM
+END
+
+;****** These are the context menues for the grab dialog ******
+; (Frame extension)
+
+MENU IDM_GRABDEFAULTHELP
+BEGIN
+	MENUITEM "Grabber setup...",IDM_GRABBERSETUP
+        MENUITEM "Help for grabbing...",IDM_GRABDEFAULTHELP       
+END
+
+MENU IDM_GRABREFRESHHELP
+BEGIN
+        MENUITEM "Help for refresh...",IDM_GRABREFRESHHELP       
+END
+
+MENU IDM_GRABTRACKLISTHELP
+BEGIN
+	MENUITEM "Select all",IDPB_SELECTALL
+	MENUITEM "Refresh" , IDPB_REFRESH
+        MENUITEM "Help for tracklist...",IDM_GRABTRACKLISTHELP       
+END
+
+MENU IDM_GRABGRABHELP
+BEGIN
+        MENUITEM "Help for grab button...",IDM_GRABGRABHELP       
+END
+
+MENU IDM_GRABSELECTALLHELP
+BEGIN
+        MENUITEM "Help for select all...",IDM_GRABSELECTALLHELP       
+END
+
+;****** These are the context menues for the ADC write dialog ******
+; (Frame extension)
+
+MENU IDM_WRITEDEFAULTHELP
+BEGIN
+	MENUITEM "CD-Creator setup...",IDM_CDRECORDSETUP
+        MENUITEM "Help for writing...",IDM_WRITEDEFAULTHELP       
+END
+
+MENU IDM_WRITEPADHELP
+BEGIN
+        MENUITEM "Help for pad...",IDM_WRITEPADHELP       
+END
+
+MENU IDM_WRITENOFIXHELP
+BEGIN
+        MENUITEM "Help for no closing...",IDM_WRITENOFIXHELP       
+END
+
+MENU IDM_WRITEPREEMPHELP
+BEGIN
+        MENUITEM "Help for preemp...",IDM_WRITEPREEMPHELP       
+END
+
+MENU IDM_WRITEDAOHELP
+BEGIN
+        MENUITEM "Help for DAO...",IDM_WRITEDAOHELP       
+END
+
+MENU IDM_WRITEDUMMYHELP
+BEGIN
+        MENUITEM "Help for test only...",IDM_WRITEDUMMYHELP       
+END
+
+MENU IDM_WRITEBURNHELP
+BEGIN
+        MENUITEM "Help for write button...",IDM_WRITEBURNHELP       
+END
+
+;**************
+MENU IDM_DEFAULTHELP
+BEGIN
+        MENUITEM "Help for main window...",IDM_DEFAULTHELP       
+END
+
+MENU IDM_STATUSDEFAULTHELP
+BEGIN
+        MENUITEM "Help for status line...",IDM_STATUSDEFAULTHELP       
+END
+
+
+
+STRINGTABLE
+BEGIN
+
+;******** Menu items *****************
+IDSTR_MENUABOUTA          "~About Audio-CD-Creator"
+IDSTR_MENUABOUTD          "~About Data-CD-Creator"
+IDSTR_MISCTOOLS            "~Misc tools"
+
+; **************************
+IDSTRD_DATACDCREATOR       "Data-CD-Creator"
+IDSTR_AUDIOCDCREATOR        "Audio-CD-Creator"
+
+; ************ Grabber *********************
+IDSTR_NOGRABSPACETEXT "Not enough free space on destination drive!"
+IDSTR_NOTRACKSSELECTEDTEXT "There are no tracks selected."
+IDSTR_NOTRACKSSELECTEDTITLE "Grab tracks message"
+IDSTR_ERRORISDATACDTITLE  "Track grabbing"
+IDSTR_ERRORISDATACDTEXT    "The Disk is a data disk!"
+IDSTR_ERRORNODISK    "Please insert the CD into the drive and press 'Refresh' again."
+IDSTR_GRABBERERRORTEXT "Grabber returned Non-zero resultcode. The grabbed track is probably corrupted. Do you want to continue grabbing?"
+IDSTR_GRABBERERRORTITLE "Grabber error!"
+
+IDSTR_TOTALSIZE                 "Total size: %lu.%lu.%lu Bytes"
+IDSTR_TOTALTIME                "Total time: %lu min %02lu sec"
+IDSTR_LBTRACKNAME            "Track %d"
+
+; ******* FreeDB *****************************
+IDSTR_CDDBQUERYLOCALDB   "CDDB-ID: %X, Querying local database..."
+IDSTR_ERRORCDDBLOCALDB      "Warning! Cannot open CDDB.ini file!"
+
+
+IDSTRD_IMAGENAMEBROWSE      "Path for ISO-Image file"
+IDSTRD_CHECKSIZEERRORFILENAME "You have to specify a valid filename including the path. Make sure the specified path exists."
+IDSTRD_CHECKSIZEERRORTITLE  "Write image, check size"
+IDSTRD_CHECKSIZEERRORFULLPATH "You have to specify a full path."
+IDSTRD_CHECKSIZEERRORNOSIZE "Sorry, file size unknown."
+IDSTRD_IMAGESIZE                 "Imagesize is %d.%0.3d.%0.3d bytes"
+IDSTRD_GETMSINFOERRORTEXT         "Can't get multisession info from cdrecord/2!"
+IDSTRD_GETMSINFOERRORTITLE         "Get multisession info error"
+IDSTRD_GETMSINFOTEXT            "Please insert the CD with the previous session into the CD-writer."
+IDSTRD_WRITEIMAGETITLE          "Image writing"
+IDSTRD_ONTHEFLYTITLE             "Writing on the fly"
+IDSTRD_GETMSINFOTITLE            "Get multisession info"
+
+IDSTRD_ALREADYWRITING       "There is an imagefile creation or write process running."
+IDSTRD_WRITINGIMAGE           "Writing image %s..."
+IDSTRD_CREATINGIMAGE          "Creating image %s..."
+IDSTR_ONTHEFLYWRITING        "Writing on the fly..."
+IDSTRD_CREATEIMAGETITLE     "Image file creation"
+IDSTRD_CHECKSIZETITLE         "Check size"
+IDSTRD_CALCULATINGIMAGESIZE "Calculating image size. Please wait..."
+IDSTR_DUMMYUNCHECKED         "'Test only' is unchecked! Do you want to perform a real write?"
+IDSTR_ALLOCSHAREDMEMERROR "Can't allocate shared memory. There's probably already a creation process running."
+IDSTR_CDRSTRINGERROR         "Internal error! Can't find end of cdrecordpath in string. Aborting..."
+IDSTR_WRITEINSTANCEDATAWARNING     "Warning! Cannot write instance data!"
+IDSTRA_WRITEAUDIOTRACK     "Writing track %d of %d     "
+IDSTRA_GRABAUDIOTRACK      "Grabbing track %d of %d     "
+IDSTRD_FIXUNCHECKED       "Fix disk is unchecked (See CD-type page). If you proceed you have to manually close this CD using the CDRTools so a CD-ROM drive can read it." 
+IDSTRA_STARTPGPROQUESTION "Should P>G Pro be started to edit the cover? (P>G Pro must be installed and *.cwx files be associated with it)."
+
+IDSTRD_RESETARCHIVEBITTITLE     "Confirmation"
+IDSTRD_RESETARCHIVEBITCONFIRM   "Do you really want to reset the archive bits of every file inside this folder?"
+
+;******Status line text *********
+IDSTRA_CALCPLAYTIME  "Calculating Play time. Please wait..."
+IDSTRA_CREATECOVER   "Creating cover. Please wait..."
+IDSTRD_QUERYFREECDSPACE       "Querying free CD space. Please wait..."
+IDSTRD_PUTFILES              "Put files and directories into this folder to burn them."
+IDSTRD_COLLECTINGFILES       "Collecting files..."
+IDSTR_CDSIZESTATUSLINETEXT   "Free space is %d.%0.3d.%0.3d bytes"
+IDSTRD_IMAGESIZESTATUSLINETEXT "Estimated imagesize is %d.%0.3d.%0.3d bytes"
+
+IDSTRD_CREATEIMAGEDONE        "CD-ROM image file created. You may burn this file on a CDR now."
+IDSTRD_WRITEIMAGEDONE         "Image file written by CDRecord/2."
+IDSTRA_AUDIOWRITETITLE "Write audio tracks"
+IDSTRA_DECODINGMSG      "Decoding %s"
+
+IDSTRD_CODEPAGETEXT   " Codepage for Joliet name creation: %d"
+IDSTRD_IMAGESIZESTATUSLINETEXT2 "Estimated imagesize is %d Mb"
+
+IDSTRD_QUERYFREEDVDSPACE       "Querying free DVD space. Please wait..."
+IDSTR_CDSIZESTATUSLINETEXT2   "Free space is %d Mb"
+
+;******* Boot CD *************
+IDSTRD_BOOTIMAGE         "Image: %s"
+IDSTRD_BOOTCATALOG         "Catalog: %s"
+IDSTRD_BOOTIMAGENAME         "OSBOOT.IMG"
+IDSTRD_BOOTCATALOGNAME         "boot.cat"
+IDSTRD_BOOTIMAGEERROR "There is no boot image 'OSBOOT.IMG' in the folder or the image has another size than 1.44M or 2.88M."
+IDSTRD_BOOTCATALOGERROR "There is a file with the name of the boot catalog in the folder. Aborting..."
+
+;******* Errors *********************
+;PM wrappers
+IDSTRPM_CDSPACEERROR         "Can't query free CD space! On some systems detection of free CD space fails so you may override this message if you know what you're doing! Do you want to proceed with writing?"
+IDSTRPM_ALLOCSHAREDMEMERROR "Can't alloc shared memory! Aborting..."
+IDSTRPM_IMAGETOBIG              "Image is bigger than free CD space! On some systems detection of free CD space fails so you may override this message if you know what you're doing! Do you want to proceed with writing?"
+IDSTRPM_DECODINGERROR         "Error while decoding MP3 file. Do you want to write the next track?"
+
+IDSTR_OPENSETTINGSERROR      "Can't open settings notebook."
+;IDSTRS_NOFONTPALETTE          "Can't open the font palette. It may have lost it's ID. Check your INI files."
+;IDSTRS_NOCOLORPALETTE         "Can't open the color palette. It may have lost it's ID. Check your INI files."
+IDSTRS_CREATORSETTINGS        "CD-Creator settings"
+IDSTRS_DEFAULTUSERGRABBERNAME        "User defined"
+
+IDSTRD_CHECKSIZEERRORMULTI     "There was an error while querying the image size. Check the '-graft-points' option of mkisofs (see the help page for more). If merging a previous session the CD with the session must be in the writer."
+
+IDSTR_NOTRACKNAMETEXT "You must specify a trackname."
+IDSTR_WRITEERRORTEXT   "CDRecord/2 returned Non-zero resultcode. The written track is probably corrupted. Do you want to continue writing?"
+IDSTR_WRITEERRORTITLE      "CD writing error!"
+IDSTR_WRITEWARNINGTITLE      "CD writing warning!"
+IDSTR_EMPTYCDFOLDER         "The folder is empty. Please put some files into it before selecting this function."
+IDSTR_NOFILELIST            "Error while opening the FILELIST.xxx file! Make sure the 'TEMP' directory exists in the Data-CD-Creator installation directory."
+IDSTR_MP3HELPERSTARTERROR   "The MP3 decoder program is not installed in the selected path or can't be started!"
+IDSTR_WAVEINFOSTARTERROR    "The program WAVEINFO.EXE is not available in the BIN directory or can't be started! Make also sure MMOS2 is installed."
+IDSTRD_ERRORIMAGECREATION   "Error while creating the image file."
+IDTRSD_ERRORIMAGEWRITING    "Error while writing the image file. Examine 'write.log.'"
+IDSTR_REOPENSETTINGSINFO    "The settings notebook will now close and immediately open again with updated settings pages."
+IDSTR_PRIORITYMESSAGETITLE  "Priority option"
+IDSTR_PRIORITYMESSAGETEXT   "It's not recommended to use a priority higher than 2 because your system may become unresponsive. Open the help for more information."
+IDSTR_INSTLANGUAGETITLE        "Language File Installation"
+IDSTR_INSTLANGUAGEDLLEXISTS "The language file already exists. Do you want to overwrite it?"
+IDSTR_INSTLANGUAGEDLLDONE   "Language file successfully installed. You have to restart the WPS so the changes take effect."
+IDSTR_INSTLANGUAGEDLLFAILED "An error occured during installation of the language file."
+
+;******* Listbox entries **************
+IDSTRLB_CDSPACEERROR       "Can't get free CD/DVD space!"
+IDSTRLB_FIXATING             "Fixating... (may need some minutes)" 
+IDSTRLB_WRITINGBUFFERS     "Writing buffers to medium..."
+IDSTRLB_CDROMCREATIONSUCCESS "CD-ROM successfully created."
+IDSTRLB_ONTHEFLYERROR      "Error while writing on the fly!"
+IDSTRLB_IMAGEWRITEERROR      "Error while writing the image!"
+IDSTRLB_FREECDSPACE            "Free CD/DVD space is %d.%0.3d.%0.3d bytes"
+IDSTRLB_QUERYINGIMAGESIZE     "Querying image size..."
+IDSTRLB_SELECT     "Please select the writer and speed"
+IDSTRLB_ONTHEFLYDVDERROR "Possible error while writing! Check the disk and the DvdDao documentation."
+
+;****** Settings page names ***********
+IDSTRSETTING_CDDESCRIPTION "CD ~name and author" 
+IDSTRSETTING_CDRSETTINGS   "~CDRecord/2"
+IDSTRSETTING_CDRDAOSETTINGS   "cdr~dao/2"
+IDSTRSETTING_MKISOFSSETTINGS "Mkisofs setup"
+IDSTRSETTING_FILENAME    "Filename options"
+IDSTRSETTING_HELPERAPPLICATIONS      "Helper applications"
+
+IDSTRSETTING_GENERAL    "~General"
+IDSTRSETTING_GRABBER    "Gra~bber"
+IDSTRSETTING_MPG123    "~MP3 decoding"
+IDSTRSETTING_MP3ENCODER   "MP3 ~encoding"
+
+IDSTRSETTING_CDDBSETTINGS    "~FreeDB setup"
+IDSTRSETTING_CDTYPE    "CD type"
+IDSTRSETTING_DATAFOLDERSPECIAL    "Special"
+IDSTRSETTING_TOOLBAR              "~User interface"
+IDSTRSETTING_ISOFS                "ISO filesystem"
+IDSTRSETTING_ABOUTPAGE       "~About"
+IDSTRSETTING_WRITERSETUP    "~Writer Setup"
+IDSTRSETTING_DVDDAOSETUP "D~VD Setup"
+
+;****** Titles for File dialogs **********
+IDSTR_FDLGSEARCHGRABBERTITLE "Find audio grabber"
+IDSTR_FDLGSEARCHCDR2TITLE "Find CDRecord/2"
+IDSTR_FDLGSEARCHMPG123TITLE "Find MP3 Decoder"
+IDSTR_FDLGSEARCHBOOTIMGTITLE "Select boot image"
+IDSTRD_FDLGSEARCHMKISOFS       "Find mkisofs"
+IDSTR_FDLGSEARCHMNTISOFSTITLE  "Search mntisofs.exe"
+IDSTR_FDLGSEARCHUMNTISOTITLE   "Search umntiso.exe"
+IDSTR_FDLGSEARCHISOIMAGETITLE  "Select ISO imagefile"
+IDSTR_FDLGSEARCHLAMETITLE  "Find LAME"
+IDSTR_FDLGSEARCHDVDDAOTITLE "Find Dvddao"
+
+;****** DAO ************************
+;PM wrappers
+IDSTRPM_LEADIN  "Writing lead in..."
+IDSTRPM_LEADOUT  "Writing lead out..."
+IDSTRPM_WRITINGAUDIO  "Writing audio data..."
+IDSTRPM_DAOCDLENGTH  "Free CD space is %d.%0.2d min"
+IDSTRPM_DAOAUDIOLENGTH  "Audio length is %d.%0.2d min"
+IDSTRPM_DAOAUDIOTOLONG "There's to much audio data for this CD-R (or querying of the CD size failed). The last track will be cut if your writer can't write audio data in the lead out area. Do you want to proceed?"
+IDSTRPM_DAOTITLE "Writing CD"
+IDSTRPM_DAOINFOTEXT "Writing audio in DAO mode..."
+;Title for warning box
+IDSTRPM_DAOWARNING "Warning!"
+IDSTRPM_DAOERROR "Error while writing audio CD!"
+
+;****** Titles for VIO programs ************
+IDSTRVIO_CDSIZE    "Query CD size VIO helper"
+IDSTRVIO_WRITEAUDIODAO "Write audio (DAO) VIO helper"
+IDSTRVIO_ONTHEFLY "On the fly VIO helper"
+
+;****** Log file messages ************
+;Ini file
+IDSTRLOG_NOCDRECORD      "No valid CDRecord/2 path found in cdrecord.ini!" 
+IDSTRLOG_NOCDRDAO         "No valid cdrdao/2 path found in cdrecord.ini!"         
+IDSTRLOG_NOMKISOFS         "No valid mkisofs path found in cdrecord.ini!"
+IDSTRLOG_NOGRABBER        "No valid grabber path found in cdrecord.ini!"
+IDSTRLOG_NOMPG123         "No valid MP3 decoder path found in cdrecord.ini!"
+IDSTRLOG_NOCDRDAODRIVER "No driver for cdrdao/2 found in cdrecord.ini!"
+
+IDSTR_INSTALLERRORTITLE  "Audio/Data-CD-Creator installation problem!"
+IDSTR_INSTALLNOVIO         "Can't find the helper program %s. It should be in the 'bin' directory of Audio/Data-CD-Creator."
+IDSTR_INIFILEOPENWARNING     "Warning! Cannot open Ini-file!"
+IDSTR_WRITEINIWARNING        "Warning! Cannot write to Ini-file!"
+IDSTR_NOVALIDPATH     "The path to %s isn't valid. Go to the appropriate page in the settings notebook, enter the path and close the notebook so the changes take effect."
+IDSTR_DIALOGERROR        "Can't load dialog template! Please check your installation."
+
+;******** Strings for pmwvinfo.exe and pmmp3dec ***
+IDSTR_PMWAVEINFOCHANNELS       "%d Channels"
+IDSTR_PMWAVEINFOBITPERSAMPLE   "%d bit per sample"
+IDSTR_PMWAVEINFOSAMPLERATE     "%d Hz"
+IDSTR_PMWAVEINFOMULAW          "Format: Mu-Law"
+IDSTR_PMWAVEINFOALAW           "Format: A-Law"
+IDSTR_PMWAVEINFOPCM            "Format: PCM"
+IDSTR_PMWAVEINFOADPCM          "Format: ADPCM"
+IDSTR_PMWAVEINFOUNKNOWN        "Format: unknown"
+IDSTR_PMWAVEINFOFILEERROR      "Can't open file %s"
+IDSTR_PMWAVEINFOMMAUDIOERROR   "Can't get MMAUDIOHEADER"
+IDSTR_PMWAVEINFOTITLE          "Wavefile info"
+IDSTR_PMMP3INFODLGTITLE        "MP3-file format info"
+IDSTR_PMMP3INFOBITRATE         "%d kBit"
+IDSTR_PMWAVEINFOPLAYTIME    "%d:%02d min playtime"
+IDSTR_PMMP3DECODENOSPACETITLE   "MP3-Decoding"
+IDSTR_PMMP3DECODENOSPACETEXT   "There isn't sufficient space for the decoded file. Choose another location with at least %d MB free disk space."
+
+;******** Strings for pmaudcpy.exe (1:1 Copy) **********
+IDSTR_PMAUDCOPYDEVICECLASHTEXT "Source and target device must be different when copying a CD on the fly."    
+
+;******** Strings for pmmntiso.exe ***
+IDSTR_PMMNTISOTITLE     "Mount ISO imagefile"
+IDSTR_PMMNTISOEXPLANATION     "Select the imagefile and a drive letter. Then press the Mount-button to mount the file."
+
+;******* Strings for MP3 names ********
+IDSTR_MP3NAMETRACK        "Track"
+IDSTR_MP3NAMETITLE        "Title"
+IDSTR_MP3NAMEARTIST       "Artist"
+IDSTR_MP3NAMEALBUM        "Album"
+IDSTR_MP3NAMENONE         "---"
+
+;******* Strings for DrDialog programs ********
+IDDRDSTR_MESSAGETITLE           "Messages"
+IDDRDSTR_CLOSE                  "Cl~ose"
+IDDRDSTR_OK                     "~Ok"
+IDDRDSTR_CANCEL                 "~Cancel"
+IDDRDSTR_TESTONLY              "~Test Only"
+IDDRDSTR_BLANKING               "Blanking"
+IDDRDSTR_FORMAT                 "Formatting"
+IDDRDSTR_FASTFORMAT             "~Quick Format"
+IDDRDSTR_FULLFORMAT             "Fu~ll format"
+IDDRDSTR_FASTBLANKING           "F~ast blanking"
+IDDRDSTR_FULLBLANKING           "F~ull blanking"
+IDDRDSTR_SCROLLTEXT            "~Scroll text"
+IDDRDSTR_DOFORMAT               "~Format"
+IDDRDSTR_DOBLANK                   "~Blank"
+IDDRDSTR_TESTONLY2              "T~est Only"
+IDDRDSTR_HELP                           "~Help"
+IDDRDSTR_BREAK                        "~Break"
+IDDRDSTR_DONE                        "~Done"
+IDDRDSTR_YES                           "~Yes"
+
+IDDRDSTR_DVDTOOLSTITLE          "DVD Tools"
+; MP3 encoding on the fly
+IDDRDSTR_DOENCODE                        "~Encode"
+IDDRDSTR_MP3FLYENCODETITLE  "Encode MP3 On The Fly"
+IDDRDSTR_MP3DESTINATION         "Destination:"
+IDDRDSTR_MP3DESTINATIONGB         "Location for encoded files"
+IDDRDSTR_CDINFOGB                            "CD info"
+IDDRDSTR_MP3INTOFOLDER            "~Place MP3 files into folder"
+IDDRDSTR_MP3TOLIBRARY                    "~Add MP3 files to library"
+IDDRDSTR_NOFREEDBDATA                 "(FreeDB data not available)"
+IDDRDSTR_ENCODEDTOTAL               "Total"
+IDDRDSTR_ENCODEDTRACK               "Track"
+IDDRDSTR_ENCODINGSTATUSGB          "Encoding status"
+IDDRDSTR_NO                                         "~No"
+IDDRDSTR_MBOXQUESTIONTITLE        "Question"
+IDDRDSTR_ENCODEBREAKQUESTION   "Encoding in progress. Do you really want to quit? Note: Encoding of the current file will continue."
+END
+
+RCINCLUDE "audiofolder001.dlg"
+
+

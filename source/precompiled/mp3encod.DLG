@@ -1,0 +1,21 @@
+#include "OS2.H"
+
+DLGTEMPLATE 100 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Encode wave files", 100, 67, 62, 276, 140, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER,
+           FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        LTEXT           "", 108, 2, 127, 269, 11, NOT WS_GROUP | DT_VCENTER
+        CONTROL         "", 101, 6, 52, 260, 63, WC_CONTAINER,
+                        WS_VISIBLE | WS_TABSTOP | CCS_SINGLESEL | CCS_AUTOPOSITION
+        LTEXT           "", 105, 2, 35, 269, 11, NOT WS_GROUP | DT_VCENTER
+        RTEXT           "Track:", 106, 2, 20, 39, 11, NOT WS_GROUP | DT_VCENTER
+        CONTROL         "", 604, 46, 20, 225, 11, "DRD_PERCENTBAR", WS_VISIBLE
+        DEFPUSHBUTTON   "Encode", 102, 2, 2, 38, 14, WS_GROUP
+        PUSHBUTTON      "Done", 204, 8, 2, 38, 14, NOT WS_VISIBLE
+        PUSHBUTTON      "Cancel", 103, 56, 2, 38, 14
+        PUSHBUTTON      "Help", 203, 234, 2, 38, 14
+        GROUPBOX        "Files to encode", 304, 2, 48, 269, 77
+    END
+END

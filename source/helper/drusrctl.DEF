@@ -1,0 +1,12 @@
+LIBRARY drusrctl INITINSTANCE LONGNAMES
+PROTMODE
+DESCRIPTION 'Rexx functions for the Creator package - (c) Copyright Chris Wohlgemuth 2001-2004'
+DATA MULTIPLE NONSHARED
+STACKSIZE 32768
+EXPORTS
+     DRCTRLDROPFUNCS            = DRCtrlDropFuncs      @1
+     DRCTRLREGISTER                 = DRCtrlRegister       @2
+     DRCTRLLOADFUNCS             = DRCtrlLoadFuncs      @3
+    CREATORGETRESSTRING     = CreatorGetResString @4
+    CREATORMESSAGEBOX        = CreatorMessageBox @5
+    CREATORGETHWND               = CreatorGetHWND @6

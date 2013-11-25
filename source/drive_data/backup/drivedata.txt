@@ -1,0 +1,742 @@
+##############################
+### Drives not known yet
+##############################
+
+[BCD 32x CD-Rom]
+driver generic-mmc 
+
+[DVD-ROM GDR8081N]
+driver generic-mmc 
+
+[Toshiba DVD-ROM SD-R1002]
+driver generic-mmc 
+
+[Toshiba DVD-ROM SD-M1502]
+driver generic-mmc 
+readonly 1
+
+[LITEON LTR-12101B]
+driver generic-mmc-raw 
+
+[LITEON LTR-0841]
+driver generic-mmc 
+
+[LG DVD-ROM DRD8120B]
+driver generic-mmc-raw
+
+[HP CD-Writer+ 9600]
+driver generic-mmc 
+
+[CREATIVE CD-RW RW4424]
+driver generic-mmc 
+
+[ACER CD-R/RW4X4X32]
+driver generic-mmc-raw 
+
+[JVC XR-W2010]
+driver teac-cdr55 
+
+[JVC R26226]
+driver teac-cdr55 
+
+[Toshiba CD-ROM XM-5401]
+driver plextor 
+
+[Toshiba CD-ROM XM-3206B]
+driver generic-mmc 
+
+[Philips PCRW404]
+driver generic-mmc-raw 
+
+[IOMEGA ZIPCD 4x650]
+driver generic-mmc-raw 
+
+[Yamaha CRW8824]
+driver generic-mmc 
+
+[Yamaha CRW8424]
+driver generic-mmc 
+
+[Yamaha CRW4001]
+driver generic-mmc 
+
+[Waitec WT2444EI]
+driver generic-mmc-raw 
+
+[Teac CD-R58]
+driver generic-mmc 
+
+[Sony CRX140]
+driver generic-mmc 
+
+[Sony CRX120]
+driver generic-mmc 
+
+[SAMSUNG CD-R/RW SW-206]
+driver generic-mmc 
+
+[SAF CD-RW6424]
+driver generic-mmc 
+
+[RICOH DVD/CDRW MP9060]
+driver generic-mmc 
+
+[RICOH MP7080]
+driver generic-mmc 
+
+[RICOH MP7060]
+driver generic-mmc 
+
+[Plextor W1210A]
+driver generic-mmc 
+
+[Plextor CD-R PX-W8432]
+driver generic-mmc 
+
+[Plextor CD-R PX-W8220]
+driver generic-mmc 
+
+[Mitsumi 2801]
+driver generic-mmc-raw 
+
+[Matshita CDRRW01]
+driver generic-mmc 
+
+[Matshita CD-R CW-7585]
+driver generic-mmc 
+
+[LG CD-RW CED 8080B]
+driver generic-mmc 
+
+[HP CD-Writer+ 9300]
+driver generic-mmc 
+
+[HP CD-Writer+ 9100]
+driver generic-mmc 
+
+[GENERIC CRD-RW2]
+driver generic-mmc 
+
+[AOPEN CRW9624]
+driver generic-mmc 
+
+[HITACHI CDR-8435]
+driver generic-mmc 
+
+[Asus CD-S340]
+driver generic-mmc 
+
+[Waitec WT624]
+driver generic-mmc 
+
+[Waitec WT4424]
+driver generic-mmc-raw 
+
+[Traxdata CRW2260 Pro]
+driver generic-mmc-raw 
+
+[Traxdata CDRW4260]
+driver generic-mmc 
+
+[Traxdata CDRW2260+]
+driver generic-mmc-raw 
+
+[Traxdata CDR4120]
+driver teac-cdr55 
+
+[Teac CD-R56]
+driver generic-mmc 
+
+[Teac CD-R55]
+driver teac-cdr55 
+
+[Teac CD-R50]
+driver teac-cdr55 
+
+[T.Yuden CD-WO EW-50]
+driver taiyo-yuden 
+
+[Sony CRX100]
+driver generic-mmc 
+
+[Sony CD-R CDU948]
+driver sony-cdu948 
+
+[Sony CD-R CDU924]
+driver sony-cdu920 
+
+[Sony CD-R CDU920]
+driver sony-cdu920 
+
+[SAF CD-RW 226]
+driver teac-cdr55 
+
+[SAF CD-R4012]
+driver teac-cdr55 
+
+[SAF CD-R2006PLUS]
+driver teac-cdr55 
+
+[Ricoh MP6201]
+driver ricoh-mp6200 
+
+[Ricoh MP6200]
+driver ricoh-mp6200 
+
+[Plextor CD-R PX-W4220]
+driver generic-mmc 
+
+[Plextor CD-R PX-R820]
+driver generic-mmc 
+
+[Plextor CD-R PX-R412]
+driver generic-mmc 
+
+[Philips PCA460RW]
+driver generic-mmc 
+
+[Philips Omniwriter26]
+driver ricoh-mp6200 
+
+[Philips CDD3610]
+driver generic-mmc-raw 
+
+[Philips CDD3600]
+driver generic-mmc-raw 
+
+[Philips CDD2600]
+driver cdd2600 
+
+[Philips CDD2000]
+driver cdd2600 
+
+[Panasonic CD-R CW-7582]
+driver generic-mmc 
+
+[Mitsumi CR-4802]
+driver generic-mmc-raw 
+
+[Mitsumi CR-4801]
+driver generic-mmc 
+
+[Memorex CRW-1662]
+driver generic-mmc-raw 
+
+[Memorex CR622]
+driver generic-mmc-raw 
+
+[Memorex CDRW-2216]
+driver generic-mmc-raw 
+
+[Memorex CD-RW4224]
+driver generic-mmc 
+
+[Matshita CD-R CW-7582]
+driver generic-mmc 
+
+[Matshita CD-R CW-7503]
+driver generic-mmc 
+
+[Matshita CD-R CW-7502]
+driver generic-mmc 
+
+[IMS CDD2000]
+driver cdd2600 
+
+[HP CD-Writer+ 8200]
+driver generic-mmc 
+
+[HP CD-Writer+ 8100]
+driver generic-mmc 
+
+[HP CD-Writer+ 7570]
+driver generic-mmc 
+
+[HP CD-Writer+ 7200]
+driver generic-mmc-raw 
+
+[HP CD-Writer+ 7100]
+driver generic-mmc-raw 
+
+[HP CD-Writer 6020]
+driver cdd2600 
+
+[HP CD-Writer 4020]
+driver cdd2600 
+
+[BTC BCE621E]
+driver generic-mmc-raw 
+
+[Yamaha CDR100]
+driver yamaha-cdr10x 
+
+[Yamaha CDR102]
+driver yamaha-cdr10x 
+
+[Yamaha CDR200]
+driver generic-mmc 
+
+[Yamaha CDR400]
+driver generic-mmc 
+
+[Yamaha CRW2260]
+driver generic-mmc 
+
+[Yamaha CRW4260]
+driver generic-mmc 
+
+[Yamaha CRW4416]
+driver generic-mmc 
+
+[Yamaha CRW6416]
+driver generic-mmc 
+
+[Asus CD-S400]
+driver generic-mmc 
+
+[Hitachi DVD-ROM GD-2500]
+driver plextor 
+
+[Matshita CD-ROM CR-588]
+driver generic-mmc 
+
+[Memorex CD-233E]
+driver generic-mmc 
+
+[Nakamichi MJ-5.16s]
+driver plextor 
+
+[Pioneer CD-ROM DR-U06]
+driver plextor 
+
+[Pioneer CD-ROM DR-U12]
+driver plextor 
+
+[Pioneer CD-ROM DR-U16]
+driver plextor 
+
+[Pioneer DVD-103]
+driver generic-mmc 
+
+[Pioneer DVD-303]
+driver plextor 
+
+[Plextor CD-ROM]
+driver plextor-scan 
+
+[Sony CD-ROM]
+driver plextor 
+
+[Sony CD-ROM CDU-76]
+driver plextor 
+
+[Sony CDU31A-02]
+driver generic-mmc 
+
+[Teac CD-532E]
+driver generic-mmc 
+
+[Teac CD-ROM CD-532S]
+driver plextor-scan 
+
+[Toshiba CD-ROM XM-5701TA]
+driver toshiba 
+
+[Toshiba CD-ROM XM-6201TA]
+driver toshiba 
+
+[Toshiba CD-ROM XM-6302B]
+driver generic-mmc 
+
+[ (driver) sony-cdu920]
+driver sony-cdu920 
+
+[ (driver) sony-cdu948]
+driver sony-cdu948 
+
+[ (driver) taiyo-yuden]
+driver taiyo-yuden 
+
+[ (driver) teac-cdr55]
+driver teac-cdr55 
+
+[ (driver) yamaha-cdr10x]
+driver yamaha-cdr10x 
+
+[ (driver) cdd2600]
+driver cdd2600 
+
+[ (driver) generic-mmc]
+driver generic-mmc 
+
+[ (driver) generic-mmc-raw]
+driver generic-mmc-raw 
+
+[ (driver) plextor]
+driver plextor 
+
+[ (driver) plextor-scan]
+driver plextor-scan 
+
+[ (driver) ricoh-mp6200]
+driver ricoh-mp6200 
+
+
+##############################
+### Drive name from identification strings (got from -scanbus)
+##############################
+
+['SCSI-CD ' 'ReWritable-2x2x6']
+drivename Traxdata CDRW2260EL PRO 
+
+['YAMAHA  ' 'CRW8424S        ']
+drivename Yamaha CRW8424S
+
+['YAMAHA  ' 'CRW2200S        ']
+drivename Yamaha CRW2200S
+
+['PLEXTOR ' 'CD-R   PX-W1210S']
+drivename Plextor PX-W1210S
+
+['TEAC    ' 'CD-W552E        ']
+drivename TEAC CD-W552E
+
+['TEAC    ' 'CD-W58E         ']
+drivename Teac CD-W58E
+
+['TEAC    ' 'CD-W54E         ']
+drivename Teac CD-W54E
+
+['HL-DT-ST' 'DVD-ROM GDR8081N']
+drivename DVD-ROM GDR8081N
+
+['TEAC    ' 'CD-W28E         ']
+drivename TEAC CD-W28E
+
+['TEAC    ' 'CD-W524E        ']
+drivename Teac CD-W524EK
+
+['LITE-ON ' 'LTR-48246K      ']
+drivename LITEON LTR48246K
+
+['LITE-ON ' 'DVDRW LDW-411S  ']
+drivename LITEON LDW 411S
+
+#DVD-ROM in Thinkpad ultrabay. LG seems to be the manufacturer
+['HL-DT-ST' 'CD-RW GCE-8240B ']
+drivename LG GCE-8240B
+
+['LITE-ON ' 'LTR-24102B      ']
+drivename LITEON LTR-24102B
+
+['HL-DT-ST' 'CD-RW GCE-8481B ']
+drivename LG GCE-8481B
+
+['SAMSUNG ' 'CDRW/DVD SM-352B']
+drivename Samsung CDRW/DVD SM-352
+
+['HP      ' 'CD-Writer+ 9200 ']
+drivename HP CD-Writer+ 9200
+
+['LITE-ON ' 'LTR-52246S      ']
+drivename LITEON E-IDE CD-RW 52x24x52x
+
+['SONY    ' 'CD-RW  CRX160E  ']
+drivename Sony CD-RW CRX160E
+
+['SONY    ' 'CD-RW  CRX175A1 ']
+drivename Sony CD-RW CRX175A1
+
+
+['PLEXTOR ' 'CD-ROM PX-40TS  ']
+drivename Plextor PX-40TS
+
+['TEAC    ' 'CD-R58S         ']
+drivename Teac CD-R58S
+
+['LITE-ON ' 'LTR-48125S      ']
+drivename LITEON LG-48125S
+
+['HL-DT-ST' 'RW/DVD GCC-4480B']
+drivename LG GCC-4480B
+
+#  (Notebook CD-RW drive)
+#  Works in an UltraSlimBay of a Thinkpad 600X
+['HL-DT-ST' 'CD-RW GCE-8080N ']
+drivename H-L Data Storage GCE-8080N
+
+['ASUS    ' 'CRW-4816A       ']
+drivename ASUS 4816A
+
+['OPTORITE' 'CD-RW CW4801    ']
+drivename OPTORITE CD-ReWriter 48x24x48
+
+['LITE-ON ' 'LTR-52246S      ']
+drivename LITEON LTR-52246S
+
+
+['YAMAHA  ' 'CRW6416S        ']
+drivename Yamaha CRW6416S
+
+['YAMAHA  ' 'CRW2200E        ']
+drivename Yamaha CRW2200E
+
+['HL-DT-ST' 'CD-RW GCE-8523B ']
+drivename LG GCE-8523B
+
+['_NEC    ' 'DVD_RW ND-2500A ']
+drivename NEC DVD+RW ND-2500A
+
+###    More info needed
+['SONY    ' 'CD-RW  CRX175E  ']
+drivename Sony CRX-175E
+
+
+
+##############################
+### Feature list of each drive
+##############################
+
+[Traxdata CDRW2260EL PRO]
+cdrdaooptions  
+driver generic-mmc-raw 
+mp3swapbytes 1 
+multisessionfix 0 
+
+[Yamaha CRW8424S]
+cdrdaooptions  
+driver generic-mmc 
+mp3swapbytes 1 
+multisessionfix 0 
+
+[Yamaha CRW2200S]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[Plextor PX-W1210S]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[TEAC CD-W552E]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 0
+multisessionfix 0 
+
+[Teac CD-W58E]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[Teac CD-W54E]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[TEAC CD-W28E]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 1
+multisessionfix 0 
+
+[Teac CD-W524EK]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[HP CD-Writer+ 9200]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[LG GCE-8240B]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[LG GCE-8481B]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[LITEON E-IDE CD-RW 52x24x52x]
+cdrdaooptions
+driver generic-mmc-raw
+mp3swapbytes 2
+multisessionfix 0 
+
+[LITEON LDW 411S]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 0
+multisessionfix 0 
+
+[LITE-ON LTR-24102B]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+#multisessionfix 0 
+
+[LITEON LTR48246K]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 1
+multisessionfix 0 
+
+[NEC DVD+RW ND-1100A]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[NEC DVD+RW ND-2500A]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 1
+multisessionfix 0
+
+[Samsung CDRW/DVD SM-352]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[Sony CD-RW CRX175A1]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[Plextor PX-40TS]
+cdrdaooptions
+driver plextor 
+mp3swapbytes 2
+multisessionfix 0 
+#    Note: --driver plextor-scan and -- driver generic-mmc work too,
+#          but grabbing and creating the toc is much slower.
+
+[Teac CD-R58S]
+cdrdaooptions
+#    Maybe I should have set 0x00000010: Drive supports CD-TEXT writing?
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[LITEON LG-48125S]
+cdrdaooptions
+driver generic-mmc-raw
+mp3swapbytes 1
+multisessionfix 0 
+
+[LG GCE-8523B]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0
+
+#Same as LG GCE-8523B
+[LG 52x24x52X]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0
+
+[LG GCC-4480B]
+cdrdaooptions
+driver generic-mmc
+#(driver) generic-mmc-raw fÅr 1:1 copy
+mp3swapbytes 2
+multisessionfix 0 
+
+[H-L Data Storage GCE-8080N]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[ASUS 4816A]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[OPTORITE CD-ReWriter 48x24x48]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 0
+multisessionfix 0
+
+[LITEON LTR-52246S]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 1
+multisessionfix 0 
+
+[Buslink 52x CDRW drive]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 1
+multisessionfix 0 
+
+[Yamaha CRW6416S]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 2
+multisessionfix 0 
+
+[Yamaha CRW2200E]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 0
+multisessionfix 0 
+
+[Yamaha 201040 CD-RW Recorder]
+cdrdaooptions
+driver generic-mmc
+mp3swapbytes 0
+multisessionfix 0 
+
+
+# Info needed
+[Sony CRX-175E]
+cdrdaooptions
+driver
+mp3swapbytes 2
+cdrdaooptions
+
+[Sony CD-RW CRX160E]
+cdrdaooptions
+driver
+mp3swapbytes 2
+
+
+
+
+#### Configuration data for CD-reader ###
+
+[jcdread2]
+addnumbers 1 
+options %1: -track %2 -file 
+ID 3 
+
+[cdda2wav]
+addnumbers 1 
+options -D<Bus>,<Target>,<Lun> -H -t %2 
+ID 1 
+
+[leech]
+addnumbers 0 
+ID 2 
+options -o %1: T %2 
+
+

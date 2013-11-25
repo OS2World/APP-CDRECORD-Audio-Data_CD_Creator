@@ -1,0 +1,219 @@
+/***************************************************************************
+
+  P>G Pro Script                                                           
+
+*/                                                                          
+
+
+info.0=''
+
+/* Get output settings */
+aH=CwGetAppHandle('output settings')
+curwidth=CwGetProperty(ah, 'output size:width')
+curheight=CwGetProperty(ah, 'output size:height')
+curunit=CwGetProperty(ah, 'unit')
+SAY 'Current width: 'curwidth
+SAY 'Current height: 'curheight
+SAY 'Current unit: 'curunit
+
+/* Set new settings */
+call CwSetProperty ah, 'unit' , 'centimeters'
+call CwSetProperty ah, 'output size:width', 15
+call CwSetProperty ah, 'output size:height', 11.7
+
+/* Draw the background */
+call drawOutline
+
+/* Draw the header */
+call writeHeader
+
+/* Put the track info into the vars */
+call allTracks
+
+/* Write the informationon the back sheet */
+call writeTracks
+
+DONE:
+Exit
+
+
+/*******************************************************/
+/* This Procedure just prints a header like 'Contents' */
+/*******************************************************/
+writeHeader:
+
+/* Headline effect */
+hO=CwCreateEffect('Headline Text','Solid Color')
+h=0.6        /* The height */
+w=4          /* The width  */
+y=11.7-0.4     /* The y pos  */
+
+call CwSetPosition hO,14.4/2,y,w,h,0,0
+call CwSetName hO, 'header'                     /* Give the object a name */
+hr=CwGetRegion(hO)
+call CwSetProperty hr, 'Caption', 'Inhalt'    /* Text */
+ht=CwGetTool(hO)
+call CwSetProperty ht, 'Color', 'Black'         /* Print it black */
+
+/* Draw a line */
+hLine=0.05
+hO1=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO1,14.4/2, y-h/2,w,hLine,0,0
+ht=CwGetTool(hO1)
+call CwSetProperty ht, 'Color', 'Black'
+return
+
+
+/*******************************************************/
+/* This Procedure draws the background                 */
+/*******************************************************/
+drawOutline:
+w=0.025
+h=11.7
+
+/* Draw some help lines */
+hO4=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO4,0.6, 11.7/2,w,h,0,0
+hO5=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO5,14.4, 11.7/2,w,h,0,0
+
+/* Create black rectangle */
+hO=CwCreateEffect('Rectangle','Solid Color')
+h=11.7
+w=15
+call CwSetPosition hO,w/2,h/2,w,h,0,0
+ht=CwGetTool(hO)
+call CwSetProperty ht, 'Color', 'Black'
+
+/* Create white rectangle */
+hO1=CwCreateEffect('Rectangle','Solid Color')
+w=13.6
+h=11.6
+call CwSetPosition hO1,13.8/2+0.6,11.7/2,w,h,0,0
+ht=CwGetTool(hO1)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Create white rectangle */
+hO2=CwCreateEffect('Rectangle','Solid Color')
+h=11.6
+w=.5
+call CwSetPosition hO2, 0.3, 11.7/2,w,h,0,0
+ht=CwGetTool(hO2)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Create white rectangle */
+hO3=CwCreateEffect('Rectangle','Solid Color')
+h=11.6
+w=.5
+call CwSetPosition hO3,14.7, 11.7/2,w,h,0,0
+ht=CwGetTool(hO3)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Group the rectangles */
+gh=CwAddObjectToGroup(hO3,0)
+call CwAddObjectToGroup hO2 , gh
+call CwAddObjectToGroup hO1 , gh
+call CwAddObjectToGroup hO , gh
+call CwAddObjectToGroup hO4 , gh
+call CwAddObjectToGroup hO5 , gh
+return
+
+
+/*******************************************************/
+/* This Procedure prints the track data                */
+/*******************************************************/
+writeTracks: PROCEDURE EXPOSE info.
+
+/* Output area */
+outWidth=12
+outHeight=10
+outY=5.5
+
+/* Size of textbox */
+h=0.6
+w=0.75
+x=1+w/2
+lineLength=2
+wName=2
+xName=x+1+wName/2
+text2=''
+text=''
+wTime=1
+timeText=''
+
+outHeight=info._name.0*h
+if outHeight>10 then outHeight=10
+
+DO track=1 to info._name.0
+  /* The text */
+  text=text||track||'.'||'0a'X
+  tempText=FILESPEC("name",info._name.track)
+  /* Remove .wav extension */
+  extPos=LASTPOS('.WAV',TRANSLATE(tempText))
+  if extPos >1 THEN tempText=LEFT(tempText,extPos-1)
+  /* Remoce .mp3 extension */
+  extPos=LASTPOS('.MP3',TRANSLATE(tempText))
+  if extPos >1 THEN tempText=LEFT(tempText,extPos-1)
+  text2=text2||tempText||'0a'X
+  timeText=timeText||info._playtime.track||'0a'X
+END
+
+/* Track numbers */
+  hO=CwCreateEffect('Block Text','Solid Color')
+  /* Textbox position */
+  call CwSetPosition hO, x, outY, w, outHeight, 0, 0
+  /* The ObjectName */
+  objectName='Tracks'
+  call CwSetName hO, objectName
+  hr=CwGetRegion(hO)
+  /* The text */
+  call CwSetProperty hr, 'Caption', text
+  call CwSetProperty hr, 'Font', 'Times New Roman'
+  call CwSetProperty hr, 'Justification', 'Center'
+  call CwSetProperty hr, 'Line Length', lineLength
+  ht=CwGetTool(hO)
+  call CwSetProperty ht, 'Color', 'Black'
+
+/* Track names */
+  hO1=CwCreateEffect('Block Text','Solid Color')
+  /* Textbox position */
+  call CwSetPosition hO1, 13.7/2 + 0.5, outY, outWidth-1.5, outHeight, 0, 0
+  /* The ObjectName */
+  objectName='TrackNames'
+  call CwSetName hO1, objectName
+  hr=CwGetRegion(hO1)
+  /* The text */
+  call CwSetProperty hr, 'Caption', text2
+  call CwSetProperty hr, 'Font', 'Times New Roman'
+  call CwSetProperty hr, 'Justification', 'Left'
+  call CwSetProperty hr, 'Line Length', 16
+  ht=CwGetTool(hO1)
+  call CwSetProperty ht, 'Color', 'Black'
+
+/* Track times */
+  hO2=CwCreateEffect('Block Text','Solid Color')
+  /* Textbox position */
+  call CwSetPosition hO2, 13.7-wTime/2, outY, wTime, outHeight, 0, 0
+  /* The ObjectName */
+  objectName='Times'
+  call CwSetName hO2, objectName
+  hr=CwGetRegion(hO2)
+  /* The text */
+  call CwSetProperty hr, 'Caption', timeText
+  call CwSetProperty hr, 'Font', 'Times New Roman'
+  call CwSetProperty hr, 'Line Length', 3
+  call CwSetProperty hr, 'Justification', 'Center'
+  ht=CwGetTool(hO2)
+  call CwSetProperty ht, 'Color', 'Black'
+
+return
+
+
+/*******************************************************/
+/* This Procedure fills the var with the track         */
+/* information. This procedure is built by A-CD-C      */
+/*******************************************************/
+allTracks: PROCEDURE EXPOSE info.
+
+info._name.0=0
+

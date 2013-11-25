@@ -1,0 +1,7 @@
+#include "pmhint.h"
+
+POINTER IDPT_HAND  hand.ptr
+
+RCINCLUDE "pmhint.dlg"
+
+

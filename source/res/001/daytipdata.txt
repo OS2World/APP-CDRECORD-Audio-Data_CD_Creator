@@ -1,0 +1,216 @@
+# This is a comment
+
+# This is the first tip. Numbering doesn't matter because the script builds the actual
+# number according to the position in this file. A [XY] must always be present!
+[1]
+# How many choices for the user
+numchoices 5
+# The first label
+choice1 Quick start
+choice2 Create data CDs
+choice3 Creating an audio sampler
+choice4 Writing MP3 files
+choice5 Copy a CD
+# Action to perform when clicking on a link. You need a line for every choice.
+# TUTORIAL: Open the specified topic in the tutorial (example: open1 TUTORIAL:Quick start)
+# OBJECT:   Open the specified object  (example: open1 OBJECT:<CWCREATOR_SETTINGS>)
+# WEB:      Visit the specified web address  (example: open2 WEB:http://www.math.berkeley.edu/~roconnor/MMIOMP3/)
+open1 TUTORIAL:Quick start
+open2 TUTORIAL:Creating data
+open3 TUTORIAL:sampler
+open4 TUTORIAL:MP3 writing
+open5 TUTORIAL:Copy CD
+# Enable=1
+enable 1
+# The text shown. Use the string 0Dx to insert carriage returns.
+hinttext Audio/Data-CD-Creator is a collection of WPS classes for the creation of data and audio CDs. Burn your CDs entirely using drag and drop. Read the tutorial for information about the features. Get more information by clicking one of the items below.
+
+#2 the second tip
+[2]
+numchoices 0
+enable 1
+hinttext You may put any object into an audio CD folder but when writing the CD only audio files are fetched from the folder. So you may keep all files related to an audio project together. Instead of real files you may also use shadows.
+
+[3]
+numchoices 0
+enable 1
+hinttext You may create additional CD creator templates with special settings. For example one template for singlesession CDs and one for multisession CDs. The settings of a template or folder are saved for each instance.
+
+[4]
+numchoices 0
+enable 1
+hinttext A data CD folder has got the features of any normal folder. Use it for example as a backup folder. After collecting some data burn it on CD with a single click. 
+
+[00]
+numchoices 1
+choice1 Visit the CW-Multimedia-Classes homepage
+open1 WEB:http://www.os2world.com/cdwriting
+enable 1
+hinttext Install new WPS audio classes to get the best integration of audio files into the WPS. These classes show for example the samplerate and playtime of your files in the details view. The settings notebook is extended for more information and editing of ID3 tags. A new WPS aware Media-Player may be used for organizing and playing of MP3, OGG, Wave or other audio files.
+
+[5]
+numchoices 1
+choice1 Open the main settings notebook
+open1 OBJECT:<CWCREATOR_SETTINGS>
+enable 1
+hinttext Change the look of the CD creator folders on the second user interface page in the main settings notebook.
+
+[6]
+numchoices 1
+choice1 Open the main settings notebook
+open1 OBJECT:<CWCREATOR_SETTINGS>
+enable 1
+hinttext Change the write speed and the size of the memory buffer on the General page 1 of the main settings notebook.
+
+[7]
+numchoices 0
+enable 1
+hinttext If you're in doubt about the meaning of an option in the settings notebook use the help button.
+
+[8]
+numchoices 1
+choice1 Open the main settings notebook
+open1 OBJECT:<CWCREATOR_SETTINGS>
+enable 1
+hinttext Audio/Data-CD-Creator supports Burnproof/Justlink/Burnsave/etc. when used with a recent version of CDRecord/2. Activate the feature on the second General page of the main settings notebook.
+
+[9]
+numchoices 1
+choice1 Open the main settings notebook
+open1 OBJECT:<CWCREATOR_SETTINGS>
+enable 1
+hinttext If you have problems during use of the classes go to the General Page 1 and deselect 'Close window on exit' and 'Start hidden'. After doing so you can read the output of the programs used for writing.
+
+[10]
+numchoices 2
+choice1 Tutorial: Writing MP3 files
+choice2 Visit the MMIOMP3 homepage
+open1 TUTORIAL:MP3 writing
+open2 WEB:http://www.math.berkeley.edu/~roconnor/MMIOMP3/
+enable 1
+hinttext With Audio-CD-Creator you may write your MP3 files as an audio CD for use in your home or car CD player. If you have installed the free MMIOMP3 procedure written by Russell O'Connor (http://www.math.berkeley.edu/~roconnor/MMIOMP3/) you can write such CDs on the fly in DAO mode. 
+
+[11]
+numchoices 1
+choice1 Visit the WPS-Wizard homepage
+open1 WEB:http://www.os2world.com/cdwriting
+enable 1
+hinttext After installation of WPS-Wizard every CD creator folder has an additional User menu. Use it to start scripts working with the contents of the folder or to have access to frequently used objects. Recent releases of WPS-Wizards support access to the WPS from started REXX scripts.
+
+[12]
+numchoices 1
+choice1 Read more about the lauch area
+open1 TUTORIAL:launch area
+enable 1
+hinttext Every CD creator folder has a launchpad right to the buttons at the top for frequently used objects. Use drag and drop to put objects there. Remove them by using the delete item of the objects context menu. 
+
+[13]
+numchoices 1
+choice1 Open the main settings notebook
+open1 OBJECT:<CWCREATOR_SETTINGS>
+enable 1
+hinttext You may disable the fly over help for the buttons on the User Interface page of the main settings notebook. Change color, font and the timing there, too. 
+
+[14]
+numchoices 1
+choice1 Start the CDR-Tools
+open1 OBJECT:<CDR-Tools>
+enable 1
+hinttext If your newly created audio CD is not readable in you CD player the CD may not be closed yet. Use CDR-Tools to fix such a CD.
+
+[15]
+numchoices 1
+choice1 Start the CDR-Tools
+open1 OBJECT:<CDR-Tools>
+enable 1
+hinttext Blank a CD-RW by using the CDR-Tools program.
+
+[16]
+numchoices 3
+choice1 Create ISO images
+choice2 Mount ISO images
+choice3 Visit the ISOFS homepage
+open1 TUTORIAL:Creating ISO
+open2 TUTORIAL:Mounting
+open3 WEB:http://www.os2world.com/cdwriting
+enable 1
+hinttext Get ISOFS from the Audio/Data-CD-Creator homepage if you want to read the contents of an ISO image file meant to be written on CD. This installable filesystem mounts the ISO file on a free drive letter. Data-CD-Creator may mount a newly created image after creation. 
+
+[17]
+numchoices 1
+choice1 Visit the MMIOVorbis homepage
+open1 WEB:http://www.math.berkeley.edu/~roconnor/MMIOMP3/
+enable 1
+hinttext If you want to write OGG files as an audio CD the MMIOVorbis input/output procedure (http://www.math.berkeley.edu/~roconnor/MMIOMP3/) must be installed. This free IO procedure is written by Russell O'Connor.
+
+[18]
+numchoices 3
+choice1 Open the main settings notebook
+choice2 Visit the MMIOMP3 homepage
+choice3 Visit the z! homepage
+open1 OBJECT:<CWCREATOR_SETTINGS>
+open2 WEB:http://www.math.berkeley.edu/~roconnor/MMIOMP3/
+open3 WEB:http://www.dink.org
+enable 1
+hinttext You only can write DAO audio CDs from MP3 files if you're using the MMIOMP3 procedure written by Russell O'Connor for decoding. Go to the MP3-decoder page of the main settings notebook to select it. If you're using z! as a decoder you may write such audio CDs in TAO mode.
+
+[19]
+numchoices 0
+enable 1
+hinttext When creating data CDs you may use shadows to build a virtual tree of files. Data-CD-Creator follows shadows in folders when selecting the appropriate option on the Special page of the particular creator folder.
+
+[20]
+numchoices 1
+choice1 More information
+open1 TUTORIAL:fails with recent
+enable 1
+hinttext Don't forget the -graft-points parameter for Mkisofs when using recent releases of the cdrecord package.
+
+[21]
+numchoices 1
+choice1 More about adapting CD creator
+open1 TUTORIAL:customization
+enable 1
+hinttext Audio/Data-CD-Creator is largely adaptable. You may create user menus, extended context menus, use a launch area for frequently used objects and change the way covers are created and tracks are named after grabbing.
+
+[22]
+numchoices 1
+choice1 Supported setup strings
+open1 TUTORIAL:setup strings
+enable 1
+hinttext Audio/Data-CD-Creator supports additional setup strings to set write options or change settings.
+
+[00]
+numchoices 2
+choice1 Visit the Gnu VCDImager homepage
+choice2 Get the OS/2 port
+open1 WEB:http://www.vcdimager.org/
+open2 WEB:http://www.os2world.com/cdwriting
+enable 1
+hinttext If you want to create VCDs or SVCDs have a look at Gnu VCDImager a free mastering program.
+
+
+[00]
+numchoices 1
+choice1 CDBoot/2 homepage
+open1 WEB:http://www.geocities.com/SiliconValley/Pines/7885/
+enable 1
+hinttext You may create bootable OS/2 installation CDs with the HowTo and the utility found on the page below. It's written by Roman Stangl author of the famous PC/2 (Programm commander/2) package.
+
+
+[00]
+numchoices 1
+choice1 BootCD HowTo on the web
+open1 WEB:http://www.geocities.com/SiliconValley/Sector/5785/
+enable 1
+hinttext If you want to create bootable OS/2 CDs have a look at this HowTo. It describes the creation of CDs booting to a textmode or to a WPS system.
+
+[00]
+numchoices 2
+choice1 Visit the gramofile homepage
+choice2 Get the OS/2 port
+open1 WEB:http://panic.et.tudelft.nl/~costar/gramofile/
+open2 WEB:http://www.os2world.com/cdwriting
+enable 1
+hinttext Remove noise and clicks from your audio files using Gramofile a free program released under the GNU license. The interface is a little bit archaic but it works.
+

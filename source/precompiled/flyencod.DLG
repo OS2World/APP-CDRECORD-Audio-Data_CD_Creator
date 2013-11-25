@@ -1,0 +1,29 @@
+#include "OS2.H"
+
+DLGTEMPLATE 700 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Encode MP3 on the fly", 700, 45, 100, 200, 154, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER,
+           FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Album:", 702, 6, 131, 53, 10,
+                        NOT WS_GROUP | DT_VCENTER
+        ENTRYFIELD      "Album", 704, 6, 121, 186, 10, WS_GROUP | ES_MARGIN
+        LTEXT           "Artist:", 703, 6, 107, 53, 10,
+                        NOT WS_GROUP | DT_VCENTER
+        ENTRYFIELD      "Artist", 705, 6, 97, 186, 10, ES_MARGIN
+        CTEXT           "(FreeDB data not available)", 701, 6, 85, 186, 10,
+                        NOT WS_VISIBLE | NOT WS_GROUP | DT_VCENTER
+        AUTORADIOBUTTON "Place MP3 files into folder", 706, 12, 56, 179, 10,
+                        WS_GROUP
+        AUTORADIOBUTTON "Add MP3 files to library", 709, 12, 45, 179, 10
+        LTEXT           "Destination:", 713, 6, 32, 84, 10,
+                        NOT WS_GROUP | DT_VCENTER
+        ENTRYFIELD      "", 714, 6, 21, 186, 10, ES_MARGIN
+        DEFPUSHBUTTON   "Encode", 710, 2, 2, 38, 12, WS_GROUP
+        PUSHBUTTON      "Cancel", 711, 50, 2, 38, 12
+        PUSHBUTTON      "Help", 712, 158, 2, 38, 12
+        GROUPBOX        "CD info", 707, 2, 82, 194, 69
+        GROUPBOX        "Location for encoded files", 708, 2, 17, 194, 62
+    END
+END

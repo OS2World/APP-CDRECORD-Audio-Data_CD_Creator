@@ -1,0 +1,29 @@
+[APPLICATION]
+NAME Audio/Data-CD-Creator V0.56
+VERSION 0.55.0.0
+COPYRIGHT (c) Chris Wohlgemuth 1999-2005
+HOME http://www.os2world.com/cdwriting/
+INTERNALNAME ADC
+TOTALSIZE 2092255
+INSTALLER 0.1.5.0
+DESCRIPTION This is Audio/Data-CD-Creator V0.56. A set of WPS classes which allow to create CDs and DVDs by drag and drop. Features include DAO, TAO and MP3 writing. MP3 encoding using LAME. Creating multi- and singlesession data CDs and much more. You need at least the CDRecord/2 package and the ASPI-Router to actually burn the CD. See the tutorial for more info.
+
+[DESCRIPTION]
+DESCRIPTION  This is Audio/Data-CD-Creator V0.56. A set of WPS classes which allow to create CDs and DVDs by drag and drop. Features include DAO, TAO and MP3 writing. MP3 encoding using LAME. Creating multi- and singlesession data CDs and much more. You need at least the CDRecord/2 package and the ASPI-Router to actually burn the CD. See the tutorial for more info.
+
+[LICENSE]
+FILE Docs\COPYING
+
+[INSTALLPROFILES]
+ADC2 õ,õ Audio/Data-CD-Creator V0.56 (automatic configuration)õ,õ This will install Audio/Data-CD-Creator and configure it to use Cdrecord V2.00 (or higher). Cdrecord must already be installed. Go to http://www.os2world.com/cdwriting to get the necessary installation package. Note that not all options can be set automatically. You have to go to the main settings notebook afterwards to specify for example your writer.
+
+[ADC2]
+ADC, , ,S,[ ], adc2.in_
+
+[DEFAULTTARGET]
+PATH %APPS%\CDBurn\ADC_056
+
+[SKRIPTS]
+# Dummy entry. Don't remove!
+
+

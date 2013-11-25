@@ -1,0 +1,39 @@
+[APPLICATION]
+NAME Audio/Data-CD-Creator Scripts
+VERSION 0.2.0.0
+COPYRIGHT (C) Chris Wohlgemuth 2002-2004
+HOME http://www.os2world.com/cdwriting
+INTERNALNAME ADCSCR
+TOTALSIZE 19370
+INSTALLER 0.1.1.0
+DESCRIPTION REXX scripts for Audio/Data-CD-Creator. These scripts add additional features like toolbars to the base folder classes. It's strongly recommended to install this package. WPS-Wizard V0.5.0 or above must be installed.
+
+[DESCRIPTION]
+DESCRIPTION  REXX scripts for Audio/Data-CD-Creator. These scripts add additional features like toolbars to the base folder classes. It's strongly recommended to install this package. WPS-Wizard V0.5.0 or above must be installed.
+
+[FILES]
+adcscr.in_, %TARGET%\ ,  F,  2685
+Details for audio ~shadows, %TARGET%\scripts\ ,  F,  1312
+Details for ~audio files, %TARGET%\scripts\ ,  F,  1258
+cwaudiofolder.rx, %TARGET%\scripts\ ,  F, 7032
+cwdatafolder.rx, %TARGET%\scripts\ ,  F, 7030
+
+[OBJECTS]
+Scripts for^Audio-CD Folderõ,õ <SKRIPTS_CWAudioFolder>õ,õ CWMenuFolderõ,õ <WPSWIZ_CONFIG>õ,õ CLEARMENUCACHE=1;DEFAULTVIEW=ICON;SHOWALLINTREEVIEW=YES;ICONVIEW=NONFLOWED,MINI;HIDECLASSPAGE=1õ,õ update
+Details for audio ~shadowsõ,õ <ADC_CWASDETAILS_SHW>õ,õ WPShadowõ,õ <SKRIPTS_CWAudioFolder>õ,õ SHADOWID=%TARGET%\scripts\Details for audio ~shadowsõ,õ update
+Details for ~audio filesõ,õ <ADC_CWADETAILS_SHW>õ,õ WPShadowõ,õ <SKRIPTS_CWAudioFolder>õ,õ SHADOWID=%TARGET%\scripts\Details for ~audio filesõ,õ update
+
+
+[SKRIPTS]
+BEFOREINST õ,õ /* Check for WPS-Wizard installation */;call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs';call SysLoadFuncs;ret=SysQueryClassList('classes.');found=0;DO cls=1 to classes.0;	theclass=WORD(classes.cls, 1);	thePath=SUBWORD(classes.cls, 2);	IF TRANSLATE(theClass)='CWMENUFOLDER' THEN DO;		found=1	;		LEAVE;	END;END;;RC=0;IF found=0 THEN DO;		usrdata._mBTitle="Script package installation";		usrData._mBCBTxt="";		usrdata._mBTxt='WPS-Wizard not found. ';		usrdata._mBTxt=usrdata._mBTxt||'You need this aplication (V0.2.0 or higher) if you ';		usrdata._mBTxt=usrdata._mBTxt||'want to use scripts.'||'0d'x;		usrdata._mBTxt=usrdata._mBTxt||'Get it at'||'0d'x||'0d'x;		usrdata._mBTxt=usrdata._mBTxt||'http://www.os2world.com/cdwriting/'||'0d'x||'0d'x;		usrdata._mBTxt=usrdata._mBTxt||'The script package will not be installed.'||'0d'x;		usrData._mBType="OK";		call beep 1000, 100;		ret=ModalFor('usermsgBox');		RC=1;END;;
+
+[INSTALLPROFILES]
+ADCSCR õ,õ Audio/Data-CD-Creator scripts installation õ,õ Installation of additional REXX scripts for additional features like toolbars or extended context menus. It's recommended to install this add on. WPS-Wizard V0.5.0 or above must be installed.
+
+[ADCSCR]
+ADCSCR, , ,S,[ ], adcscr.in_
+
+[DEFAULTTARGET]
+PATH %APPS%\CDBurn\ADCScrpt
+
+

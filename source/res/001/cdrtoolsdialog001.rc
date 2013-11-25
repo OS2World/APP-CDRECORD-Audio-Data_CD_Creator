@@ -1,0 +1,61 @@
+#include <os2.h>
+#include "audiodialog.h"
+
+DEFAULTICON CDRTools.ico
+
+DLGTEMPLATE DLGID_SETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  " Setup ", DLGID_SETUP, 50, 66, 289, 111, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           " Enter the CDRecord path: ", STID_CDRECORDPATH, 30, 
+                        88, 133, 10
+        ENTRYFIELD      "", EFID_CDRECORDPATH, 35, 74, 156, 8, ES_MARGIN
+        PUSHBUTTON      " Browse... ", PBID_CDRECORDBROWSE, 205, 71, 52, 14
+        PUSHBUTTON      " OK ", DID_OK, 32, 9, 40, 14
+        PUSHBUTTON      " Cancel ", DID_CANCEL, 91, 9, 40, 14
+        ENTRYFIELD      "", EFID_CDRECORDOPTIONS, 36, 37, 216, 8, ES_MARGIN
+        LTEXT           " Enter the CDRecord/2 options i.e. dev=N,N,N", 
+                        STID_CDRECORDOPTIONS, 30, 53, 203, 8
+    END
+END
+
+DLGTEMPLATE DLGID_CDTOOLS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "CD-Tools V1.04", DLGID_CDTOOLS, 99, 21, 241, 210, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "CD-RW-Blanking", GBID_BLANKING, 15, 143, 204, 57
+        AUTORADIOBUTTON " ~Fast blanking ", RBID_FAST, 29, 180, 88, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " ~All", RBID_ALL, 29, 170, 88, 10, WS_TABSTOP
+        AUTORADIOBUTTON " Last ~Session ", RBID_LASTSESSION, 29, 160, 88, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " U~nclose last session ", RBID_UNCLOSE, 29, 150, 
+                        110, 10, WS_TABSTOP
+        AUTOCHECKBOX    " Dumm~y ", CBID_DUMMY, 160, 172, 53, 10
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        PUSHBUTTON      "~Blank", PBID_BLANK, 159, 155, 40, 14
+        GROUPBOX        "Fix the CD", GBID_FIX, 16, 96, 204, 42
+        AUTOCHECKBOX    " Du~mmy ", CBID_FIXDUMMY, 161, 120, 53, 10
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        PUSHBUTTON      "Fi~x it", PBID_FIX, 161, 103, 40, 14
+        LTEXT           " Warning! You can't append ", 110, 22, 117, 125, 8
+        LTEXT           " data to a fixed disk!", 111, 22, 105, 111, 8
+        GROUPBOX        "Misc", GBID_MISC, 15, 26, 204, 65
+        AUTORADIOBUTTON " ~Load disk ", RBID_LOADDISK, 29, 71, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " ~Unload disk ", RBID_UNLOADDISK, 29, 61, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " ~Reset device ", RBID_RESETDEVICE, 29, 51, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " Show ~TOC", RBID_SHOWTOC, 29, 41, 129, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " Show ATIP ~info", RBID_SHOWATIP, 29, 31, 129, 10, 
+                        WS_TABSTOP
+        PUSHBUTTON      "~Do it", PBID_MISC, 160, 51, 40, 14
+        PUSHBUTTON      "Settings", PBID_SETTINGS, 16, 5, 45, 14
+        PUSHBUTTON      "~Close", PBID_EXIT, 180, 5, 40, 14
+    END
+END
+

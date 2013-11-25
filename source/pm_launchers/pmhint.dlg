@@ -1,0 +1,21 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "pmhint.h"
+
+DLGTEMPLATE 100 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM-Hint", 100, 69, 21, 182, 97, NOT FS_DLGBORDER | FS_BORDER | 
+            WS_VISIBLE
+    BEGIN
+        LTEXT           "", IDST_MAINTEXT, 3, 54, 177, 40, DT_WORDBREAK
+        AUTOCHECKBOX    "Don't show folder hints again", IDCB_HINTENABLE, 9, 
+                        2, 171, 13
+        LTEXT           "Item 1", IDST_ITEM1, 20, 33, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 2", IDST_ITEM2, 20, 26, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 3", IDST_ITEM3, 20, 19, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 4", IDST_ITEM4, 20, 13, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 0", IDST_ITEM0, 20, 39, 157, 8, NOT WS_VISIBLE
+                        PRESPARAMS PP_BACKGROUNDCOLOR, 0x00147B22L
+    END
+END

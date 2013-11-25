@@ -1,0 +1,26 @@
+[APPLICATION]
+NAME Generic installer
+VERSION 0.1.6.0
+COPYRIGHT (c) C. Wohlgemuth
+HOME http://www.geocities.com/SiliconValley/Sector/5785/
+INTERNALNAME CWINST
+TOTALSIZE 377282
+INSTALLER 0.1.0.0
+DESCRIPTION This is the Generic installer V0.1.6. It supports file copying, WPS classes, WPS objects, changes to the config.sys, INI file changes and complete deinstallation.
+
+[DESCRIPTION]
+DESCRIPTION  This is the Generic installer V0.1.6. It supports file copying, WPS classes, WPS objects, changes to the config.sys, INI file changes and complete deinstallation.
+
+[LICENSE]
+FILE COPYING
+
+[INSTALLPROFILES]
+GENINSTALL õ,õ Generic installer V0.1.6 õ,õ This installer keeps track of your system changes and may deinstall apps later on.
+
+[GENINSTALL]
+CWINST, , ,S,[ ], cwinst2.in_
+
+[DEFAULTTARGET]
+PATH %APPS%\cwinst
+
+

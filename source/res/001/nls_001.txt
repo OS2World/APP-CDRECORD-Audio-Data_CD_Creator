@@ -1,0 +1,118 @@
+#Messages for REXX skripts
+#These messages are for example used for
+#the folder information area.
+
+[1]
+drives Open drives folder...
+
+[1]
+sysconf System configuration...
+
+[1]
+wpswiz WPS wizard configuration...
+
+[1]
+cdwriting Open CD writing folder...
+
+[1]
+dcdcreator Put files and folders or shadows of them into this folder to burn them on CD.
+
+[1]
+acdcreator Put audio files or shadows of them into this folder to create an audio CD. You may also use MP3 files. See tutorial for more.
+
+[1]
+adctutorial Open CD writing tutorial...
+
+[1]
+howdoi How do I
+
+[1]
+createdata Create a data CD...
+
+#/* The chapter in the tutorial */
+[1]
+cdcchapter Creating data
+
+#/* CWDataFolder */
+[1]
+createiso Create an ISO image...
+
+#/* The chapter in the tutorial */
+[1]
+cisochapter Creating ISO
+[1]
+createaudio Create an audio CD...
+[1]
+writemp3 Write MP3 files...
+
+#/* CWAudioFolder */
+[1]
+createaudio Create an audio CD...
+
+#/* The chapter in the tutorial */
+[1]
+caudiochapter Creating audio
+
+[1]
+writemp3 Write MP3 files...
+
+#/* The chapter in the tutorial */
+[1]
+wmp3chapter Create an audio CD from MP3
+[1]
+copy Copy...
+[1]
+delete Delete...
+[1]
+copyname Copy filename
+
+[1]
+class Class
+
+[1]
+width Width
+
+[1]
+height Height
+
+[1]
+depth Depth
+
+[1]
+channel channel
+
+[1]
+channels channels
+
+[1]
+by by
+
+#WPDrive
+[1]
+free free
+
+[1]
+total total
+
+[1]
+files files
+
+[1]
+dirs directories
+
+#/* Convert link */
+[1]
+convert Convert...
+
+[1]
+mvolume Master volume...
+
+[1]
+
+[1]
+
+[1]
+
+[1]
+
+

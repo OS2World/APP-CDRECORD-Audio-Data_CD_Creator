@@ -1,0 +1,160 @@
+**********************
+      mp3Info
+**********************
+
+A small utility to read and write TAG info, as well as retrieve the MP3
+Header info and print it all out in a nice format.
+
+Released under GNU GPL.
+
+Features:
+ - Get, Set and Wipe MP3 TAG Info.
+ - Get MPEG Audio Version 1, 2 and 2.5 (All Layers) Header info.
+ - Userdefinable output formatting (rather advanced).
+ - Can rename files according to userdefined scheme.
+ - Can now also PLAY MP3s in a correct manner (Linux only).
+
+Author is Thorvald Natvig <thorvald@natvig.com>, if you in any way think this
+is a nice program, send me an email saying "Hi". Feedback is nice.
+
+I have only tested it on Linux/x86, but people have reported it to work on
+a lot of other machines, and it should theoretically work on anything. I'm
+interested in having it compilable on other machines, so mail me any
+problems you may have.
+
+A few people have tested this on other Unix-alike platforms, and gotten it
+to work, and it's even reported to work under OS/2 :) 
+
+INSTALLATION INSTRUCTIONS:
+
+Just run the file 'INSTALL' to install it, should theoretically work just
+fine.
+
+Someday I'll learn how to do autoconfig and then it will be even finer.
+
+If you change any of the source, please, Please send me a patch or the new
+source so I can include it. Also send me a email if you use this utility :)
+
+NEW VERSIONS:
+New versions will be available on ftp://bimbo.hive.no/pub/mp3info/
+They will also be uploaded to sunsite
+
+MP3 PLAYING:
+
+mp3info -e "programname \"%f\"" CoolMusic.mp3
+
+This will run
+programname CoolMusic.mp3
+which will play the music for you
+
+For AMP, use 
+mp3info -e "amp -q \"%f\"" filename.mp3
+
+I have included my playmp script, which I doubt will work on anything but
+Linux system where you are root (just edit it and it will work anywhere).
+What it does, is use locate to find all your MP3 tunes, and play them
+all randomly. It goes with a shell alias:
+alias mp='killall -HUP mp3info'
+Just type 'mp' to skip to the next song.
+
+*****************************
+Output formatting magic
+
+The output from the program can be 100% userdefined. There are two uses, one
+is -f <format> to set the output format, and the other is -N <format> to set
+a naming scheme. -N will RENAME the files specified according to the format.
+
+The format is built up as a string, with the following special characters:
+
+%% = %
+%I = IF (explained below)
+%! = Not-IF (also explained below)
+%t = title of song
+%a = Artist
+%l = album
+%y = year
+%c = comment
+%g = genre (text)
+%# = genre (number)
+%v = MPEG Version (1/2/2.5)
+%V = MPEG Version as text
+%L = Layer version (I, II, III)
+%A = Layer version as number
+%C = Error_Protection (0/1)
+%b = Bitrate (in kbit/s)
+%F = Sampling frequency
+%M = mode
+%O = Copyright (0/1)
+%o = Original (0/1)
+%m = length (minutes)
+%s = length (remaining seconds.. Ie 3m 2s is "%mm %ss")
+%S = length (ALL in seconds).
+%N = Newline
+%f = Filename (as specified on command line)
+%B = Base filename (path stripped)
+%i = Size of file (in bytes)
+%E = ANSI ESC-code (\0x1B [ )
+
+If cases:
+If-cases are %I<WHAT>..
+%IT If TAG info present
+%IH If HEADER info present
+%Ia If Artist info present
+%It If Title of song present
+%Il If album name present
+%Iy If year present
+%Ic If comment present
+%IC If CRC.
+%IO If Copyrighted.
+%Io If Original
+%IS If Stereo
+%IE End-IF.
+
+%! and the same characters means If NOT. So %!T means IF NOT TAG.
+%!E is ELSE.
+
+Example..
+%IT Tag info present%IE %IHHeader info present %ICwith CRC%IE%IE
+
+should explain it.
+As seen, ifs can be nested. 
+
+There is a length limit on the formatting string and the output which can be
+set in mp3tools.h
+
+Hint:
+Bash etc often has ! as a special char, meaning you can't use it on the
+command line, you have to have it in a bash-script of sorts.
+
+Formatting:
+mp3info now understands normal printf formatting, so you can use
+"%m:%02s" to get 3:02 for the duration.
+
+Naming: I use the following naming scheme :
+mp3info -N "%IH%It%t.mp3%IE%IE"
+Which calls the tune
+Rhythm is a dancer.mp3
+
+Which names the files as <song name>.mp3, which is how I like it.
+As an alternative, you can use:
+mp3info -N "%IH%It%Ia(%a)-%IE%t.mp3%IE%IE"
+Which would produce
+(Snap)-Rhythm is a dancer.mp3
+as a name.
+
+-------
+CREDITS
+-------
+
+I got the info about the MPEG Headers from free software available to decode
+MPEG2 streams. 
+
+ID3 format by NamkraD/DC (erick@marble.net)
+http://www.marble.net/~erick/mpeg3.htm
+
+The debian stuff was added by Clint Adams <schizo@simons-rock.edu>
+
+And a big thanks to all those who sent me an email :)
+
+And another thanks to all those who sent me email on the 'riff' header
+problem, which finally drove me to updating.

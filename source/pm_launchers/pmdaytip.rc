@@ -1,0 +1,8 @@
+#include "pmdaytip.h"
+
+ICON    IDICON_INFO     "info.ico"
+POINTER IDPT_HAND  hand.ptr
+
+RCINCLUDE "pmdaytip.dlg"
+
+

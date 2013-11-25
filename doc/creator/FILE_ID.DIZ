@@ -1,0 +1,33 @@
+Audio/Data-CD-Creator V0.56 (GPL freeware)
+(C) Chris Wohlgemuth 1999-2005
+http://www.geocities.com/SiliconValley/Sector/5785/
+http://www.os2world.com/cdwriting
+
+This version replaces all previous releases
+(V0.2 - V0.55)
+--------------------------------------------
+These are folder classes for the WPS which work as
+frontends for cdrecord/2, cdrdao/2 for creating of Audio- and
+Data-CDs.
+Just put files/folders or shadows of files/folders into
+the Creator-folder and press 'write'. Full WPS aware.
+MP3 writing support.
+MP3 encoding support.
+CD track encoding to MP3 on the fly.
+
+Prerequisites:
+-Warp 4, eCS
+-A filesystem supporting long filenames
+-EMX runtime libraries 0.9d fix4
+-MMOS2 installed
+-WPS-wizard (http://www.os2world.com/cdwriting)
+-CDRecord/2, mkisofs, cdda2wav (http://www.os2world.com/cdwriting=
+-optionally: z!, MMIOMP3, LAME
+
+License:
+
+This package is provided 'as is' under the
+Gnu public License (GPL). 
+All files must be kept together.
+Read the file 'Copying' for further information.
+

@@ -1,0 +1,31 @@
+#include "OS2.H"
+
+DLGTEMPLATE 100 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Write audio CD -DAO mode-", 100, 147, 99, 289, 139, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER,
+           FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        LTEXT           "Text", 108, 2, 127, 283, 11, NOT WS_GROUP | DT_VCENTER
+        CONTROL         "", 101, 6, 51, 275, 63, WC_CONTAINER,
+                        WS_VISIBLE | WS_TABSTOP | CCS_SINGLESEL | CCS_AUTOPOSITION
+        LTEXT           "", 110, 6, 34, 193, 11, NOT WS_GROUP | DT_VCENTER
+        RTEXT           "Device:", 111, 6, 20, 43, 11,
+                        NOT WS_GROUP | DT_VCENTER
+        ENTRYFIELD      "", 906, 50, 20, 53, 10, WS_GROUP | ES_MARGIN
+        RTEXT           "Fifo:", 112, 114, 20, 43, 11,
+                        NOT WS_GROUP | DT_VCENTER
+        CONTROL         "", 120, 158, 21, 34, 9, WC_SPINBUTTON,
+                        WS_VISIBLE | WS_TABSTOP | SPBS_NUMERICONLY | SPBS_MASTER
+        RTEXT           "Speed:", 113, 198, 20, 44, 11,
+                        NOT WS_GROUP | DT_VCENTER
+        CONTROL         "", 805, 244, 22, 34, 8, WC_SPINBUTTON,
+                        WS_VISIBLE | WS_TABSTOP | SPBS_NUMERICONLY | SPBS_MASTER
+        PUSHBUTTON      "Ok", 102, 6, 3, 39, 12
+        PUSHBUTTON      "Cancel", 103, 52, 3, 39, 12
+        CTEXT           "Hint", 109, 172, 3, 39, 12,
+                        NOT WS_VISIBLE | NOT WS_GROUP | DT_VCENTER
+        PUSHBUTTON      "Help", 203, 246, 3, 39, 12
+        GROUPBOX        "Files to burn on CD", 304, 2, 47, 283, 77
+    END
+END

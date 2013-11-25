@@ -1,0 +1,89 @@
+
+1.  The name of your writer as used in advertising.
+
+    Plextor PX-40TS
+
+
+2.  The features of your writer/CD-ROM. Use the following command to
+    capture the information (be sure to adapt the dev=... setting) in a
+    temporary file.
+
+    epm: D:\os2\apps\cdr2_0_0 >cdrecord dev=0,3,0 -prcap
+    scsidev: '0,3,0'
+    scsibus: 0 target: 3 lun: 0
+    Cdrecord 2.0 (i386-pc-os2_emx) Copyright (C) 1995-2002 J÷rg Schilling
+    Using libscg version 'schily-0.7'
+    Device type    : Removable CD-ROM
+    Version        : 2
+    Response Format: 2
+    Capabilities   : SYNC LINKED
+    Vendor_info    : 'PLEXTOR '
+    Identifikation : 'CD-ROM PX-40TS  '
+    Revision       : '1.12'
+    Device seems to be: Generic CD-ROM.
+
+
+3.  Does your writer support buffer underrun protection
+    (burnproof/burnsave/just-link/...)?
+
+    No
+
+
+4.  Does your writer need the 'Sony multisession fix'?
+    (Setting on the General page 2)
+
+    No
+
+
+5.  Additional needed options for cdrecord when writing audio CDs
+    (if any).
+
+
+6.  Additional needed options for cdrecord when writing data CDs (if any).
+
+
+7.  Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+
+    (driver) plextor
+
+    Note: --driver plextor-scan and -- driver generic-mmc work too,
+          but grabbing and creating the toc is much slower.
+
+
+8.  Additional options for cdrdao (if any). (cdrdao/2 page 1)
+
+    None
+
+
+9.  Are you using cdrdao.exe coming with CD-Creator? If no please
+    specify the release you're using.
+
+    CDBurn\ADC_053\bin\cdrdao.exe
+
+
+10. If you use different settings for 1:1 copy (source) please specify
+    them here. Include everything you find on that page and the cdrdao
+    release you're using. (cdrdao/2 page 2)
+
+
+11. If you use different settings for 1:1 copy (target) please specify
+    them here. Include everything you find on that page and the cdrdao
+    release you're using. (cdrdao/2 page 3)
+
+
+12. If you use mpg123 or MMIOMP3 for MP3 decoding, do you have to specify
+    'Swap bytes when writing'? (MP3 decoding page)
+
+    Haven't created MP3 files yet.
+
+
+Note: My current eCS 1.0 setup doesn't work with cdrdao. Even when I
+use the same versions I'd used in W4 FP12, grabbing doesn't work -- or
+I should better say: about 10--100 times slower.
+
+The settings I post here have worked well with W4, but are quite slow
+in eCS. (Hoping, that's nothing more than a IRQ problem of the Symbios
+20810 driver -- BTW: I already tried to restore everything, e.g. the
+driver versions, but I've another mainboard now.)
+
+

@@ -1,0 +1,71 @@
+; audiofolder.rc: Resource file for aucdfldr.dll (Audio-CD-Creator)
+;
+;                    (C) Chris Wohlgemuth 1999-2005
+;/*
+; * Copyright (c) Chris Wohlgemuth 1999-2005
+; * All rights reserved.
+; *
+; * http://www.geocities.com/SiliconValley/Sector/5785/
+; * http://www.os2world.com/cdwriting
+; *
+; * Redistribution and use in source and binary forms, with or without
+; * modification, are permitted provided that the following conditions
+; * are met:
+; * 1. Redistributions of source code must retain the above copyright
+; *    notice, this list of conditions and the following disclaimer.
+; * 2. Redistributions in binary form must reproduce the above copyright
+; *    notice, this list of conditions and the following disclaimer in the
+; *    documentation and/or other materials provided with the distribution.
+; * 3. The authors name may not be used to endorse or promote products
+; *    derived from this software without specific prior written permission.
+; *
+; * THIS SOFTWARE IS PROVIDED ``AS IS'' AND
+; * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+; * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+; * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+; * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+; * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+; * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+; * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+; * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+; * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+; * SUCH DAMAGE.
+; *
+; */
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "audiofolderres.h"
+
+; Language specific info is in another resource dll. This resource file is bound
+;to the class dll becuase it contains only common graphics and icons.
+
+ICON ID_ICONAUDIOFOLDER "../icons/audiofolder1.ico"
+ICON ID_ICONDATAFOLDER "../icons/datafolder1.ico"
+ICON ID_ICONAUDIOFOLDER2 "../icons/audiofolder2.ico"
+ICON ID_ICONDATAFOLDER2 "../icons/datafolder2.ico"
+ICON ID_ICONCREATORSETTINGS "../icons/creatorsettings.ico"
+ICON ID_ICONCDRFOLDER "../icons/cdrfold1.ico"
+ICON ID_ICONCDRWTOOLS "../icons/cdrtools.ico"
+ICON ID_ICONHELP "../icons/help.ico"
+ICON ID_ICONTUTORIAL "../icons/tutorial.ico"
+ICON ID_ICONCREATECOVER "../icons/cover.ico"
+ICON ID_ICONCDSETTINGS "../icons/cd.ico"
+ICON ID_ICONMP3DECODE  "../icons/MP3.ico"
+
+;------- Bitmaps ---------
+BITMAP IDBMP_BACKGROUND  "../bmp/bottom.bmp"
+BITMAP IDBMP_CHECK          "../bmp/check.bmp"
+BITMAP IDBMP_UNCHECK       "../bmp/uncheck.bmp"
+BITMAP IDBMP_UNCHECKSEL  "../bmp/unchecksel.bmp"
+BITMAP IDBMP_RADCHECK     "../bmp/radcheck.bmp"
+BITMAP IDBMP_RADCHECKSEL  "../bmp/radchecksel.bmp"
+BITMAP IDBMP_RADUNCHECK  "../bmp/radunchk.bmp"
+BITMAP IDBMP_RADUNCHECKSEL  "../bmp/radunchksel.bmp"
+BITMAP IDBMP_RADMASK     "../bmp/RADmask.bmp"
+BITMAP IDBMP_RADMASKSEL     "../bmp/RADselmask.bmp"
+;----------------------------------
+
+POINTER IDPT_HAND      "../hand.ptr"
+
+

@@ -1,0 +1,370 @@
+History
+------
+
+New with 0.56 (20.Feb.2005):
+----------------------------
+-CD size query for on the fly data writing was broken. Even ignoring wasn't possible.
+-If free space is to small for grabbing to wave files show an informational box. 
+-CD-R/W Tools dialog added to switch list.
+-Added *.iso to search list when opening an image file in a data folder
+-Dropping of disk objects on creator folders no longer possible
+-DVD-Tools dialog
+-Preliminary DVD writing (needs Dvddao 0.0.8)
+-Code changes for better support of other languages
+-Codepage conversion for tracknames derived from CDDB data (only CP850 so far).
+-Codepage conversion for MP3 data derived from CDDB (CP850 only) 
+-Some settings weren't shown without WPS-wizard installed
+-Addon scripts weren't installed
+
+
+New with 0.55 (27.June.2004):
+----------------------------
+-Fixed folder scripts (for the toolbars) so they work with ORexx.
+-One of the installation skripts was broken.
+
+
+New with 0.54 (22.May.2004):
+----------------------------
+-WPS-wizard V0.5.0 or above is now a prerequisite for using the CD-Creator classes.
+-Introduction of "Expert" and "normal" mode with different amount of settings and choices to make the start for new users easier.
+-Check installation: ASPIROUT.SYS check failed if parameters were given.
+-One of the "User menu" menu items was broken.
+-User defined MP3 encoding settings didn't work.
+-Resized dialogs of helper applications.
+-Reworked settings pages.
+-New 'About' settings page.
+-Sometimes carriage returns in object names truncated flyover help for launchpad buttons
+-Scanning the SCSI bus sometimes resulted in bogus entries in the listbox.
+-updated installer to V0.1.7
+-Priority setting for MP3 encoder
+-M_CW*Folder class was unloaded (at least on eCS 1.01) by the system even if still in use by some
+ awake objects leading to WPS freeze on next access of a CW*Folder object. This was for example triggered
+ by deleting a CD-Creator folder. The reason is not clear but some hopefully successful workarounds were added.
+-Percent bar for audio folders showing the occupied space on a CD-R.
+-Message boxes now are modal to the window they belong to. This prevents that error messages are popping
+ up in the background.
+-About dialog is modal now.
+-Added setup strings for MP3 encoder.
+-Enabled metall look for some more dialogs (On the fly writing, image writing, track grabbing, TAO audio writing).
+-'&' characters in FreeDB track names chrashed the on-the-fly MP3 encoder.
+
+
+New with V0.53 (16.Feb.2003):
+-----------------------------
+-Support for CW-MM classes V0.2.4 and above
+-Fix for the "incorrect call to routine: call wait.Position x+20, y+dy/2" problem. Thanks to Kris Buelens for the patch.
+-Write DAO: always used the settings from the main options not the specified ones from the dialog.
+-Write DAO: better handling of write errors.
+-Decode MP3: added error handling for missing MP3 player.
+-Data and audio folder: added even more error handling for bad setup. Does anybody read the documentation at all?!?
+-Added help pages for cdrdao settings page 2 and 3
+-Mp3 decoding with MMIOMP3 works now when selected form folder menu
+-ID3 tags are preserved when decoding to wave (saved in EAs). You need CW-MM 0.2.5 or higher
+-New installation checker for those refusing to read help pages, tutorials and Readme files.
+-MP3 encoding using LAME.
+-On the fly MP3 encoding directly from CD.
+
+
+New with V0.52 (31.Jul.2002):
+---------------------------
+-Writing of certain MP3 files with MMIOMP3 failed due to wrong time calculation
+-Wrong setup page for cdrdao (target)
+-cdcopy fixed. Failed when two devices were used.
+-On the fly frontend crashed when image calculation failed.
+-MP3 decoding frontend tried to decode wave-files when using z!.
+-CD-size menu was broken.
+-If volume name was too long writing failed.
+-Fixed background painting for empty folder launchpads.
+-Preparation for use of CW-MM classes v0.2.3 and above.
+-'Create shadows' is default after initial installation
+
+
+New with V0.51 (20.Apr.2002):
+---------------------------
+-Playing with z! in MP3 decode dialog failed when z!-path contained spaces.
+-New progressbars
+-Template creation changed to prevent duplicate or lost templates.
+-'Test only' settings of templates are no longer overriden when creating the folder. Use with care when changing. 
+-Fixed settings page handling. Sometimes the notebook switched to the background.
+-CD-size query when writing DAO always used device 0,1,0.
+-Information about buffer when writing DAO.
+-Sometimes the WPS blocked when closing the settings until CTRL-Esc was pressed.
+-Additional options for cdrdao weren't used.
+-New CD-copy frontend with progressbars
+-Different cdrdao settings for CD copy and audio writing
+-New 'metal' look (go to the user interface page to disable it)
+
+
+New with V0.50 (23.Dez.2001):
+---------------------------
+-1:1 copy dialog now remains open after starting the grab.
+-Saving of CDCopy settings (path, drive etc.)
+-When creating and writing several ISO-images sometimes a wrong name for writing was used.
+-Added some more setup strings
+-Added 'About' to settings object
+-Added folder hints
+-Updated mp3info from 0.2.11 to 0.2.16
+-Changed logfile names to more meaningful ones
+-Added MP3 decoding to folder
+-DAO audio CD handling rewritten. You may specify pregaps now.
+-Added help for some more objects (use F1)
+
+New with V0.49 (22.Sep.2001):
+---------------------------
+-'Create another' menu item was lost.
+-Fixed some minor memory leaks
+-The object for decoding MP3s had a wrong parameter
+-Fixed a CD/session detection problem when creating multisession CDs
+-Added mounting/unmounting support for ISO-FS
+-Image creation failed when spaces in the path
+-Removed WPS name support (only useful for FAT) because it caused way to much troubles like duplicate names preventing succesful writing.
+-'=' in filenames weren't handled.
+-Check size for imagefiles sometimes failed (mainly because of WPS names).
+-Enhanced CD-copy program to write and save images, too.
+
+New with V0.48 (20.July.2001):
+---------------------------
+-Image creation failed if WPS-object title contained carriage returns
+-Writing several CDs and image creation at the same time possible.
+-CD-size check when writing DAO audio always used the default device not the selected one. 
+-void CWDataFolder::cwEnableMultiSessionCntrls(HWND hwnd, BOOL bEnable) removed
+-Autodetermination if the first or additional sessions are to be written in multisession mode.
+-Window position are saved for the PM-helpers
+-MP3-decoding frontend for z! (http://dink.org) added
+-New setup strings
+-Default templates are no longer created in addition to those created by the installer.
+-Toolbar improved: objects may be placed freely.
+-1:1 CD-Copy drive selection fixed
+-Removed flickering when resizing folders
+
+New with V0.47 (13.May.2001):
+---------------------------
+-Eject CD after blanking to force OS/2 to discard the filesystem cache entries.
+-Improved script for audio cover creation. Thanks to Christoph Kloeters.
+-Helper for CD-size querying rewritten
+-Added some more setup strings.
+-Added 'Show ATIP' to CDR-Tools.
+-Using WPS names when creating CD -> correct names even if sourcefiles are on a FAT drive.
+-Fixed a buffer overflow bug in querycddb/Pmcddb when used with CDs with a lot of tracks (>70).
+-Fixed a parsing problem in querycddb/Pmcddb for very long tracknames (several lines).
+-Tweaked dynamic priority control for DAO (Hysterese)
+-Experimental: Increased priority of on-the-fly process.
+-lnchmkis.exe, onthefly.exe and prntsize.exe no longer lock the shared memory during running.
+-Creating of shadows when dropping objects on closed creator-folders not always worked. Files were moved instead.
+-Filelist.lst file isn't written on CD anymore.
+-Playtime added to MP3/waveinfo dialogs.
+-Associated the MP3/Waveinfo dialogs with the respective files.
+-Configurable context menus if WPS-Wizard is installed.
+-User defined menus if WPS-Wizard is installed.
+
+New with V0.46 (25.Feb.2001):
+---------------------------
+-Settings for flyover help
+-Some polishing of settings pages for Warp 4
+-Predefined grabber settings
+-Option for TRANS.TBL files
+-Priority settings for onthefly.exe changed
+-Bugfix: When calling mkisofs for mulstisession the bus was omitted
+-Launchpad toolbar
+-Bugfix: CD was ejected after each track when in TAO mode.
+-Audio CD writing with several writers at the same time possible.
+ This doesn't mean simultaneous writing of the same data on several
+ drives. (you need the new ASPI-router for this feature).
+-Bugfix: Because of a race condition renaming of waves sometimes failed.
+-Grab status for Leech, cdda2wav and JCDRead.
+-Now using z! for format query of MP3 (if avaiable). So you may use all MP3s
+ for writing z! is able to decode. Thanks to dink (http://dink.org) for adding
+ the option. You need z! from 2001/01/23 or above.
+
+New with V0.45 (12.Jan.2001):
+------------------------
+-Data-CD-Creator: optional use only files with archive bit
+-Audio-CD-Creator: Display format of tracks in confirm dialog by doubleclicking
+-CD-Copy: overflow of disk sizes fixed
+-Setup string bug fixed which prevented successful installation
+-Missing toolbar bitmaps fixed (really? please report)
+-Use WarpSans on Warp 4 and above
+
+
+New with V0.44 (02.Jan.2001):
+------------------------
+-Mnemonics added
+-Format checking of audio and mp3 tracks added
+-CDDB support fixed which was broken
+-Image writing doesn't lock shared mem during writing
+-Preliminary 1:1 CD copy
+-Setup strings section added to the tutorial
+
+
+New with V0.43 (10.Dec.2000):
+------------------------
+-Unlimited shadow nesting (experimental)
+-Fix: CDR-Tools ignored speed settings (standalone version
+ not fixed yet)
+-some cosmetic GUI fixes
+-Recalculate time after track grabbing:  correct time display 
+-CDDB support improved: track listbox shows track names
+-Special Sony multisession handling (and some OEMs like HP)
+-Options for cdrdao
+-Filename page revised
+-CD-type page cleaned up
+
+
+New with V0.42 (09.Oct.2000):
+------------------------
+-mkisofs runs with increased priority when writing on the fly
+ preventing buffer underruns in high load situations
+-priority of mkisofs now changed after FIFO is filled preventing
+ high CPU load during filling.
+-added toolbars
+-Cover creation for data CDs
+-preliminary CDDB support for audio tracks
+-Option to create shadows as default
+-min FIFO size was limited to 4MB when using spinbutton on general page, now 0MB
+-Fix: No statusbar update when writing an image with FIFO=0MB
+-Keyboard navigation added to folder
+
+
+New with V0.41 (26.Jun.2000):
+------------------------
+-Again: resource DLL error fixed (really?)
+-Support for z! as mp3 decoder. You need a version later than 17.june.2000 to use
+ this feature. Thanks to dink for the added option.
+-Last image path now saved
+-Cdrecord options for data CDs weren't saved
+-Some options for data folders weren't saved
+-Grab helper didn't find wrapper.exe -> grabbing failed
+-Preliminary support for cover creation. You need Photo>Graphics Pro
+ to use this feature.
+
+New with V0.40 (11.Jun.2000):
+------------------------
+-Preliminary boot CD support
+-CD size check may be completely overriden
+-Included mp3info to get size of MP3 files. See docs for the features
+ of this program.
+-allowing spaces in folders for DAO
+-subdirectory for logfiles
+-Cleaned up installation directory
+-codepage support when creating data CDs with Joliet names  
+-Some more icon improvements
+-On the fly Multisession CD creation with cdrecord V1.8.1a05 and above
+-some bugs fixed, mainly the annoying can't find resource DLL error
+
+
+New with V0.39 (13.Apr.2000):
+------------------------
+-Check for valid CDRecord/2 path for scan button
+-Added log for scanbus
+-scanbus: CDRecord/2 started with DosExecPgm(),
+ not DosStartSession()->failed on some systems
+-new mp3decod.exe
+-log for mp3decod.exe
+-Audio-CD-Creator methods removed:
+  AddCdrecordOptionPage, AddGrabOptionPage,
+  AddMpg123OptionPage, AddCdrdaoOptionPage,cwAddGeneralOptionPage
+-improved hires icons by Klaus Staedtler
+-Error 'Not enough free CD space' may be overridden
+-First version of a tutorial
+-Settings object for global settings
+-CDRTools: changed startData.InheritOpt to SSF_INHERTOPT_PARENT
+ for DosStartSession() so modified environment
+ by a skript is inherited. Needed when using e.g. BEGINLIBPATH.
+
+
+New with V0.38 (23.02.2000):
+------------------------
+-Writer setup is now more easy (drop down list for device selection)
+-Fifo setting is now also used for DAO
+-Improved icons for Hires
+-Some help improvements
+-Fix: Language settings for keyboard sometimes changed (really fixed?)
+-Fix: CDRTools was broken since 0.37
+-Fix: Settings for hide and close window were lost
+-Fix: Another problem mit freeing shared memory removed
+
+New with V0.37 (06.02.2000):
+------------------------
+-DAO for audio CDs using cdrdao/2 with dynamic priority control
+-Better option handling for the helper programs. Most options will be set by the front end now
+-Fix: Creation of 2. session image when merging previos sessions was broken since V0.36
+-Fix: Shared memory wasn't always freed properly preventing creation of CDs
+-Some minor enhancements like better logfile handling 
+
+New with V0.36 (15.01.2000):
+------------------------
+-MP3 writing with Audio-CD-Creator using mpg123 (only 44100 KHz)
+-Several bugs in install script removed (thanks to Christian Hennecke)
+-Spaces are allowed in preparer name, author name etc.
+ (thanks to Alexander Wittig).
+
+New with V0.35 (10.12.99):
+----------------------
+-Bug removed: The number of shadows in the
+ data folder was limited.
+-Some more bug fixes
+-Progress bar for image writing
+ 
+New with V0.34 (01.11.99):
+----------------------
+-Allow spaces in audio folder names
+-Progress bar for audio CD writing
+-Folder backgrounds (Thanks to Arjen Meijer)
+-different cdrecord options for audio and data folders
+-fixed Bug: Audio-CD-C lost setting for tracknumbers
+-Code cleanups and preparation for NLS
+-removed member function cwLoadIniValues()
+ 
+New with V0.33 (14.10.99):
+----------------------
+-Allow spaces in file names for data CDs
+-Status window with progress bar for on the fly writing
+-Status window for image writing
+-Perform size checks (CD and image) before writing
+-Button and menu for size check
+
+New with V0.32 (22.08.1999):
+------------------------
+-Removed a bug which caused WPS lockups
+-Option to start cdrecord/2 minimized
+-Option to start  cdrecord/2 hidden
+-Spaces in track names are allowed
+Data-CD-Creator V0.11:
+- On the fly CD creation
+- Option to start cdrecord/2 and mkisofs minimized
+- Option to start cdrecord/2 and mkisofs hidden
+- More online help
+- Directories are correctly included into the image if provided as shadows
+- The imagename entryfield works as intended
+
+
+New with V0.31b (24.04.1999):
+------------------------
+-Hotfix release
+
+New with V0.31 (11.04.1999):
+------------------------
+-Write log for cdrecord/2
+-status window for cdrecord/2
+-Total playtime in statusbar
+-More online help. Use the right mouse button
+-Initial release of Data-CD-Creator V0.1
+
+
+New with V0.3 (23.01.1999):
+------------------------
+-Now support for grabbers like 'Leech'. Switch between grab-
+ and write mode.
+-Online Help
+
+V0.2 (08.01.1999):
+---------------
+First public version.
+
+
+
+V1.8a8 of cdrecord has got a limitation for the count of 
+filenames on the command line. Get V1.8a15 or above
+if you want to burn more than about 13 tracks at once.
+
+

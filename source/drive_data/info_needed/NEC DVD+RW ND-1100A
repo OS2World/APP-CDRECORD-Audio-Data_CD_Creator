@@ -1,0 +1,89 @@
+################
+
+cdrecord -prcap fehlt
+
+################
+
+Hi Chris,
+
+Thanks for all your good work. Here are my current settings:
+
+
+1. The name of your writer as used in advertising.
+
+   Example: AOPEN CRW9624, Ricoh MP6200, Teac CD-532-E
+
+   Your writers name: NEC DVD+RW ND-1100A
+
+
+2. The features of your writer/CD-ROM. Use the following command to
+   capture the information (be sure to adapt the dev=... setting) in a
+   temporary file.
+
+           'cdrecord dev=x,y,z -prcap > out.txt'
+
+
+3. Does your writer support buffer underrun protection
+   (burnproof/burnsave/just-link/...)?
+
+   Does support Buffer-Underrun-Free recording
+
+
+4. Does your writer need the 'Sony multisession fix'?
+   (Setting on the General page 2)
+
+   No
+
+5. Additional needed options for cdrecord when writing audio CDs
+   (if any).
+
+   None
+
+6. Additional needed options for cdrecord when writing data CDs (if any).
+
+   None
+
+7. Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+
+   Example: (driver) cdd2600, AOPEN CRW9624
+
+   Your driver: generic-mmc
+
+
+8. Additional options for cdrdao (if any). (cdrdao/2 page 1)
+
+   None
+
+9. Are you using cdrdao.exe coming with CD-Creator? If no please
+   specify the release you're using.
+
+   Yes
+
+10. If you use different settings for 1:1 copy (source) please specify
+    them here. Include everything you find on that page and the cdrdao
+    release you're using. (cdrdao/2 page 2)
+
+    None
+
+11. If you use different settings for 1:1 copy (target) please specify
+    them here. Include everything you find on that page and the cdrdao
+    release you're using. (cdrdao/2 page 3)
+    
+    None
+
+
+
+
+
+Best regards,
+Andre
+
+
+---
+Dr. Andre' M. Sonnet                          Department of Mathematics
+http://www.maths.strath.ac.uk/~aas02102       University of Strathclyde
+Tel. +44 (0)141 548 3648                      26 Richmond Street
+Fax  +44 (0)141 552 8657                      Glasgow G1 1XH, U.K.
+
+
+

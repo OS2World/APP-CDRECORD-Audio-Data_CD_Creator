@@ -1,0 +1,24 @@
+DLGTEMPLATE IDDLG_CHECKSTATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "On the fly writing", IDDLG_CHECKSTATUS, 112, 103, 243, 108, 
+            WS_VISIBLE, FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        GROUPBOX        "", 2605, 9, 88, 224, 20
+        CTEXT           "Writing CD on the fly", IDST_ACTIONTEXT, 38, 92, 
+                        168, 8, DT_VCENTER | NOT WS_GROUP
+        GROUPBOX        "Select writer", 211, 9, 61, 147, 24
+        CONTROL         "", IDDD_DEVICESELECTION, 13, 28, 138, 48, 
+                        WC_COMBOBOX, CBS_DROPDOWNLIST | WS_GROUP | 
+                        WS_TABSTOP | WS_VISIBLE
+        GROUPBOX        "Speed", 212, 172, 61, 61, 24
+        SPINBUTTON      IDSB_SPEED, 186, 66, 35, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | WS_GROUP
+        LISTBOX         IDLB_CHECKSTATUS, 9, 22, 222, 38
+        PUSHBUTTON      "~Abort", IDPB_ABORTWRITE, 90, 4, 61, 14
+        PUSHBUTTON      "~Write", IDPB_WRITECD, 22, 4, 61, 14
+        DEFPUSHBUTTON   "~Ok", IDPB_STATUSOK, 40, 4, 61, 14
+        PUSHBUTTON      "Show ~log...", IDPB_SHOWLOG, 139, 4, 61, 14
+        CONTROL         "", IDSR_PERCENT, 9, 5, 222, 12, WC_STATIC, 
+                        SS_FGNDRECT | WS_GROUP
+    END
+END

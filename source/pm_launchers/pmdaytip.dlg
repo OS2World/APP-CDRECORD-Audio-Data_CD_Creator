@@ -1,0 +1,29 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "pmdaytip.h"
+
+DLGTEMPLATE IDDLG_DAYTIP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Tip of the day", IDDLG_DAYTIP, 70, 22, 319, 129, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CONTROL      "#6001", IDPB_ICON, 12, 60, 35, 23, WC_BUTTON, WS_VISIBLE | BS_PUSHBUTTON | BS_ICON | BS_NOCURSORSELECT | BS_NOPOINTERFOCUS | BS_NOBORDER
+			CTLDATA 10, 0, 0, IDICON_INFO
+        GROUPBOX        "", IDGB_GROUP, 1, 31, 317, 98
+        LTEXT           "", IDST_MAINTEXT, 55, 77, 251, 40, DT_WORDBREAK | SS_AUTOSIZE
+;PRESPARAMS PP_BACKGROUNDCOLOR, 0x00147B22L
+        AUTOCHECKBOX    "Don't show tips again", IDCB_HINTENABLE, 74, 20, 
+                        171, 13
+        LTEXT           "Item 1", IDST_ITEM1, 71, 53, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 2", IDST_ITEM2, 71, 46, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 3", IDST_ITEM3, 71, 39, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 4", IDST_ITEM4, 71, 33, 157, 8, NOT WS_VISIBLE
+        LTEXT           "Item 0", IDST_ITEM0, 71, 60, 157, 8, NOT WS_VISIBLE
+                        PRESPARAMS PP_BACKGROUNDCOLOR, 0x00147B22L
+        PUSHBUTTON      "~Close", DID_OK, 9, 4, 40, 14
+        PUSHBUTTON      "~Previous tip", IDPB_PREVIOUS, 72, 4, 64, 14
+        PUSHBUTTON      "~Next tip", IDPB_NEXT, 145, 4, 64, 14			
+    END
+END
+

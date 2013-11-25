@@ -1,0 +1,31 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename:   audiocdcreator_056.zip
+       Short Description:   WPS aware application for CD and DVD writing (GPL freeware). Supports audio and data CDs, data DVDs, MP3 encoding, writing of MP3 files, CD grabbing. Tutorial and help available. Included is Batchburn 2.0 by Martin Vieregg.
+
+        Long Description:  These are folder classes for the WPS which work as frontends for cdrecord/2, cdrdao/2, dvddao for creating of Audio- and
+Data-CDs and data DVDs.
+Just put files/folders or shadows of files/folders into the Creator-folder and press 'write'.
+MP3 encoding and decoding support. On-the-fly MP3 encoding from CD. On-the-fly writing of MP3 files as an audio CD.
+ISO image creation and writing. and much more. Full WPS aware. GPL freeware so full source is available (http://www.os2world.com/cdwriting/). Included is Batchburn 2.0 by Martin Vieregg.
+ 
+
+      Proposed directory
+           for placement:    /pub/os2/apps/mmedia/cd/cd-r
+
+               Your name:   Chris Wohlgemuth
+           Email address:   see tutorial
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL:    http://www.os2world.com/cdwriting/
+
+      Would you like the
+   contact email address
+    included in listings? yes
+
+Operating System/Version: Warp 4 and above or eCS 
+ Additional requirements:   EMX runtime libraries 0.9d fix 4, WPS-wizard (http://www.os2world.com/cdwriting), CDRecord/2 (http://www.os2world.com/cdwriting)
+
+                Replaces: /pub/os2/apps/mmedia/cd/cd-r/audiocdcreator_054.zip /pub/os2/apps/mmedia/cd/cd-r/audiocdcreator_039.zip /pub/os2/apps/mmedia/cd/cd-r/audiocdcreator_041.zip /pub/os2/apps/mmedia/cd/cd-r/audiocdcreator_052.zip 
+

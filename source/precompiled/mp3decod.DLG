@@ -1,0 +1,25 @@
+#include "OS2.H"
+
+DLGTEMPLATE 500 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "ID3 tag info", 500, 154, 71, 179, 118, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE,
+           FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "", 501, 7, 88, 167, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "Title:", 503, 7, 73, 42, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "Artist:", 504, 7, 61, 42, 11,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "Album:", 505, 7, 49, 42, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "Comment:", 509, 7, 37, 42, 11,
+                        NOT WS_GROUP | DT_VCENTER
+        LTEXT           "Genre:", 511, 7, 25, 42, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 506, 49, 73, 124, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 507, 49, 61, 124, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 508, 49, 49, 124, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 510, 49, 37, 124, 11, NOT WS_GROUP | DT_VCENTER
+        LTEXT           "", 512, 49, 25, 124, 11, NOT WS_GROUP | DT_VCENTER
+        PUSHBUTTON      "Push", 502, 8, 3, 39, 13, WS_GROUP
+        GROUPBOX        "ID3 tag info", 602, 4, 20, 172, 92
+    END
+END

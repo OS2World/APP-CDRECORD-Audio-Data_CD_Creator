@@ -1,0 +1,396 @@
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+NAME
+       mpg123 - play audio MPEG 1.0/2.0 file (layers 1, 2 and 3)
+
+SYNOPSIS
+       mpg123  [ -tscvqy01m24 ] [ -b size ] [ -k num ] [ -n num ]
+       [ -f factor ] [ -r rate ] [ -g gain ] [ -a dev ] [ -o s  |
+       -o  h  | -o l ] [ -d n ] [ -h n ] [ -p proxy ] [ -@ file ]
+       file ... | URL ... | -
+
+DESCRIPTION
+       mpg123 reads one or more files (or standard input if ``-''
+       is  specified)  or URLs and plays them on the audio device
+       (default) or outputs them to stdout.  file/URL is  assumed
+       to be an MPEG-1/2 audio bit stream.
+
+OPTIONS
+       mpg123  options  may  be  either the traditional POSIX one
+       letter options, or the  GNU  style  long  options.   POSIX
+       style  options  start  with a single ``-'', while GNU long
+       options start with ``--''.
+
+       -t, --test
+              Test mode.  The audio stream  is  decoded,  but  no
+              output occurs.
+
+       -s, --stdout
+              The  decoded  audio samples are written to standard
+              output, instead of playing them through  the  audio
+              device.   This  option  must  be used if your audio
+              hardware is not supported by  mpg123.   The  output
+              format  is  raw (headerless) linear PCM audio data,
+              16 bit, stereo, host byte order.
+
+       -c, --check
+              Check for filter range violations, and report  them
+              for each frame if any occur.
+
+       -v, --verbose
+              Increase  the  verbosity  level.  For example, dis-
+              plays the frame numbers during decoding.
+
+       -q, --quiet
+              Quiet.  Suppress diagnostic messages.
+
+       -y, --resync
+              Try to resync and continue  decoding  if  an  error
+              occurs in the input file.  Also try to recover from
+              certain broken headers.  Useful if you have a  bro-
+              ken  MPEG  file,  on which mpg123 normally gives up
+              saying `Illegal header'.  Be careful: Broken  loca-
+              tions in MPEG files might cause sharp, loud pops or
+              clicks, which might damage your speakers if  played
+              too loud.
+
+
+
+
+                           21 Apr 1997                          1
+
+
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+       -0, --single0; -1, --single1
+              Decode  only channel 0 (left) or channel 1 (right),
+              respectively.   These  options  are  available  for
+              stereo MPEG streams only.
+
+       -m, --singlemix
+              Mix  both  channels.   This option is available for
+              stereo MPEG layer-3 streams only.   It  takes  less
+              CPU time than full stereo decoding.
+
+       -2, --2to1; -4, --4to1
+              Performs  a  downsampling  of ratio 2:1 (22 kHz) or
+              4:1 (11 kHz) on the  output  stream,  respectively.
+              Saves  some  CPU cycles, but at least the 4:1 ratio
+              sounds ugly.
+
+       -b size, --buffer size
+              Use an audio output buffer of size Kbytes.  This is
+              useful  to  bypass  short  periods  of heavy system
+              activity, which would normally cause the audio out-
+              put to be interrupted.  You should specify a buffer
+              size of at least 1024  (i.e.  1  Mb,  which  equals
+              about  6  seconds of audio data) or more; less than
+              about 300 does not make much sense.  The default is
+              0, which turns buffering off.
+
+       -k num, --skip num
+              Skip  first  num  frames.   By default the decoding
+              starts at the first frame.
+
+       -n num, --frames num
+              Decode only num frames.  By  default  the  complete
+              stream is decoded.
+
+       -f factor, --scale factor
+              Change scale factor (default: 32768).
+
+       -r rate, --rate rate
+              Set  sample  rate  (default: automatic).  You don't
+              want to change this.
+
+       -g gain, --gain gain
+              Set audio  hardware  output  gain  (default:  don't
+              change).
+
+       -a dev, --audiodevice dev
+              Specify  the  audio  device to use.  The default is
+              system-dependent (usually /dev/audio or  /dev/dsp).
+              Use  this option if you have multiple audio devices
+              and the default is not what you want.
+
+       -o s, --speaker
+              Direct audio output to the speaker.
+
+
+
+
+                           21 Apr 1997                          2
+
+
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+       -o h, --headphones
+              Direct audio output to the headphone connector.
+
+       -o l, --lineout
+              Direct audio output to the line-out connector.
+
+       -d n, --doublespeed n
+              Only play every n'th frame.  This  will  cause  the
+              MPEG  stream to be played n times faster, which can
+              be used for special effects.  Can also be  combined
+              with  the  --halfspeed  option  to  play 3 out of 4
+              frames etc.  Don't expect great sound quality  when
+              using this option.
+
+       -h n, --halfspeed n
+              Play  each frame n times.  This will cause the MPEG
+              stream to  be  played  at  1/n'th  speed  (n  times
+              slower), which can be used for special effects. Can
+              also be combined with the --doublespeed  option  to
+              double  every  third  frame  or  things  like that.
+              Don't expect great sound quality  when  using  this
+              option.
+
+       -p URL | none, --proxy URL | none
+              The specified proxy will be used for HTTP requests.
+              It   should    be    specified    as    full    URL
+              (``http://host.domain:port/''), but the ``http://''
+              prefix, the port number and the trailing slash  are
+              optional (the default port is 80).  Specifying none
+              means not to use any proxy, and to  retrieve  files
+              directly from the respective servers.  See also the
+              ``HTTP SUPPORT'' section.
+
+       -u auth, --auth auth
+              HTTP authentication to use when recieving files via
+              HTTP.  The format used is user:password.
+
+       -@ file, --list file
+              Read  filenames  and/or  URLs of MPEG audio streams
+              from the specified file in  addition  to  the  ones
+              specified  on the command line (if any).  Note that
+              file can be either an ordinary file, a  dash  ``-''
+              to  indicate that a list of filenames/URLs is to be
+              read from the standard input, or an URL pointing to
+              a  an  appropriate  list  file.   Note: only one -@
+              option can be used (if more than one is  specified,
+              only the last one will be recognized).
+
+       -z, --shuffle
+              Shuffle  play.   Randomly shuffles the files speci-
+              fied on the command line and in the list file.
+
+OPERANDS
+       The following operands are supported:
+
+
+
+                           21 Apr 1997                          3
+
+
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+       file(s) The path name(s) of one or more input files.  They
+               must be valid MPEG-1/2 audio layer-1, -2 or -3 bit
+               streams.  If a dash ``-'' is specified, MPEG  data
+               will  be  read  from the standard input.  Further-
+               more, any name starting with ``http://'' is recog-
+               nized as URL (see next section).
+
+HTTP SUPPORT
+       In  addition  to  reading MPEG audio streams from ordinary
+       files  and  from  the  standard  input,  mpg123   supports
+       retrieval of MPEG audio files via the HTTP protocol, which
+       is used in the World Wide Web (WWW).  Such files are spec-
+       ified using a so-called URL (universal resource location),
+       which starts with ``http://''.  When a file with that pre-
+       fix  is  encountered, mpg123 attempts to open an HTTP con-
+       nection to the server in order to retrieve  that  file  to
+       decode and play it.
+
+       It  is  often useful to retrieve files through a WWW cache
+       or so-called proxy.  To accomplish this,  mpg123  examines
+       the   environment   for  variables  named  MP3_HTTP_PROXY,
+       http_proxy and HTTP_PROXY, in this order.   The  value  of
+       the first one that is set will be used as proxy specifica-
+       tion.  To override this, you can use the -p  command  line
+       option  (see the ``OPTIONS'' section).  Specifying -p none
+       will enforce contacting the server directly without  using
+       any  proxy, even if one of the above environment variables
+       is set.
+
+       Note that, in order to play MPEG audio files  from  a  WWW
+       server, it is necessary that the connection to that server
+       is fast enough.  For  example,  a  128  kbit/s  MPEG  file
+       requires  the network connection to be at least 128 kbit/s
+       (16 kbyte/s) plus protocol overhead.  If you  suffer  from
+       short  network  outages,  you  should  try  the  -b option
+       (buffer) to bypass such outages.  If your network  connec-
+       tion  is  generally not fast enough to retrieve MPEG audio
+       files in realtime, you can first  download  the  files  to
+       your  local  harddisk  (e.g.  using lynx(1)) and then play
+       them from there.
+
+       If authentication is needed to access the file it  can  be
+       specified with the .B "-u user:pass".
+
+INTERRUPT
+       You  can  abort mpg123 at any time by pressing Ctrl-C.  If
+       you are playing multiple files, this will stop the current
+       file and begin playing the next one.  If you want to abort
+       playing immediately instead of skipping to the next  file,
+       press  Ctrl-C  twice in short succession (within about one
+       second).
+
+       Note that the result of pressing Ctrl-C might not be audi-
+       ble  immediately, due to audio data buffering in the audio
+
+
+
+                           21 Apr 1997                          4
+
+
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+       device.  This delay is system dependent, but it is usually
+       not more than one or two seconds.
+
+SEE ALSO
+       lynx(1), sox(1), intro(1)
+
+NOTES
+       MPEG  audio  decoding  requires a good deal of CPU perfor-
+       mance, especially layer-3.  To decode it in realtime,  you
+       should  have  at  least  a  Pentium,  Alpha, SuperSparc or
+       equivalent processor.  You can  also  use  the  -singlemix
+       option  to  decode  mono  only, which reduces the CPU load
+       somewhat for layer-3 streams.  See  also  the  -2  and  -4
+       options.
+
+       If  everything  else fails, use the -s option to decode to
+       standard output, direct it into a file  and  then  use  an
+       appropriate  utility to play that file.  You might have to
+       use a tool such as sox(1) to  convert  the  output  to  an
+       audio format suitable for your audio player.
+
+       Also  note that mpg123 always generates 16 bit stereo data
+       (if one of the -single* options  is  used,  two  identical
+       stereo channels are generated).  If your hardware requires
+       some other format, for example 8 bit mono, you  also  have
+       to use a converter such as sox(1).
+
+       If your system is generally fast enough to decode in real-
+       time, but there are sometimes periods of heavy system load
+       (such  as cronjobs, users logging in remotely, starting of
+       ``big'' programs etc.) causing  the  audio  output  to  be
+       interrupted,  then  you  should use the -b option to use a
+       buffer of at least 1000 Kbytes.
+
+BUGS
+       Known bugs and limitations:
+              MPEG-2, Layer 1 and 2 not  tested.  May  not  work.
+              (Layer 3 should work.)
+              Free format streams are not supported.
+              Layer-1 support is not heavily tested.
+              No CRC error checking is performed.
+              There is currently no support for audio hardware on
+              DEC Digital Unix, Ultrix and IBM AIX, therefore the
+              -s option has to be used on those platforms.
+
+AUTHORS
+       Main author:
+              Michael    Hipp   <Michael.Hipp@student.uni-tuebin-
+              gen.de>
+
+       Uses code (or at least ideas) from:
+              MPEG Software Simulation Group (Base package)
+              Philipp Knirsch <phil@mpik-tueb.mpg.de> (DCT36/man-
+              ual unroll)
+
+
+
+                           21 Apr 1997                          5
+
+
+
+
+
+mpg123(1)                                               mpg123(1)
+
+
+              Tobias   Bading  <bading@cs.tu-berlin.de>  (subband
+              synthesis)
+              Jeff Tsay <ctsay@pasteur.eecs.berkeley.edu> (DCT36)
+              Thomas Woerner (SGI Audio)
+              Damien  Clermonte  <clermond@esiee.fr> (HP-UX audio
+              fixes)
+              Oliver Fromme <oliver.fromme@heim3.tu-clausthal.de>
+
+       Internet references:
+       http://www.sfs.nphil.uni-tuebingen.de/~hipp/mpg123.html
+       http://www.heim3.tu-clausthal.de/~olli/mpg123/
+       (includes information about the mpg123 mailing list)
+
+       The latest version is also available from here:
+       ftp.tu-clausthal.de:/pub/unix/audio/mpg123
+       http://ftp.tu-clausthal.de/pub/unix/audio/mpg123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           21 Apr 1997                          6
+
+

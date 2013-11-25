@@ -1,0 +1,323 @@
+# Format of the input text file:
+#
+# Comments start with '#'.
+#
+# The first word is the WPS object ID. After one space the object hint text follows.
+# Line breaks are not allowed in this text. Use "0ax" (without qoutation marks) to
+# insert breaks 
+#
+# [1]
+# <WPS_ID> Object hint text.
+
+# Objects of the Audio/Data-CD-Creator package
+[1]
+<CWCREATOR_SETTINGS> Use this object to 0ax change global settings 0ax e.g. path to CDRecord/2 or FIFO size.
+
+[1]
+<CDR_TOOLS> CD-RW blanking, session closing 0ax and other tools.
+
+[1]
+<CD_COPY> Create 1:1 copies of data and audio CDs.
+
+[1]
+<CWCONFIG_CDRECORD> Set some important options for Mkisofs 0ax and CDRecord/2. 0ax You have to set the right paths and more 0ax options in the CD-Creator settings.
+
+[1]
+<CREATOR_RECREATEOBJ> Use this object to recreate the CD-Creator objects 0ax if they are lost or broken.
+
+[1]
+<CWCREATOR_TUTORIAL> Tutorial and help for the CD-Creator package. 0ax Read this if you have problems or want 0ax to learn more about the features.
+
+[1]
+<CD_WRITING> This folder contains tools for 0ax CD writing.
+
+[1]
+<CREATOR_CONFIG> Special configuration objects. 0ax Normaly only used once after installation 0ax or to recreate lost objects. 
+
+[1]
+<AUDIOCD_CREATOR> Drag this template to create a new 0ax audio CD folder. 0ax Use the folder to create audio CDs from 0ax wave, MP3 and other audio files.
+
+[1]
+<DATACD_CREATOR> Drag this template to create a new 0ax data CD folder. 0ax Use the folder to create data CDs. Read 0ax the CD-Creator tutorial for more info. 
+
+#WPS-wizard
+[1]
+<WPSWIZ_FOLDER> Main WPS-Wizard folder. 0ax Contains objects for global settings 0ax and popup menu configuration.
+
+[1]
+<WPSWIZ_CONFIG> Menu configuration folder. 0ax Use this folder to configure popup/folder menus 0ax and folder scripts.
+
+[1]
+<WPSWIZ_TUTORIAL> Manual and reference for the 0ax WPS-Wizard package.
+
+[1]
+<MENUITEMS_FOLDER> Template folder for menu items. 0ax Find a template for new menu folders here. 
+
+[1]
+<WPSWIZ_TBITEMFOLDER> This folder contains items for the 0ax toolbar of folders. Drag one of them to 0ax the action area and drop it there.
+
+[1]
+<WPSWIZ_GADGETFOLDER> Find gadgets here. 0ax Gadgets are small scripts running 0ax in the background and displaying 0ax their output on the desktop.
+
+[1]
+<WPSWIZ_TIMEGADGET> Displays the time and date 0ax on the desktop.
+
+[1]
+<WPSWIZ_SYSINFOGADGET> Information about the system: 0ax -Physical memory 0ax -Free space on the bootdrive 0ax -Uptime 0ax -Time and date 
+
+[1]
+<WPSWIZ_DRIVEINFOGADGET> Shows the free space on 0ax all fixed disks.
+
+[1]
+<WPSWIZ_ZINFOGADGET> Displays track information of MP3 files 0ax currently played by z!.
+
+#XWP objects
+[1]
+<XWP_CLASSLIST> Use the WPS class list to view the installed classes 0ax and to register or deregister them.
+
+[1]
+<XWORKPLACE_SETUP> Main XWorkplace configuration. 0ax Enable/disable features of XWP globaly. 
+
+[1]
+<XWP_WPS> Configure the WPS features of XWorkplace with this object 0ax e.g. path in folder titles or status bars.
+
+[1]
+<XWP_MEDIA> Information about the installed multi media codecs, 0ax IO procedures etc.
+
+[1]
+<XWP_KERNEL> Modify the Config.sys entries for drivers, 0ax file systems and the kernel.
+
+[1]
+<XWP_SCREEN> Screen related settings. 0ax Resolution and print screen. 0ax The same settings may be found 0ax in the 'System' object, too.
+
+[1]
+<XWP_REF> XWorkplace documentation. Learn more about 0ax the features and how to configure them.
+
+[1]
+<XWP_CONFIG> The XWorkplace configuration folder can 0ax be used to configure the XWorkplace folder popup menus.
+
+[1]
+<XWP_FONTFOLDER> The font object shows the currently installed fonts. 
+
+#Configuration objects 
+[1]
+<WP_MOUSE> Mouse configuration: 0ax Buttons, timing, pointer shape etc.
+
+[1]
+<WP_KEYB> Keyboard configuration: 0ax Keymap, timing and special keys.
+
+[1]
+<WP_CNTRY> Country configuration. 0ax Configure the data and time format, number separators etc.
+
+[1]
+<WP_CLOCK> Set date and time in the properties notebook. 0ax Open the object to display a clock.
+
+[1]
+<WP_SOUND> Enable system sounds and manage sound schemes 0ax for system events.
+
+[1]
+<WP_WINCFG> Global settings for WIN-OS/2 programs. 
+
+[1]
+<WP_CONFIG> System configuration folder.
+
+[1]
+<WP_HIRESCLRPAL> The color palette can be used to change 0ax the colors of windows or controls.
+
+[1]
+<WP_LORESCLRPAL> This color palette only contains the 16 0ax predefined system colors. Use it to change the 0ax color of windows and controls.
+
+[1]
+<WP_SCHPAL96> Using the layout palette it's possible to change 0ax colors, fonts and other settings of a window at once. 0ax Several predefined shemes are available and new 0ax ones can be defined.
+
+[1]
+<WP_HWMGR> The hardware manager lists the installed hardware. 
+
+
+#Standard objects
+[1]
+<WP_OS2WIN> Opens an OS/2 command window.
+
+[1]
+<WP_DOSFS> Opens a DOS full screen session.
+
+[1]
+<WP_DOSWIN> Opens a DOS window.
+
+[1]
+<WP_WINFS> Opens a Win-OS/2 full screen session.
+
+[1]
+<WP_WIN2WIN> Opens a Win-OS/2 seemless session. 0ax This means windows of Win-OS/2 programs 0ax open on the OS/2 desktop.
+
+[1]
+<WP_DOS_DRV_A> Start a DOS session from a diskette 0ax in drive A. 0ax This is like booting DOS from the diskette.
+
+[1]
+<WP_TEMPS> This folder contains templates for 0ax various objects. 0ax 0ax To create a new object drag and 0ax drop a template.
+
+[1]
+<WP_PROMPTS> This folder contains objects for OS/2 and DOS 0ax command windows and fullscreen sessions 0ax and Win-OS/2 sessions. 
+
+[1]
+<WP_START> Objects in this folder will be opened on 0ax system start.
+
+[1]
+<WP_VIEWER> Minimized windows can be found in this 0ax viewer.
+
+[1]
+<WP_PRINTERSFOLDER> For every installed printer an 0ax object can be found in this folder.
+
+[1]
+<WP_DRIVES> All drive objects can be found in this folder.
+
+[1]
+<WP_PROGRAMSFOLDER> Default location for objects of installed programs.
+
+[1]
+<WP_SHRED> Drop objects on this shredder to delete them.
+
+[1]
+<WP_ASSISTANCE> This folder contains documents and problem determination tools. 
+
+[1]
+<WP_INFO> Manuals, readme files and other dokuments.
+
+[1]
+<WP_MINDEX> Main index for the system documentation. 
+
+[1]
+<WP_REXREF> Reference for the REXX programming language. 0ax REXX is the macro language used in OS/2.
+
+[1]
+<MCIREXX_INF> Multimedia programming with REXX reference manual.
+
+[1]
+<WP_SYSED> Basic text editor.
+
+[1]
+<WP_EPM> Extended editor (EPM) with macro support, 0ax syntax highliting and more. 
+
+#[1]
+#<WP_SEEK> Search for text and files.
+
+
+#MM objects
+[1]
+<MMPM2_FOLDER> Find multimedia objects in this folder.
+
+[1]
+<MMPM2_MMVOLUME> Master volume object. 0ax Control the system volume using this object.
+
+[1]
+<MFLDR_PROGDOC> Reference and programming manual for the 0ax CW-Multimedia classes and the Media folder.
+
+[1]
+<CWFREEDB_CLIENT_CONFIG> Change the email address used for FreeDB queries.
+
+# Standard templates
+[1]
+<MMPM2_MMTEMPLATEFOLDER> This folder contains templates for multi 0ax media objects. 0ax For example for image files or audio files.
+
+[1]
+<WPINET_TEMPLATES> Templates for the internet and the 0ax local network like URL or FTP objects. 
+
+[1]
+<WPINET_URLTEMPLATE> Create an URL object from this template. 0ax URL objects point to resources on the internet 0ax or the local network, 0ax e.g. web pages on a server.
+
+[1]
+<WP_NEWPROGRAM> Use this template to create a new 0ax program object. 0ax Program objects may be used to start 0ax the same executable with different parameters.
+
+#PMView 2000
+[1]
+<PMVIEW20> PMView is an image viewer for 0ax various different image formats 0ax with basic editing features. 
+
+[1]
+<PMVIEW20FOLDER> PMView is an image viewer for 0ax various different image formats 0ax with basic editing features. 
+
+[1]
+<PMVIEW20MAKEDEFV> Use this object to associate image 0ax formats with PMView.
+
+#Text converter package
+[1]
+<TEXT_CONVERTER_PROGRAM> Use the Text Converter to convert 0ax text files between different codepages.
+
+# PMMail/2
+[1]
+<PMM2EXE> Start PMMail/2
+
+#Config tool
+[1]
+<CFGCOMP130_PROG> ConfigCompare lets you compare 0ax different config.sys files.
+
+[1]
+<CFGTOOL130_PROG> Configtool is a config.sys editor 0ax with bells and wistles.
+
+[1]
+<GISYSTOOLS_FOLD> This folder contains several system 0ax related maintenance utilities.
+
+[1]
+<ID_SMARTBAR_FOLDER> Smartbar is a feature rich monitoring bar.
+
+[1]
+<ID_SMARTBAR_PROGRAM> OS/2 Presentation Manager utility 0ax for monitoring various system activities.
+
+[1]
+<INIEDIT_PROGRAM> INIedit allows you to edit your INI files.
+
+[1]
+<LBMIX_CONFIG> LBMIX configuration utility.
+
+[1]
+<LBMIX_FOLDER> LBMIX is a universal mixer for 0ax IOCTL90 and pipe mixer APIs.
+
+[1]
+<LBMIX_MAIN> This is a IOCTL90 mixer front end.
+
+[1]
+<PMPDF_CP> PoorMans PDF configuration utility.
+
+[1]
+<PMVIEW30> PMView is an image viewer for 0ax various different image formats 0ax with basic editing features.
+
+[1]
+<PMVIEW30FOLDER> PMView is an image viewer for 0ax various different image formats 0ax with basic editing features.
+
+[1]
+<PMVIEW30MAKEDEFV> Use this object to associate image 0ax formats with PMView.
+
+[1]
+<QueenCy> QueenCy is a paint program with Layering, 0ax Tablet and Twain support.
+
+[1]
+<ROMES2_FOLDER> The RoboticsMessenger lets you control 0ax the USRobotics Message Modems.
+
+[1]
+<ROMES2_PROGRAM> With the RoboticsMessenger you can control 0ax the independent modes of the 0ax USRobotics Message Modems.
+
+# Tame/2
+[1]
+<TAME_2_FOLDER> Tame/2 is a PMFrontend for 0ax SANE (Scanner Acess Now Easy).
+
+[1]
+<TAME_2_IMAGES> This is a shadow to the images folder 0ax where TAME/2 stores the scanned images. 0ax Attention: scans greater than 75MB are not shown here 0ax due to a lighttable limitation, but you can view them 0ax with an alternative viewer (not using the mmiocodecs) 0ax by opening the TAME/2 images subdirectory.
+
+[1]
+<TAME_2_PROG> TAME/2 is a powerfull PMFrontend for SANE. 0ax It gives you acess to more than 60 scanners, 0ax lets you print/fax scans and lots more.
+
+[1]
+<TAME_2_FAXVIEW> FaxView is an andvanced Image Viewer.
+
+[1]
+<WCLOCK140_FOLDER> Worldclock is a highly configurable Clock.
+
+[1]
+<WCLOCK140_PROG> Worldclock tells you everything about 0ax time for more than 2000 cities
+
+[1]
+<Weasel_Daemon> Weasel is a combined POP3 and SMTP daemon 0ax (Post Office server).
+
+[1]
+<Weasel_folder> Weasel is a POP/SMTP server.
+
+

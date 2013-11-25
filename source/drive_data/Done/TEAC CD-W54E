@@ -1,0 +1,178 @@
+>>Gather the information
+>>----------------------
+>>The following bits of information are necessary. You may just insert it
+>>here when replying to this posting. If you have several working devices or
+>>a dedicated CD-ROM for grabbing include the information for all of your
+>>devices by duplicating the template below.
+>>
+>>
+>>1. The name of your writer as used in advertising.
+>>   
+>>   Example: AOPEN CRW9624, Ricoh MP6200, Teac CD-532-E
+>>
+>>   Your writers name:  Teac  CD-W54E 
+>>
+>>
+>>2. The features of your writer/CD-ROM. Use the following command to 
+>>   capture the information (be sure to adapt the dev=... setting) in a
+>>   temporary file.
+>>
+>>           'cdrecord dev=x,y,z -prcap > out.txt'
+
+Cdrecord 2.0 (i386-pc-os2_emx) Copyright (C) 1995-2002 Jörg Schilling
+Using libscg version 'schily-0.7'
+Device type    : Removable CD-ROM
+Version        : 2
+Response Format: 2
+Capabilities   : 
+Vendor_info    : 'TEAC    '
+Identifikation : 'CD-W54E         '
+Revision       : '1.1Y'
+Device seems to be: Generic mmc CD-RW.
+
+Drive capabilities, per MMC page 2A:
+
+  Does read CD-R media
+  Does write CD-R media
+  Does read CD-RW media
+  Does write CD-RW media
+  Does not read DVD-ROM media
+  Does not read DVD-R media
+  Does not write DVD-R media
+  Does not read DVD-RAM media
+  Does not write DVD-RAM media
+  Does support test writing
+
+  Does read Mode 2 Form 1 blocks
+  Does read Mode 2 Form 2 blocks
+  Does read digital audio blocks
+  Does restart non-streamed digital audio reads accurately
+  Does not support Buffer-Underrun-Free recording
+  Does read multi-session CDs
+  Does read fixed-packet CD media using Method 2
+  Does not read CD bar code
+  Does read R-W subcode information
+  Does return R-W subcode de-interleaved and error-corrected
+  Does read raw P-W subcode data from lead in
+  Does return CD media catalog number
+  Does return CD ISRC information
+  Does support C2 error pointers
+  Does not deliver composite A/V data
+
+  Does play audio CDs
+  Number of volume control levels: 256
+  Does support individual volume control setting for each channel
+  Does support independent mute setting for each channel
+  Does not support digital output on port 1
+  Does not support digital output on port 2
+
+  Loading mechanism type: tray
+  Does support ejection of CD via START/STOP command
+  Does not lock media on power up via prevent jumper
+  Does allow media to be locked in the drive via PREVENT/ALLOW command
+  Is not currently in a media-locked state
+  Does not support changing side of disk
+  Does not have load-empty-slot-in-changer feature
+  Does not support Individual Disk Present feature
+
+  Maximum read  speed:  5645 kB/s (CD  32x, DVD  4x)
+  Current read  speed:  5645 kB/s (CD  32x, DVD  4x)
+  Maximum write speed:   706 kB/s (CD   4x, DVD  0x)
+  Current write speed:   706 kB/s (CD   4x, DVD  0x)
+  Buffer size in KB: 1280
+
+>>
+>>3. Does your writer support buffer underrun protection
+>>   (burnproof/burnsave/just-link/...)?
+>>No
+>>
+>>4. Does your writer need the 'Sony multisession fix'? (Setting on the
+>>General page 2)
+>>No
+>>
+>>5. Additional needed options for cdrecord when writing audio CDs (if any).
+>>
+>>
+>>6. Additional needed options for cdrecord when writing data CDs (if any).
+>>No
+>>
+>>7. Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+>>
+>>   Example: (driver) cdd2600, AOPEN CRW9624
+>>
+>>   Your driver:  Teac CD W 54 E
+>>
+>>
+>>8. Additional options for cdrdao (if any). (cdrdao/2 page 1)
+>>No
+>>
+>>9. Are you using cdrdao.exe coming with CD-Creator? If no please
+>>   specify the release you're using.
+>>Yes
+>>
+>>10. If you use different settings for 1:1 copy (source) please specify
+>>them
+>>    here. Include everything you find on that page and the cdrdao release
+>>    you're using. (cdrdao/2 page 2)
+>>Device: 0,0,0 : BCD 32x CD-Rom
+
+Driver: Generic MMC
+
+>>
+>>11. If you use different settings for 1:1 copy (target) please specify
+>>them
+>>    here. Include everything you find on that page and the cdrdao release
+>>    you're using. (cdrdao/2 page 3)
+>>
+>>
+>>12. If you use mpg123 or MMIOMP3 for MP3 decoding, do you have to specify
+>>    'Swap bytes when writing'? (MP3 decoding page)
+>>
+>>
+>>13. Send the information to
+>>
+>>                 <adc-os2DESPAM@cityweb.de>  (Note: remove the "DESPAM")
+>>
+>>
+>>
+>>Url:  http://www.os2world.com/cdwriting
+>>
+>>From: Chris Wohlgemuth (adc-os2DESPAM@cityweb.de)
+>>
+>>
+>>Submitted with the form on http://www.os2world.com/submit_news.php
+>>
+>>--
+>>  Warpstock 2004 - Denver, Colorado, October 21-24
+>>  The Mile High OS/2 Event:  http://www.warpstock.org
+>>
+>> [Moderator's note:  All posts are sent without guarantee to the 
+>>  accuracy of the content.  We try to verify details and URLs but
+>>  this is an entirely volunteer run list, so 100% fact checking and 
+>>  the quality/useability of products announced here is impossible.
+>>
+>>  If you respond to this post please remove the DESPAM from the
+>>  poster's email addresses.   Please do not send requests for information
+>>  about a specific post to the moderator unless it is an update or I sent
+>>it.]
+>>
+>>-- 
+>>
+>>To unsubscribe yourself from this list, send the following message
+>>to majormajor@os2voice.org
+>>
+>>     unsubscribe news
+>>     end
+>>
+>>Or, visit http://www.os2voice.org/MailingLists.html
+>>
+>>If you have an announcement you would like posted to the VOICE 
+>>News list, please send it to submit@os2voice.org. Please include a 
+>>valid reply address and a real contact name.  If you wish to comment
+>>on this post, please reply to feedback@os2voice.org
+>>
+
+
+
+
+

@@ -1,0 +1,117 @@
+/***************************************************************************
+
+  P>G Pro Script for data CD cover creation.
+
+*/                                                                          
+
+
+info.0=''
+
+/* Get output settings */
+aH=CwGetAppHandle('output settings')
+curwidth=CwGetProperty(ah, 'output size:width')
+curheight=CwGetProperty(ah, 'output size:height')
+curunit=CwGetProperty(ah, 'unit')
+SAY 'Current width: 'curwidth
+SAY 'Current height: 'curheight
+SAY 'Current unit: 'curunit
+
+/* Set new settings */
+call CwSetProperty ah, 'unit' , 'centimeters'
+call CwSetProperty ah, 'output size:width', 13.2
+call CwSetProperty ah, 'output size:height', 12
+
+/* Draw the background */
+call drawOutline
+
+/* Draw the header */
+call writeHeader
+
+
+DONE:
+Exit
+
+
+/*******************************************************/
+/* This Procedure just prints a header like 'Contents' */
+/*******************************************************/
+writeHeader:
+
+/* Headline effect */
+hO=CwCreateEffect('Headline Text','Solid Color')
+h=0.6        /* The height */
+w=4          /* The width  */
+y=12-0.4     /* The y pos  */
+
+call CwSetPosition hO,12.6/2,y,w,h,0,0
+call CwSetName hO, 'header'                     /* Give the object a name */
+hr=CwGetRegion(hO)
+call CwSetProperty hr, 'Caption', 'Contents'    /* Text */
+ht=CwGetTool(hO)
+call CwSetProperty ht, 'Color', 'Black'         /* Print it black */
+
+/* Draw a line */
+hLine=0.05
+hO1=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO1,12.6/2, y-h/2,w,hLine,0,0
+ht=CwGetTool(hO1)
+call CwSetProperty ht, 'Color', 'Black'
+return
+
+
+/*******************************************************/
+/* This Procedure draws the background                 */
+/*******************************************************/
+drawOutline:
+w=0.025
+h=14
+
+/* Draw some help lines */
+hO4=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO4,0.6, 12/2,w,h,0,0
+hO5=CwCreateEffect('User Draw','Solid Color')
+call CwSetPosition hO5,12.6, 12/2,w,h,0,0
+
+/* Create black rectangle */
+hO=CwCreateEffect('Rectangle','Solid Color')
+h=12
+w=13.2
+call CwSetPosition hO,w/2,h/2,w,h,0,0
+ht=CwGetTool(hO)
+call CwSetProperty ht, 'Color', 'Black'
+
+/* Create white rectangle */
+hO1=CwCreateEffect('Rectangle','Solid Color')
+w=11.9
+h=11.9
+call CwSetPosition hO1,12/2+0.6,12/2,w,h,0,0
+ht=CwGetTool(hO1)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Create white rectangle */
+hO2=CwCreateEffect('Rectangle','Solid Color')
+h=11.9
+w=.5
+call CwSetPosition hO2, 0.3, 12/2,w,h,0,0
+ht=CwGetTool(hO2)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Create white rectangle */
+hO3=CwCreateEffect('Rectangle','Solid Color')
+h=11.9
+w=.5
+call CwSetPosition hO3,12.9, 12/2,w,h,0,0
+ht=CwGetTool(hO3)
+call CwSetProperty ht, 'Color', 'White'
+
+/* Group the rectangles */
+gh=CwAddObjectToGroup(hO3,0)
+call CwAddObjectToGroup hO2 , gh
+call CwAddObjectToGroup hO1 , gh
+call CwAddObjectToGroup hO , gh
+call CwAddObjectToGroup hO4 , gh
+call CwAddObjectToGroup hO5 , gh
+return
+
+
+

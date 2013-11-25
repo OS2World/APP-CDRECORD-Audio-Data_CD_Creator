@@ -1,0 +1,18 @@
+#include "OS2.H"
+
+DLGTEMPLATE 100 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Creator configuration", 100, 124, 56, 219, 252, 
+           WS_SYNCPAINT | NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE,
+           FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Text", 107, 6, 197, 206, 52,
+                        NOT WS_GROUP | DT_WORDBREAK
+        CONTROL         "", 106, 12, 50, 194, 129, WC_CONTAINER,
+                        WS_VISIBLE | WS_TABSTOP | CCS_SINGLESEL | CCS_AUTOPOSITION
+        PUSHBUTTON      "Set options", 103, 20, 27, 62, 14, WS_GROUP
+        PUSHBUTTON      "More options...", 105, 132, 27, 62, 14
+        PUSHBUTTON      "Close", 104, 6, 1, 46, 14, WS_GROUP
+        GROUPBOX        "Select your CDRecord/2 release", 102, 6, 22, 206, 168
+    END
+END

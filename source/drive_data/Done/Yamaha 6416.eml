@@ -1,0 +1,73 @@
+
+Hello,
+here are some info for my CD Writer.
+I hope it will be helpful for your database.
+
+-----------------------------------------------------------
+CD Writer: Yamaha 6416
+Features: please look attached out.txt file
+Underrun protection support: no
+Sony multisession fix needed: no
+Additional needed options for cdrecord when writing data CDs: None
+Writer or driver selection when using cdrdao: generic-mmc (not
+tested!!!) Additional options for cdrdao: none (until now)
+Are you using cdrdao.exe coming with CD-Creator? No. Actually I'm using
+release 1.1.6.
+
+
+-- 
+-----------------------------------------------------------
+mentore.siesto@libero.it
+Team OS/2 Italy
+-----------------------------------------------------------
+--===_40A3F03D_==
+Content-Type: text/plain; name="out.txt"
+Content-Transfer-Encoding: base64
+
+Q2RyZWNvcmQtQ2xvbmUgMi4wMWEyNSAoaTM4Ni1wYy1vczJfZW14KSBDb3B5cmlnaHQgKEMp
+IDE5OTUtMjAwNCBK9nJnIFNjaGlsbGluZw0KVXNpbmcgbGlic2NnIHZlcnNpb24gJ3NjaGls
+eS0wLjgnDQpEZXZpY2UgdHlwZSAgICA6IFJlbW92YWJsZSBDRC1ST00NClZlcnNpb24gICAg
+ICAgIDogMg0KUmVzcG9uc2UgRm9ybWF0OiAyDQpDYXBhYmlsaXRpZXMgICA6IFNZTkMgDQpW
+ZW5kb3JfaW5mbyAgICA6ICdZQU1BSEEgICcNCklkZW50aWZpa2F0aW9uIDogJ0NSVzY0MTZT
+ICAgICAgICAnDQpSZXZpc2lvbiAgICAgICA6ICcxLjBiJw0KRGV2aWNlIHNlZW1zIHRvIGJl
+OiBHZW5lcmljIG1tYyBDRC1SVy4NCg0KRHJpdmUgY2FwYWJpbGl0aWVzLCBwZXIgTU1DIHBh
+Z2UgMkE6DQoNCiAgRG9lcyByZWFkIENELVIgbWVkaWENCiAgRG9lcyB3cml0ZSBDRC1SIG1l
+ZGlhDQogIERvZXMgcmVhZCBDRC1SVyBtZWRpYQ0KICBEb2VzIHdyaXRlIENELVJXIG1lZGlh
+DQogIERvZXMgbm90IHJlYWQgRFZELVJPTSBtZWRpYQ0KICBEb2VzIG5vdCByZWFkIERWRC1S
+IG1lZGlhDQogIERvZXMgbm90IHdyaXRlIERWRC1SIG1lZGlhDQogIERvZXMgbm90IHJlYWQg
+RFZELVJBTSBtZWRpYQ0KICBEb2VzIG5vdCB3cml0ZSBEVkQtUkFNIG1lZGlhDQogIERvZXMg
+c3VwcG9ydCB0ZXN0IHdyaXRpbmcNCg0KICBEb2VzIHJlYWQgTW9kZSAyIEZvcm0gMSBibG9j
+a3MNCiAgRG9lcyByZWFkIE1vZGUgMiBGb3JtIDIgYmxvY2tzDQogIERvZXMgcmVhZCBkaWdp
+dGFsIGF1ZGlvIGJsb2Nrcw0KICBEb2VzIHJlc3RhcnQgbm9uLXN0cmVhbWVkIGRpZ2l0YWwg
+YXVkaW8gcmVhZHMgYWNjdXJhdGVseQ0KICBEb2VzIG5vdCBzdXBwb3J0IEJ1ZmZlci1VbmRl
+cnJ1bi1GcmVlIHJlY29yZGluZw0KICBEb2VzIHJlYWQgbXVsdGktc2Vzc2lvbiBDRHMNCiAg
+RG9lcyByZWFkIGZpeGVkLXBhY2tldCBDRCBtZWRpYSB1c2luZyBNZXRob2QgMg0KICBEb2Vz
+IG5vdCByZWFkIENEIGJhciBjb2RlDQogIERvZXMgcmVhZCBSLVcgc3ViY29kZSBpbmZvcm1h
+dGlvbg0KICBEb2VzIHJldHVybiBSLVcgc3ViY29kZSBkZS1pbnRlcmxlYXZlZCBhbmQgZXJy
+b3ItY29ycmVjdGVkDQogIERvZXMgbm90IHJlYWQgcmF3IFAtVyBzdWJjb2RlIGRhdGEgZnJv
+bSBsZWFkIGluDQogIERvZXMgcmV0dXJuIENEIG1lZGlhIGNhdGFsb2cgbnVtYmVyDQogIERv
+ZXMgcmV0dXJuIENEIElTUkMgaW5mb3JtYXRpb24NCiAgRG9lcyBub3Qgc3VwcG9ydCBDMiBl
+cnJvciBwb2ludGVycw0KICBEb2VzIG5vdCBkZWxpdmVyIGNvbXBvc2l0ZSBBL1YgZGF0YQ0K
+DQogIERvZXMgcGxheSBhdWRpbyBDRHMNCiAgTnVtYmVyIG9mIHZvbHVtZSBjb250cm9sIGxl
+dmVsczogMjU2DQogIERvZXMgc3VwcG9ydCBpbmRpdmlkdWFsIHZvbHVtZSBjb250cm9sIHNl
+dHRpbmcgZm9yIGVhY2ggY2hhbm5lbA0KICBEb2VzIHN1cHBvcnQgaW5kZXBlbmRlbnQgbXV0
+ZSBzZXR0aW5nIGZvciBlYWNoIGNoYW5uZWwNCiAgRG9lcyBub3Qgc3VwcG9ydCBkaWdpdGFs
+IG91dHB1dCBvbiBwb3J0IDENCiAgRG9lcyBub3Qgc3VwcG9ydCBkaWdpdGFsIG91dHB1dCBv
+biBwb3J0IDINCg0KICBMb2FkaW5nIG1lY2hhbmlzbSB0eXBlOiB0cmF5DQogIERvZXMgc3Vw
+cG9ydCBlamVjdGlvbiBvZiBDRCB2aWEgU1RBUlQvU1RPUCBjb21tYW5kDQogIERvZXMgbm90
+IGxvY2sgbWVkaWEgb24gcG93ZXIgdXAgdmlhIHByZXZlbnQganVtcGVyDQogIERvZXMgYWxs
+b3cgbWVkaWEgdG8gYmUgbG9ja2VkIGluIHRoZSBkcml2ZSB2aWEgUFJFVkVOVC9BTExPVyBj
+b21tYW5kDQogIElzIG5vdCBjdXJyZW50bHkgaW4gYSBtZWRpYS1sb2NrZWQgc3RhdGUNCiAg
+RG9lcyBub3Qgc3VwcG9ydCBjaGFuZ2luZyBzaWRlIG9mIGRpc2sNCiAgRG9lcyBub3QgaGF2
+ZSBsb2FkLWVtcHR5LXNsb3QtaW4tY2hhbmdlciBmZWF0dXJlDQogIERvZXMgbm90IHN1cHBv
+cnQgSW5kaXZpZHVhbCBEaXNrIFByZXNlbnQgZmVhdHVyZQ0KDQogIE1heGltdW0gcmVhZCAg
+c3BlZWQ6ICAyODIyIGtCL3MgKENEICAxNngsIERWRCAgMngpDQogIEN1cnJlbnQgcmVhZCAg
+c3BlZWQ6ICAyODIyIGtCL3MgKENEICAxNngsIERWRCAgMngpDQogIE1heGltdW0gd3JpdGUg
+c3BlZWQ6ICAxMDU4IGtCL3MgKENEICAgNngsIERWRCAgMHgpDQogIEN1cnJlbnQgd3JpdGUg
+c3BlZWQ6ICAxMDU4IGtCL3MgKENEICAgNngsIERWRCAgMHgpDQogIEJ1ZmZlciBzaXplIGlu
+IEtCOiAyMDQ4DQo=
+
+--===_40A3F03D_==--
+
+
+

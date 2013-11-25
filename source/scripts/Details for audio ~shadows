@@ -1,0 +1,49 @@
+/* Calculate the playtime of all selected tracks */
+
+/* Load Rexxutil functions */
+call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs'
+call SysLoadFuncs
+
+
+/* Check if we are executing */
+if ARG(1)\='/EXECUTE' THEN EXIT
+
+/* Check if CWAudioShadow class is installed */
+list.0=0
+found=0
+rc=SysQueryClassList(list.)
+DO a=1 to list.0
+	if TRANSLATE(WORD(list.a,1))='CWAUDIOSHADOW' THEN DO
+		found=1
+		LEAVE
+	END
+END
+
+IF found=0 THEN DO
+	theString="The CW-Multimedia classes are not installed. You need this package for displaying audio details of audio shadows (class CWAudioShadow)."
+	theString=theString||'0d'X||'0d'X
+	theString=theString||'Get it from http://www.os2world.com/cdwriting'||'0d'X||'  '
+	rc=RxMessageBox(theString, "",'OK', "Information")
+	EXIT
+END
+
+/* The folder running this skript */
+theFldr=ARG(2)
+/* And the frame handle */
+frameHandle=ARG(3)
+
+thePath=WPSWizCallFunc("cwQueryRealName", theFldr, 1)
+
+IF thePath="ERROR:" | thePath='' THEN DO
+    rc=RxMessageBox("Cannot get the name of the folder!", "",'OK', "Information")
+     EXIT
+END
+
+setup='DETAILSCLASS=CWAudioShadow;SORTCLASS=CWAudioShadow;DETAILSTODISPLAY=0,1,4,12,13,14,15,16,17,18,19,20,21;SORTBYATTR=6,24,25,26,27,28,29,30,31,32,33'
+
+rc=SysSetObjectData(thePath, setup)
+
+RC=0
+exit
+
+

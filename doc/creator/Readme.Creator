@@ -1,0 +1,277 @@
+Note:
+
+This document is outdated and only included for
+historical reasons.
+
+---------------------
+
+Audio/Data-CD-Creator
+---------------------
+
+I consider this release as a beta. There may be
+bugs so be warned. Don't blame the author.
+All flames will be routed into dev/nul!
+
+See the file COPYING for the licence.
+See the file COPYING.mpg123 for the licence of mpg123
+
+       USE ON YOUR OWN RISK!!!!
+
+######################################
+
+!!! READ THIS !!! READ THIS !!! READ THIS !!! READ THIS !!!
+
+1.     To use the grab status you have to go to the grabber
+        settings page and check your settings. If you did an
+        upgrade installation this is necessary so the settings are
+        updated.
+
+2.      If you use z! for MP3 decoding upgrade to the version
+        23Feb2001 or above. Otherwise the MP3 format checking
+        will fail.
+
+3.      If you use mkisofs from a cdrecord release newer than
+        V1.9a02 enter -graft-points into the mkisofs-options
+        field of the main settings notebook. The cdrtools-xx
+	distribution with cdrecord2.exe etc. is not supported.
+
+4.      Only cdrecord releases downloadable from the homepage:
+
+     http://www.geocities.com/SiliconValley/Sector/5785/index.html
+     http://www.os2world.com/cdwriting
+
+        are known to work with this release. Other distributions may
+        or may not work.
+
+5.      Use the help and the tutorial!
+
+6.      Use the help and the tutorial!
+
+7.      Use the help and the tutorial! Hope you got it ;-).
+	
+######################################
+
+Starting with V0.33 Data- and Audio-CD-Creator 
+share the same version number.
+
+
+Overview
+--------
+This package contains new folder classes helping you
+creating CDs with CDRecord/2 and mkisofs. Since these
+classes are childs of the normal folder class all WPS
+features are available including context menus, drag and drop
+and so on.
+
+Highlights:
+
+-Fully integrated into the WPS
+-Shields you from the cmd-line syntax of mkisofs and
+ cdrecord/2.
+-All settings are specified in the settings notebook
+-Singlesession and multisession support.
+-Support for audio CDs (TAO and DAO)
+-Support for any textmode CD grabber like leech or cdda2wav
+-Online help. Use right mouse button
+-Support for shadows
+-Support for MP3 writing
+-Support for MP3 encoding
+-Preliminary boot CD support
+-Preliminary cover creation support. You need Photo>Graphics PRO
+ to use this feature. Get it from http://hobbes.nmsu.edu (tspg202s.zip)
+ and the key from http://www.truespectra.com
+
+Installation
+------------
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Deinstall any version of Audio/Data-CD-Creator before
+installing this package.
+
+UPDATE INSTALLATION IS NOT SUPPORTED!
+
+Begin the installation by starting install.exe.
+Read the file Readme.1st!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Remark:
+If you're using Warp 3 the installation does not
+work as intended. Warp 3 does not support JPGs
+as folder backgrounds. So you wont have them after
+the installation.
+
+If you've got an earlier version installed:
+
+Uninstall the version by calling uninstall.cmd. Do
+not use uninstall.cmd from this release! Restart the WPS.
+This is important to unlock aucdfldr.dll, progfldr.dll
+and aucdfldr.hlp which will be replaced with new
+versions. Delete the mentioned files.
+
+Put all the files into a directory of your choice.
+
+Make sure the EMX runtime libraries 0.9d fix 4 are
+in your libpath.
+
+The command emxrev should give you the following:
+
+EMX : revision = 61
+EMXIO : revision = 60
+EMXLIBC : revision = 63
+EMXLIBCM : revision = 64
+EMXLIBCS : revision = 64
+EMXWRAP : revision = 60
+
+If the numbers on your system are smaller you don't have
+installed the fix. Higher numbers are ok.
+
+Run 'Install.exe'. That's all.
+
+After installation you'll find a folder on your desktop
+which includes a program object for CDRTools and
+shadows of the Audio-CD-Creator and the
+Data-CD-Creator template. These templates
+are located in the templates folder of your system.
+Enter the path to CDRecord/2, mkisofs and optional
+cdrdao/2 and your grabber into the settings notebook.
+You may use the 'scan' button to find your writer.
+If this doesn't work enter your device id into the
+entry field e.g. 0,3,0.
+When opening the settings notebook the first time
+the path to CDRecord/2 isn't provided. Scanning needs
+CDRecord/2 so the button only works after entering
+the path, closing the notebook and reopening it.
+A tutorial is avaiable. If there're any questions
+read it first! Use the help button avaiable in most
+dialogs!
+
+The new object 1:1 CD-Copy is a fast hack for direct
+CD copies with cdrdao.
+On-the-fly copying isn't supported. An intermediate
+imagefile will be created in the root of the choosen
+drive.
+
+Deinstallation
+-----------
+Use the installer to remove the package from your
+system.
+
+How to use
+---------
+First go to the settings notebook of the installation and
+fill in the path for every helper program. Select the device
+number of your writer and the speed.
+A more decent description may be found in the tutorial.
+
+Data-CD-Creator:
+
+Drop the template of Data-CD-Creator somewhere in
+your filesystem to create a project. Beside any filesystem
+object you can also put shadows into the project folder
+to create a virtual tree of files. When building the image
+the linked to files and folders are searched. Only one level
+of linkage is supported. That means shadows in
+shadow-folders or normal folders are ignored.
+You may choose to create only the CD image or write 
+directly on the CD. It's also possible to write an already
+created image on a CD using the folder GUI.
+
+
+Audio-CD-Creator:
+
+For burning an Audio-CD you have to create an Audio-CD
+folder. Just drag the template to the location where you
+want to create the folder. Put wave files or shadows of
+wave files into the folder and order them, then press
+'Write'. A tracklist window pops up for confirmation then
+CDRecord/2 is called with the right flags.
+If you've configured a grabber Audio-CD-Creator can use
+it to grab tracks directly into the folder. So it's also
+useful as a grabber frontend.  
+
+A special version of mpg123 ((c) M. Hipp) is included
+with this release. It allows you to write MP3s like wave files.
+Be sure to have enough space for the decoded MP3 in
+your Audio folder. Only one file will be decoded at time.
+At the moment only 44100 Hz stereo MP3s are supported.
+See the file COPYING.mpg123 for copyright of mpg123.
+If you only hear some noise on your CD check the
+'Swap bytes" check button on the mpg123 page of the
+settings notebook.
+With V0.41 and above there's support for dink's z! mp3 player.
+Thanks to dink for the special option! Use a version newer than
+17. June 2000. Get it from http://dink.org.
+With V0.46 and above z! is used for format query of MP3 when
+installed. You have to upgrade to the version 23.Feb2001 or above.
+
+There's now support for cover creation. If you select the
+menu item a REXX script will be created (back.cwx) which
+builds a P>G PRO project when launched. P>G Pro must
+be properly installed (Get it from http://hobbes.nmsu.edu
+(tspg202s.zip) and the key from http://www.truespectra.com).
+You may modify the base script back.cwx in the 'bin'
+directory which contains all the draw commands to fit your
+needs.
+
+You can put arbitrary objects into the Audio-CD folder, too.
+All these objects and files are ignored when calling
+CDRecord/2.
+The functionality of CDRTools is included into Audio-CD-
+Creator. There is a menu entry for calling the function.
+The CDRecord/2 setup and the grabber setup are done in the
+settings notebook. See the help for information.
+
+
+To do
+-----
+- check audio-discs for preemphasis
+- CDDB-support with proxies
+- NLS
+- ...
+
+
+How to get the source
+------------------
+Get the source from
+
+http://www.geocities.com/SiliconValley/Sector/5785/index.html
+http://www.os2world.com/cdwriting
+
+
+Credits
+------
+Thanks to
+
+-Klaus Staedtler for the icons, the improvement of
+ the tutorial and helpfile and fearless beta testing.
+-Arjen Meijer for creating the background pictures
+-M. Hipp for mpg123
+-Samuel Audet for his nice OS/2 port of mpg123. I only changed
+ a few lines to fix some problems with stdout, so all the credit belongs to him.
+-Christian Hennecke for several bugfixes to the install script
+-Alexander Wittig for some patches correcting problems with spaces and
+ the author name, preparer etc.
+-dink for adding some special options to z! (visit http://dink.org for more)
+-Christoph Kloeters for improvements to the P>G Pro cover scripts
+-Ron Gemeinhardt. I took the book icon from his Free-D Warp icons package (can be found on Hobbes).
+-all the users who sent in bug reports and feature requests.
+
+
+License
+------
+This Program is released under the
+Gnu Public License (GPL).
+See the file COPYING for further
+information.
+
+
+Author
+-----
+Chris Wohlgemuth
+
+http://www.geocities.com/SiliconValley/Sector/5785/index.html
+http://www.os2world.com/cdwriting
+
+

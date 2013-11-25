@@ -1,0 +1,38 @@
+# This is a comment
+
+# 1 is the App key for Audio-CD-Folder
+[1]
+# How many choices for the user
+numchoices 4
+# The first label
+choice1 Creating audio CDs
+# The second label
+choice2 Writing MP3 files
+choice3 Creating an audio sampler
+choice4 Copy a CD
+# The action after selection
+open1 TUTORIAL:creating audio CDs
+open2 TUTORIAL:MP3 writing
+open3 TUTORIAL:sampler
+open4 TUTORIAL:Copy CD
+# Enable=1
+enable 1
+# The text shown. Use the string 0Dx to insert carriage returns.
+hinttext Put wave files and MP3 files into this folder to burn them. You may also use shadows. Get more information by clicking one of the items below.
+
+
+#2 is the App key for Data-CD-Folder
+[2]
+numchoices 4
+choice1 Quick start
+choice2 Create data CDs
+choice3 Create ISO images
+choice4 Copy a CD
+open1 TUTORIAL:Quick start
+open2 TUTORIAL:Creating data
+open3 TUTORIAL:Creating ISO
+open4 TUTORIAL:Copy CD
+enable 1
+hinttext Put files and directories into this folder to burn them. You may also use shadows to create a virtual tree of files. 0Dx 0Dx Click one of the items below for more information.
+
+

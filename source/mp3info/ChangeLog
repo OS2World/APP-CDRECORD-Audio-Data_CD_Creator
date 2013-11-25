@@ -1,0 +1,140 @@
+2/3/97	Version 0.2.0beta1 Released
+	First public released version.
+
+3/3/97	Version 0.2.1 Released
+	Added -W to wipe TAG Info.
+	Added %I(n,a.etc) for what TAG Info is present.
+
+4/3/97	Added STD_BUF_LEN and FORMAT_LEN as defines instead of constants.
+	Started using jed as editor, all code properly indented. 
+	Help or hints with JED *MUCH* wanted. Is there a c-compiler interface?
+	Added the NOT IF and ELSE IF to the formatting string.
+
+5/3/97	Finally got a response from Sonny (lsm robot). Unfortunately the lsm
+	was wrong :)
+	Make mklsm to ease lsm updating.
+	Finally could upload to sunsite.
+
+6/3/97	Version 0.2.2 Released
+	Added -p to print the genres.
+	Fixed a minor bug in the man page.
+	Added -N to rename songs.
+
+7/3/97	Working on version 0.2.3
+	Fixed tagwipe() to return correctly.
+	Oooops.. All the header values are correct for MPEG 1s only.
+	Need info on header format of MPEG 2.5
+
+8/3/97	Added MPEG 2 decoding.
+	Removed -t and -h (Print TAG and Header, from v0.1)
+	Renamed all old n things (song name) to t (song title)
+	Added MPEG 2.5. I HOPE it's correct, as it's partly guesswork.
+	Fixed a VERY nasty bug in %F formatting. It was %d, not %f :)
+	Added 'make test' for use here. Made the errors more consistent.
+
+	Version 0.2.4 Released
+	Work began on 0.2.5
+
+12/3/97	Changed %F to use integers, not doubles.
+	Started on the play option. (mp3play.c)
+	-P implemented, to play.
+	Now sets fragment size to 4096, a much better value.
+	Added a 'wait for Enter' cheesy routine in the player.
+	Added support to use Jung woo-jae's splay incompiled.
+
+13/3/97	Converted the whole thing to C++.
+	Bugs will be present.
+
+16/3/97 Squashed one from mp3file.cc, forgot to set haslayer :)
+	Updated to use splay-0.2
+
+29/3/97 Fixed some minor bugs.
+	Added random playing. Fixed the l3dec player to handle sigs.
+
+4/6/97	Added some contributed patches.
+	Fixed splayer module to use splay-0.5
+	Compiles under glibc2 on Linux.
+	Updated genres to those from Studio 1.1
+
+6/6/97	Updated mp3splay to accept the signals.
+
+20/8/97	Updated to use splay-0.6
+	Fixed the genre-list to print in 3 columns
+	Included my playmp program
+
+13/9/97 Fixed a small bug when compiling without player (printf should
+	have been fprintf, thanks to Anders Due <due@dsbdata.dsb.dk>
+	for noticing this).
+	Adding more predefined formatting strings available by the
+	-F option. If anyone has other cool formats they want to share,
+        please send them.
+	Added optional option to -p to control how the genre list
+	is printed, primarily for use in scripts.
+	Added the 'mp3diag' script, which uses dialog to get a somewhat
+        more graphical userinterface.
+        Added %V and %A, fixed %L.
+	Released version 0.2.8
+
+21/9/97 Added support for ~/.mp3info.rc
+	Added a new default format and squashed a bug in the 'max number
+	of formats' checking.
+	Updated to use splay-0.8, I wish the format would stay the same.
+	Released version 0.2.9
+
+23/9/97 GPL'ed the whole thing.
+
+28/9/97 Fixed a bug in which files aren't closed, noticed by
+        "Henry T. So Jr." <henryso@panix.com>, also added his format
+        as a default one.
+	Also modified the renaming scheme, I HOPE it still works.
+	Added printf formatting options for width.
+	Added %A to get ANSI escape code.
+	Added fix to mp3diag from Andrea Borgia
+        <bab0069@iperbole.bologna.it>
+	Updated mp3diag to do a list of files, but causes dialog
+        to bug badly if the list is too wide :(
+
+1/10/97	Added %B for basename
+	Made 'rename' create directories if missing.
+	Released version 0.2.10
+
+5/10/97	Added -e to execute
+	Fixed minor bug in rename
+	Added mpclose() and renamed open to mpopen().
+	Made the default to have NO players active.
+	Released version 0.2.11
+
+7/1/98	Maintenance bugfix... Setting a tag on an file without
+	a tag will no longer evaluate to 'has no tag' in the
+	formatting.
+
+13/1/98	Fix for 'rename' when Artist or song title contained a
+	'/'. Reported by Brian Ristuccia <brianr@osiris.ml.org>.
+	Released 0.2.12
+
+19/1/98	Fixed the version detection, thanks to Brian Foutz
+        <foutz@anise.ee.cornell.edu>, for this.
+	Added option to set genre with -G "genrename", which
+	looks it up in the tables.
+	Released 0.2.13
+
+11/3/98	Fixed the case of 0xFFFF FFFF headers.
+
+ 7/4/98	Read 1024 bytes of header and scanned, to get around
+	the problem of MS RIFF headers.
+	Released 0.2.14
+
+10/4/98 Fixed the %IT parsing, since the copytag() was ALWAYS
+	done. Thanks to cedric stehlin <stehlin@hp1.esiea.fr>
+	for reporting this.
+	Released 0.2.15
+
+19/3/99	Added some genres, thanks to the BUNCH of people who
+	asked me for it and even provided patches.
+	Made it into an autoconf program.
+	Added mp3info.spec 
+	Released 0.2.16
+
+TODO:	Stupid 0.01 second sound hang at DSP_SYNC (l3dec playing).
+	Consider manually buffering output from l3dec.
+	Make rename COPY and DELETE the file if on another filesystem.

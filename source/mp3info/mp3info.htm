@@ -1,0 +1,211 @@
+<HTML><HEAD><TITLE>Manpage of mp3info</TITLE>
+</HEAD><BODY>
+<H1>mp3info</H1>
+Section: User Commands  (1)<BR>Updated: 13th January 1998<BR><A HREF="#index">Index</A>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+mp3info - MP3 Information tool
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>mp3info</B>
+
+[
+<B>-option</B>
+
+&lt;
+<B>value</B>
+
+&gt;
+]
+<B>filename[s]...</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+This is a small tool to get and set MP3 information.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-T </B>
+
+<DD>
+Do NOT get TAG Info. Use on slowseeking media, since TAG is at the very end of
+the file.
+<DT><B>-s &lt;0/1&gt;</B>
+
+<DD>
+Print info. Pretty much obsolete, as it always should be on.
+Defaults 1.
+<DT><B>-f &lt;format&gt;</B>
+
+<DD>
+Format of printed string. See README for details.
+<DT><B>-F &lt;Formatnumber&gt;</B>
+
+<DD>
+Predefined format of printed string. Try it out.
+<DT><B>-w</B>
+
+<DD>
+Write TAG Info. Will write a TAG at the end of the file.
+<DT><B>-W</B>
+
+<DD>
+Wipe TAG Info. Will wipe clean TAG Info. Overrides all other TAG Options,
+and turns -s off. To both wipe tag and display info, use 
+<B>-W -s 1</B>
+
+<DT><B>-n &lt;name&gt;</B>
+
+<DD>
+Set song title. Implies -w. Will go away soon, use -t instead.
+<DT><B>-t &lt;name&gt;</B>
+
+<DD>
+Set song title. Alias for -n. Implies -w.
+<DT><B>-a &lt;artist&gt;</B>
+
+<DD>
+Set name of artist. Implies -w.
+<DT><B>-l &lt;album&gt;</B>
+
+<DD>
+Set album name. Implies -w.
+<DT><B>-y &lt;year&gt;</B>
+
+<DD>
+Sets published year. Implies -w.
+<DT><B>-c &lt;comment&gt;</B>
+
+<DD>
+Sets comment. Implies -w.
+<DT><B>-g &lt;genre&gt;</B>
+
+<DD>
+Set genre number. Implies -w.
+<DT><B>-G &lt;genrename&gt;</B>
+
+<DD>
+Set genre by name. Implies -w.
+<DT><B>-p[format]</B>
+
+<DD>
+Prints all the genres in 3 columns (default or format 0), 1 column (format
+1) or 1 column without numbers (format 2). If you pass a negative format
+number, it will output something suitable for the dialog-using script. The
+negative format is primarily for internal use and is likely to change, so
+don't depend on it.
+<DT><B>-N &lt;format&gt;</B>
+
+<DD>
+Rename files according to format. Same format as -f. If this format expands
+to nothing, no rename will be done.
+<DT><B>-e &lt;format&gt;</B>
+
+<DD>
+Executes the command as made by format. If this expands to nothing, nothing
+will be done.
+<DT><B>-P[numthreads]</B>
+
+<DD>
+Plays file(s). Beta, and Linux only. If you compiled with splay and threads,
+you can specify the number of threads. If you used the l3dec player, you can
+send the player sighup and it will skip to the next file in the queue.
+<DT><B>-R</B>
+
+<DD>
+Enables random play.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURNS</H2>
+
+<DL COMPACT>
+<DT><B>0</B>
+
+<DD>
+All Ok
+<DT><B>1</B>
+
+<DD>
+Error opening file.
+<DT><B>2</B>
+
+<DD>
+No SYNC Found.
+<DT><B>3</B>
+
+<DD>
+Error writing TAG. (Disk full, maybe?)
+<DT><B>4</B>
+
+<DD>
+Error wiping TAG. (Shouldn't happen)
+<DT><B>5</B>
+
+<DD>
+Error renaming file.
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT><B>$HOME/.mp3info.rc</B>
+
+<DD>
+This file, if present, is used as the default format. This file can contain
+newlines and other special formatting characters if so desired.
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>BUGS</H2>
+
+Well, there are no known bugs, but if a list of files is specified, and handling one of them produces an error,
+the program goes on, and returns the LAST error produced.
+<A NAME="lbAI">&nbsp;</A>
+<H2>CREDITS</H2>
+
+ID3 format by NamkraD/DC (<A HREF="mailto:erick@marble.net">erick@marble.net</A>)
+<P>
+
+All the people who have sent me patches, comments and ideas
+<A NAME="lbAJ">&nbsp;</A>
+<H2>COPYRIGHT</H2>
+
+This program is released under GPL
+<A NAME="lbAK">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+<DL COMPACT><DT><DD>
+Thorvald Natvig
+<BR>
+
+<A HREF="mailto:thorvald@natvig.com">thorvald@natvig.com</A>
+<P>
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">RETURNS</A><DD>
+<DT><A HREF="#lbAG">FILES</A><DD>
+<DT><A HREF="#lbAH">BUGS</A><DD>
+<DT><A HREF="#lbAI">CREDITS</A><DD>
+<DT><A HREF="#lbAJ">COPYRIGHT</A><DD>
+<DT><A HREF="#lbAK">AUTHOR</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://localhost/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:40:00 GMT, June 03, 2000
+</BODY>
+</HTML>

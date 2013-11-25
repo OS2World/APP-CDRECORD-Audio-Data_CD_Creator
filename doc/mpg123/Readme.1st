@@ -1,0 +1,17 @@
+mpg123 0.59m for OS/2  (mpg123/2 0.11b)
+------------------------------------
+
+The included mpg123 is compiled from modified sources
+provided by Samuel Audet <guardia@cam.org>.
+I only changed stdout to binary and made sure all messages
+are going to stderr so decoding to stdout now works.
+It was no great deal so all the credits goe to the original
+authors. Get the source from my homepage at
+
+http://www.geocities.com/SiliconValley/Sector/5785/
+
+if you want to compile. It's included in the Audio-CD-Creator
+source tree.
+
+Chris Wohlgemuth
+

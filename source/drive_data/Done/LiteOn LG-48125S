@@ -1,0 +1,178 @@
+
+Hi Chris,
+
+nachfolgend die gewünschten Info's.
+Vielen Dank für Deine Mühe und 'keep on rockin'...
+
+Ein dankbarer Andwender
+Thomas
+
+PS: Ist bei dir was zum Thema DVD's brennen in der pipe?
+
+
+Gather the information
+----------------------
+The following bits of information are necessary. You may
+just insert it here when replying to this posting. If you
+have several working devices or a dedicated CD-ROM for
+grabbing include the information for all of your devices
+by duplicating the template below.
+
+
+1. The name of your writer as used in advertising.
+
+    Example: AOPEN CRW9624, Ricoh MP6200, Teac CD-532-E
+
+    Your writers name: LiteOn LG-48125S
+
+
+2. The features of your writer/CD-ROM. Use the following command to
+    capture the information (be sure to adapt the dev=... setting) in a
+    temporary file.
+
+            'cdrecord dev=x,y,z -prcap > out.txt'
+
+   File is attached.
+
+
+3. Does your writer support buffer underrun protection
+    (burnproof/burnsave/just-link/...)?
+
+   BURNFREE is supported
+
+4. Does your writer need the 'Sony multisession fix'?
+    (Setting on the General page 2)
+
+   No.
+
+5. Additional needed options for cdrecord when writing audio CDs
+    (if any).
+
+   sometimes -overburn to force cdrecord to overburn
+
+6. Additional needed options for cdrecord when writing data CDs (if any).
+
+   None.
+
+7. Writer or driver selection when using cdrdao. (cdrdao/2 page 1)
+
+    Example: (driver) cdd2600, AOPEN CRW9624
+
+    Your driver: generic-mmc-raw
+
+
+8. Additional options for cdrdao (if any). (cdrdao/2 page 1)
+   None.
+   
+9. Are you using cdrdao.exe coming with CD-Creator? If no please
+    specify the release you're using.
+   Yes.
+
+10. If you use different settings for 1:1 copy (source) please specify
+     them here. Include everything you find on that page and the cdrdao
+     release you're using. (cdrdao/2 page 2)
+    None.
+
+11. If you use different settings for 1:1 copy (target) please specify
+     them here. Include everything you find on that page and the cdrdao
+     release you're using. (cdrdao/2 page 3)
+    None:
+
+12. If you use mpg123 or MMIOMP3 for MP3 decoding, do you have to specify
+     'Swap bytes when writing'? (MP3 decoding page)
+    I've selected it, but don't ask me if that is a 'must'...
+
+13. Send the information to
+
+                  <adc-os2@cityweb.de>
+
+
+--------------040905050808040008070208
+Content-Type: text/plain;
+ name="out.txt"
+Content-Transfer-Encoding: 8bit
+Content-Disposition: inline;
+ filename="out.txt"
+
+Cdrecord 2.0 (i386-pc-os2_emx) Copyright (C) 1995-2002 Jörg Schilling
+Using libscg version 'schily-0.7'
+Device type    : Removable CD-ROM
+Version        : 2
+Response Format: 2
+Capabilities   : 
+Vendor_info    : 'LITE-ON '
+Identifikation : 'LTR-48125S      '
+Revision       : '1S07'
+Device seems to be: Generic mmc CD-RW.
+
+Drive capabilities, per MMC-3 page 2A:
+
+  Does read CD-R media
+  Does write CD-R media
+  Does read CD-RW media
+  Does write CD-RW media
+  Does not read DVD-ROM media
+  Does not read DVD-R media
+  Does not write DVD-R media
+  Does not read DVD-RAM media
+  Does not write DVD-RAM media
+  Does support test writing
+
+  Does read Mode 2 Form 1 blocks
+  Does read Mode 2 Form 2 blocks
+  Does read digital audio blocks
+  Does restart non-streamed digital audio reads accurately
+  Does support Buffer-Underrun-Free recording
+  Does read multi-session CDs
+  Does read fixed-packet CD media using Method 2
+  Does not read CD bar code
+  Does read R-W subcode information
+  Does not return R-W subcode de-interleaved and error-corrected
+  Does read raw P-W subcode data from lead in
+  Does return CD media catalog number
+  Does return CD ISRC information
+  Does support C2 error pointers
+  Does not deliver composite A/V data
+
+  Does play audio CDs
+  Number of volume control levels: 255
+  Does support individual volume control setting for each channel
+  Does support independent mute setting for each channel
+  Does not support digital output on port 1
+  Does support digital output on port 2
+  Does not send digital data LSB-first
+  Does not set LRCK high for left-channel data
+  Does not have valid data on falling edge of clock
+  Length of data in BCLKs: 16
+
+  Loading mechanism type: tray
+  Does support ejection of CD via START/STOP command
+  Does not lock media on power up via prevent jumper
+  Does allow media to be locked in the drive via PREVENT/ALLOW command
+  Is not currently in a media-locked state
+  Does not support changing side of disk
+  Does not have load-empty-slot-in-changer feature
+  Does not support Individual Disk Present feature
+
+  Maximum read  speed:  8448 kB/s (CD  48x, DVD  6x)
+  Current read  speed: 22000 kB/s (CD 125x, DVD 15x)
+  Maximum write speed:  8448 kB/s (CD  48x, DVD  6x)
+  Current write speed:     0 kB/s (CD   0x, DVD  0x)
+  Rotational control selected: CLV/PCAV
+  Buffer size in KB: 2048
+  Copy management revision supported: 0
+  Number of supported write speeds: 10
+  Write speed # 0:  8448 kB/s CLV/PCAV (CD  48x, DVD  6x)
+  Write speed # 1:  7040 kB/s CLV/PCAV (CD  40x, DVD  5x)
+  Write speed # 2:  5632 kB/s CLV/PCAV (CD  32x, DVD  4x)
+  Write speed # 3:  4224 kB/s CLV/PCAV (CD  24x, DVD  3x)
+  Write speed # 4:  2816 kB/s CLV/PCAV (CD  16x, DVD  2x)
+  Write speed # 5:  2112 kB/s CLV/PCAV (CD  12x, DVD  1x)
+  Write speed # 6:  1760 kB/s CLV/PCAV (CD  10x, DVD  1x)
+  Write speed # 7:  1408 kB/s CLV/PCAV (CD   8x, DVD  1x)
+  Write speed # 8:   704 kB/s CLV/PCAV (CD   4x, DVD  0x)
+  Write speed # 9:   352 kB/s CLV/PCAV (CD   2x, DVD  0x)
+
+--------------040905050808040008070208--
+
+

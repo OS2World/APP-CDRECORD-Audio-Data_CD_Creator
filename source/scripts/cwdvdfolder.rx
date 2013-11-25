@@ -1,0 +1,336 @@
+/* rexx -  Default REXX script handling folder callbacks of
+           the data creator folder */
+
+call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs'
+call SysLoadFuncs
+
+/* Uncomment if you don't want to have a tool bar */
+/* WANTTOOLBAR=NO */
+
+/*theString=ARG(1)||' !! '||ARG(2)||' !! '||ARG(3)||' !! '||ARG(4)
+*/
+
+WC_BUTTON=ffff0003
+WC_STATIC=ffff0005
+WC_ENTRYFIELD=ffff0006
+WC_MLE=ffff000A
+
+NUMBUTTONS=9
+idEntry=NUMBUTTONS+1
+
+FOLDER_MIN_SIZE_Y=200
+
+	SIGNAL ON SYNTAX NAME errorHandler
+	SIGNAL ON ERROR NAME errorHandler
+	SIGNAL ON FAILURE NAME errorHandler
+
+NUMERIC DIGITS 15 /* We need this for caculating with hex numbers */
+
+theObject=ARG(2)
+
+SELECT
+WHEN ARG(1)="/OBJECTINFO" THEN DO
+	/* Get title of object */
+	theString="<h1>"||TRANSLATE(WPSWizCallWPSFunc("wpQueryTitle", theObject), ' ',D2C(10) )||"</h1>"
+
+	/* Find object info in ini */
+	PARSE SOURCE . . theScript
+	iniPath=getIni()
+	call getNLS
+	theId=WPSWizCallWPSFunc("wpQueryObjectID", theObject)
+	if theId\="(null)" THEN DO
+		iniValue=SysIni(iniPath, theId, "hint")
+		if iniValue\="ERROR:" then DO
+			iniValue=TRANSLATE(iniValue, ' ',D2C(10) )
+			theString=theString||"<p>"||iniValue||"</p>"
+			EXIT theString||" "
+		END
+	END
+	EXIT theString||" "
+END
+WHEN ARG(1)="/FOLDERINFO" THEN DO
+	PARSE SOURCE . . theScript
+
+	theString="<h1>"||TRANSLATE(WPSWizCallFunc("cwQueryRealName", ARG(2), 0), ' ',D2C(10) )||"</h1>"
+
+	iniPath=getIni()
+	call getNLS
+	/* Find object info in ini */
+	theId=WPSWizCallWPSFunc("wpQueryObjectID", theObject)
+	if theId\="(null)" THEN DO
+		iniValue=SysIni(iniPath, theId, "hint")
+		if iniValue\="ERROR:" then DO
+			iniValue=TRANSLATE(iniValue, ' ',D2C(10) )
+			theString=theString||"<p>"LEFT(iniValue,LENGTH(iniValue)-1)||"</p><hr>"
+		END
+	END
+	/* Add folder actions for this folder */
+	theString=theString||"<p>"||nls._dcdcreator||"</p>"
+	theString=theString||"<9 1><p><a 2>"||nls._cdwriting||"</a></p>"
+	theString=theString||"<p><a 4>"||nls._adctutorial||"</a></p><10>"
+	theString=theString||"<p>"||nls._howdoi||"</p>"
+	theString=theString||"<9 1><p><a 5>"||nls._createdata||"</a></p>"
+	theString=theString||"<p><a 6>"||nls._createiso||"</a></p><10><hr>"
+
+	theString=theString||"<9 1><p><a 1>"||nls._drives||"</a></p><10><hr>"
+
+	DROP nls.
+/*  call rxmessagebox theString */
+
+	EXIT theString" "
+END
+WHEN ARG(1)="/INFOWINDOWEVENT" THEN DO
+    /* This callback is called with only 3 parameters!
+ 
+    ARG(1): The callback indentifier. In this case /INFOWINDOWEVENT
+    ARG(2): The object pointer
+    ARG(3): Deafult return code
+    ARG(4): A composite argument
+
+    */
+	PARSE SOURCE . . theScript
+	PARSE VALUE ARG(4) WITH cmd id hwndInfo hwndFrame
+	/* cmd: the event. Currently only COMMAND 
+	   id:  id of the link which caused the event
+           hwnd: window handle of window holding the info text with the link
+           hwndFrame: frame handle of the folder
+	*/
+
+	iniPath=getIni()
+	call getNLS
+
+	SELECT
+	WHEN id=1 then call sysSetObjectData "<WP_DRIVES>", "OPEN=DEFAULT"
+
+	WHEN id=2 then call sysSetObjectData "<CD_WRITING>", "OPEN=DEFAULT"
+
+	WHEN id=3 then call sysSetObjectData "<WPSWIZ_FOLDER>", "OPEN=DEFAULT"
+	WHEN id=4 then call sysSetObjectData "<CWCREATOR_TUTORIAL>", "OPEN=DEFAULT"
+	WHEN id=5 then DO
+		call getClass "CWDATAFOLDER"
+		if found=1 THEN DO
+			tutorial=FILESPEC("drive", thePath)||FILESPEC("path", thePath)||"help\tutorial.inf"
+			ADDRESS CMD 'start view '||tutorial||" "||nls._cdcchapter
+		END
+	END
+	WHEN id=6 then DO
+		call getClass "CWDATAFOLDER"
+		if found=1 THEN DO
+			tutorial=FILESPEC("drive", thePath)||FILESPEC("path", thePath)||"help\tutorial.inf"
+			ADDRESS CMD 'start view '||tutorial||" "||nls._cisochapter
+		END
+	END
+	OTHERWISE
+		NOP
+	END
+
+END
+WHEN ARG(1)="/TOOLBAREVENT" THEN DO
+	/* An event from the folder tool bar */
+
+    /* This callback is called with only 3 parameters!
+ 
+    ARG(1): The callback indentifier. In this case /TOOLBAREVENT
+    ARG(2): The object pointer
+    ARG(3): A composite argument
+
+    */
+
+	PARSE VALUE ARG(3) WITH cmd id hwnd hwndFrame
+	/* cmd: the event. Currently only COMMAND 
+	   id:  id of the window (button) which caused the event
+           hwnd: window handle of window 'id'
+           hwndFrame: frame handle of the folder with this toolbar
+	*/
+/*
+if cmd="COMMAND" THEN DO
+	SELECT
+	WHEN id=9 THEN /* Open system configuration */
+		ret=SysSetObjectData("<WP_CONFIG>", "OPEN=DEFAULT")
+	OTHERWISE
+		EXIT(0)
+	END
+END
+*/
+        EXIT(0)
+END
+WHEN ARG(1)="/OPENFOLDER" THEN DO 	/* The folder just opened */
+
+	if WANTTOOLBAR=NO THEN 	EXIT(0)
+
+	/* Get the currently running script */
+	PARSE SOURCE . . rxfile
+	/* Build the res dir from the script location. The res dir contains icons for the tool bar buttons */
+	theDir=FILESPEC("d",rxFile)||FILESPEC("p",rxFile) /* Get base dir (x:\...\base\bin\) */
+	theDir=LEFT(theDir, LENGTH(theDir)-1)             /* remove last backslash (x:\...\base\bin) */
+	theDir=FILESPEC("d",theDir)||FILESPEC("p",theDir)||"res\" /* Add res dir to base path: (x:\...\base\res\) */
+
+	PARSE VALUE ARG(4) WITH hwndFrame ulView
+
+	/* Size folder so toolbar fits */
+	PARSE VALUE WPSWizCallWinFunc("winQueryWindowPos", hwndFrame) WITH x y cx cy rest
+
+	if cy<FOLDER_MIN_SIZE_Y then
+		ret=WPSWizCallWinFunc("winSetWindowPos", hwndFrame, 0, x, y-FOLDER_MIN_SIZE_Y+cy, cx, FOLDER_MIN_SIZE_Y, 3)
+
+	/* Call folder method to add tool bar */
+	hwndToolbar=WPSWizCallFunc("wizAddToolBar", ARG(2), hwndFrame, 36, rxfile)
+
+	/* Create some toolbars */
+	/* Default WPS-wizard folder action toolbar */
+	winData.0=6
+	winData.1=hwndToolbar    /* Parent window */
+	winData.2=hwndToolbar    /* Owner  */
+	winData.3=0                             /* x      */
+	winData.4=0                             /* y      */
+	winData.5=36                            /* width  */
+	winData.6=36                            /* height */
+	rc=WPSWizCallFunc("cwCreateLaunchArea",  ARG(2), "winData." , 1, "<CWCREATOR_DVDFLDRACTION>")
+	PARSE VAR rc hwndLA object
+
+	if hwndLA<>0 THEN
+		rc=WPSWizCallWinFunc("winShowWindow", hwndLA , 1)
+
+
+	xPos=500
+	winData.0=6
+	winData.1=hwndToolbar    /* Parent window */
+	winData.2=hwndToolbar    /* Owner  */
+	winData.4=0                             /* y      */
+	winData.5=36                            /* width  */
+	winData.6=36                            /* height */
+
+	rc=WPSWizCallFunc("cwQueryRealName", object , 1)
+	IF rc<>"ERROR:" THEN DO
+		iniPath=rc||'\objects.ini'
+		rc=SysIni(iniPath, "objects", "handles")
+		IF rc<>"ERROR:" THEN DO
+			numButtons=LENGTH(rc)/4 /* Every handle is 4 bytes */
+			/* Move launchpad to the right */
+			xPos=numButtons*36 + 50
+		END
+	END
+	winData.3=xPos                         /* x      */
+
+	rc=WPSWizCallFunc("cwCreateLaunchArea",  ARG(2), "winData." , 0, "<CWCREATOR_DEFLAUNCHPAD>")
+	PARSE VAR rc hwndLA object
+
+	if hwndLA<>0 THEN
+		rc=WPSWizCallWinFunc("winShowWindow", hwndLA , 1)
+
+
+	rc=WPSWizCallFunc("cwQueryRealName", object , 1)
+	IF rc<>"ERROR:" THEN DO
+		iniPath=rc||'\objects.ini'
+		rc=SysIni(iniPath, "objects", "handles")
+		IF rc<>"ERROR:" THEN DO
+			numButtons=LENGTH(rc)/4 /* Every handle is 4 bytes */
+			/* Move launchpad to the right */
+			xPos=xPos+numButtons*36 + 50
+		END
+	END
+	winData.3=xPos                         /* x      */
+
+	/* Default WPS-wizard folder launchpad */
+	winData.0=6
+	winData.1=hwndToolbar    /* Parent window */
+	winData.2=hwndToolbar    /* Owner  */
+	winData.4=0                             /* y      */
+	winData.5=36                            /* width  */
+	winData.6=36                            /* height */
+	rc=WPSWizCallFunc("cwCreateLaunchArea",  ARG(2), "winData." , 0, "<WPSWIZ_FLDRLAUNCHPAD>")
+	PARSE VAR rc hwndLA object
+
+	if hwndLA<>0 THEN
+		rc=WPSWizCallWinFunc("winShowWindow", hwndLA , 1)
+
+
+	EXIT(0)
+END
+WHEN ARG(1)="/FOLDEROPENED" THEN DO
+	/* This is called when the folder is opened and fully populated. That means all objects are awake */
+	PARSE VALUE ARG(4) WITH hwndFrame ulView .
+
+	/* Query folder size */
+	PARSE VALUE WPSWizCallWinFunc("winQueryWindowPos", hwndFrame) WITH x y cx cy rest
+	
+	/* Check for XFolder statusbar */
+	hwndBar=WPSWizCallWinFunc("winWindowFromID", hwndFrame, 36865)
+
+	if hwndBar\=0 THEN DO
+		PARSE VALUE WPSWizCallWinFunc("winQueryWindowPos", hwndBar) WITH . . . cy3 rest
+		cy2=cy3+FOLDER_MIN_SIZE_Y
+	END
+	ELSE
+		cy2=FOLDER_MIN_SIZE_Y
+
+	if cy2<cy then EXIT(0)
+
+	/* First opening of folder. Scroll objects down. They moved out of sight 
+           because of the toolbar. */
+	rc=WPSWizCallWinFunc("winSendMsg", hwndFrame , 49 ,  x2D(7ff9), x2D(30000))	/* WM_VSCROLL / SB_PAGEUP */
+	/* Prevent second scrolling */
+	WPSWizCallWinFunc("winSetWindowPos", hwndFrame, 0, x, y, cx, cy+1, 1)
+	EXIT(0)
+
+END
+OTHERWISE
+	return ARG(3)
+END
+
+/************************/
+getIni:
+
+iniPath=FILESPEC("drive",theScript)||FILESPEC("path", theScript)
+iniPath=LEFT(iniPath, LENGTH(iniPath)-1)
+
+iniPath=FILESPEC("drive",iniPath)||FILESPEC("path", iniPath)
+
+return iniPath||"help\hint.ini"
+
+/*************************/
+getClass:
+
+	found=0
+	ret=SysQueryClassList('classes.')
+	DO cls=1 to classes.0
+		theclass=WORD(classes.cls, 1)
+		thePath=SUBWORD(classes.cls, 2)
+		IF TRANSLATE(theClass)=TRANSLATE(ARG(1)) THEN DO
+			found=1	
+			LEAVE
+		END
+	END
+return
+
+
+/*************************/
+errorHandler:
+	PARSE SOURCE . . theScript
+
+	ret=WPSWizGadgetFunc("cwDisplayRexxError", "")
+	ret=WPSWizGadgetFunc("cwDisplayRexxError", theScript||": ")
+	ret=WPSWizGadgetFunc("cwDisplayRexxError", "Error in line "||SIGL||":")
+	ret=WPSWizGadgetFunc("cwDisplayRexxError", "")
+
+DO lp = -4 to 4
+		ret=WPSWizGadgetFunc("cwDisplayRexxError", SIGL+lp||": "||SOURCELINE(SIGL+lp))
+END
+exit(0)
+
+
+/****/
+getNLS:
+
+nls._drives=SysIni(iniPath, "nls", "drives")
+nls._cdwriting=SysIni(iniPath, "nls", "cdwriting")
+nls._adctutorial=SysIni(iniPath, "nls", "adctutorial")
+nls._dcdcreator=SysIni(iniPath, "nls", "dcdcreator")
+nls._howdoi=SysIni(iniPath, "nls", "howdoi")
+nls._createdata=SysIni(iniPath, "nls", "createdata")
+nls._cdcchapter=SysIni(iniPath, "nls", "cdcchapter") /* The chapter in the tutorial */
+nls._createiso=SysIni(iniPath, "nls", "createiso")
+nls._cisochapter=SysIni(iniPath, "nls", "cisochapter") /* The chapter in the tutorial */
+
+return
+

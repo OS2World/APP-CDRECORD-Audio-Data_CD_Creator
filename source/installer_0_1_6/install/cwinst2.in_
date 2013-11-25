@@ -1,0 +1,49 @@
+[APPLICATION]
+NAME Generic installer
+VERSION 0.1.6.0
+COPYRIGHT (c) C. Wohlgemuth
+HOME http://www.geocities.com/SiliconValley/Sector/5785/
+INTERNALNAME CWINST
+TOTALSIZE 211254
+INSTALLER 0.1.0.0
+DESCRIPTION This is a generic installer. It supports file copying, WPS classes, WPS objects, changes to the config.sys, INI file changes and complete deinstallation.
+
+[DESCRIPTION]
+DESCRIPTION  This is a generic installer. It supports file copying, WPS classes, WPS objects, changes to the config.sys, INI file changes and complete deinstallation.
+
+[LICENSE]
+FILE install\COPYING
+
+[FILES]
+cwinst2.in_, %TARGET%\ ,  F,  1856
+install.EXE, %TARGET%\ ,  F,  162706
+install\COPYING, %TARGET%\ ,  F,  1604
+install\cwinst.in_, %TARGET%\ ,  F,  835
+install\drive.BMP, %TARGET%\ ,  F,  782
+install\folder.BMP, %TARGET%\ ,  F,  786
+install\geninst.dll, %TARGET%\ ,  F,  27443
+install\INSTALL.ICO, %TARGET%\ ,  F,  3344
+install\INSTFLD2.ICO, %TARGET%\ ,  F,  3344
+install\INSTFOLD.ICO, %TARGET%\ ,  F,  3344
+install\repclass.exe, %TARGET%\ ,  F,  2641
+install\unlock.exe, %TARGET%\ ,  F,  2569
+
+[OBJECTS]
+Generic Installerõ,õ <CWINST_FOLDER>õ,õ WPFolderõ,õ <WP_DESKTOP>õ,õ õ,õ update
+Installation/Deinstallationõ,õ <CWINST_PROGRAM>õ,õ WPProgramõ,õ <CWINST_FOLDER>õ,õ EXENAME=%TARGET%\install.exe;ASSOCFILTER=*.insõ,õ update
+Installation/Deinstallationõ,õ <CWINST_PROGRAMSHADOW>õ,õ WPShadowõ,õ <WP_CONFIG>õ,õ SHADOWID=<CWINST_PROGRAM>õ,õ update
+
+[UPDATEOBJECTS]
+<CWINST_PROGRAM>õ,õ ICONFILE=%TARGET%\install\install.ico
+<CWINST_FOLDER>õ,õ ICONFILE=%TARGET%\install\instFOLD.ico
+<CWINST_FOLDER>õ,õ ICONNFILE=1,%TARGET%\install\instFLD2.ico
+
+[DEFAULTTARGET]
+PATH %APPS%\cwinst
+
+[INI]
+USER õ,õ cwinst õ,õ version õ,õ 0.1.6.0 õ,õ YES
+USER õ,õ cwinst õ,õ instdir õ,õ %TARGET% õ,õ YES
+USER õ,õ cwinst õ,õ status õ,õ minimal õ,õ YES
+
+

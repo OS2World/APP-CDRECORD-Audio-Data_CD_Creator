@@ -1,0 +1,623 @@
+; audiofolder.rc: Resource file for aucdfldr.dll (Audio-CD-Creator)
+;
+;                    (C) Chris Wohlgemuth 1999
+;/*
+; * This program is free software; you can redistribute it and/or modify
+; * it under the terms of the GNU General Public License as published by
+; * the Free Software Foundation; either version 2, or (at your option)
+; * any later version.
+; *
+; * This program is distributed in the hope that it will be useful,
+; * but WITHOUT ANY WARRANTY; without even the implied warranty of
+; * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; * GNU General Public License for more details.
+; *
+; * You should have received a copy of the GNU General Public License
+; * along with this program; see the file COPYING.  If not, write to
+; * the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+; */
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "audiofolderres.h"
+
+DLGTEMPLATE IDDLG_CHECKSTATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "On the fly CD screiben", IDDLG_CHECKSTATUS, 112, 103, 243, 87, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "", 2605, 9, 64, 224, 22
+        CTEXT           "Screibe CD on the fly", IDST_ACTIONTEXT, 38, 69, 
+                        168, 8, DT_VCENTER | NOT WS_GROUP
+        LISTBOX         IDLB_CHECKSTATUS, 9, 22, 222, 38
+        PUSHBUTTON      "Abbruch", IDPB_ABORTWRITE, 90, 4, 61, 14
+        PUSHBUTTON      "Ok", IDPB_STATUSOK, 90, 4, 61, 14
+        CONTROL         "", IDSR_PERCENT, 9, 5, 222, 12, WC_STATIC, 
+                        SS_FGNDRECT | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDDLG_MKISOFSMAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDDLG_MKISOFSMAIN, 145, 67, 109, 163, NOT FS_DLGBORDER | NOT 
+            WS_SAVEBITS
+    BEGIN
+        GROUPBOX        "Creation", 1603, 7, 67, 96, 79
+        PUSHBUTTON      "CD-Einstellungen...", IDPB_MKISOFSSETTINGS, 21, 75, 68, 
+                        14
+        AUTORADIOBUTTON "Nur Image erstellen", IDRB_IMAGEONLY, 12, 125, 89, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Nur Schreiben", IDRB_WRITEIMAGE, 12, 111, 89, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "On the fly", IDRB_ONTHEFLY, 12, 96, 89, 10, 
+                        WS_TABSTOP
+        AUTOCHECKBOX    "Dummy", IDCB_DUMMY, 9, 26, 67, 10, WS_GROUP | NOT 
+                        WS_TABSTOP
+        PUSHBUTTON      "Image erstellen", IDPB_CREATE, 22, 9, 66, 14
+        PUSHBUTTON      "CD brennen", IDPB_WRITECD, 27, 9, 57, 14
+        PUSHBUTTON      "Grî·e prÅfen", IDPB_CHECKSIZE, 25, 45, 60, 14
+    END
+END
+
+DLGTEMPLATE IDDLG_SHOWTITLES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Create Audio-CD", IDDLG_SHOWTITLES, 98, 67, 318, 169, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LISTBOX         IDLB_TRACKLIST, 11, 30, 295, 103
+        DEFPUSHBUTTON   "OK", IDPB_OK, 11, 7, 47, 14
+        PUSHBUTTON      "Cancel", IDPB_CANCEL, 70, 7, 47, 14
+        LTEXT           "Die folgenden Tracks schreiben?", IDST_TEXT1, 11, 153, 
+                        152, 8
+        LTEXT           "Gesamtgrî·e: 0 Bytes", IDST_TOTALSIZE, 11, 138, 135, 
+                        8
+        LTEXT           "Spieldauer: ", IDST_TOTALTIME, 153, 138, 152, 8
+    END
+END
+
+DLGTEMPLATE IDDLG_CDRECORDSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Setup", IDDLG_CDRECORDSETUP, 0, 0, 226, 150, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        CONTROL         "", IDLB_WRITERLETTER, 121, 90, 32, 51, WC_COMBOBOX, 
+                        CBS_DROPDOWN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+
+        LTEXT           " CD-Record Pfad: ", IDPB_WIDERRUFEN, 13, 109, 104, 
+                        10
+        ENTRYFIELD      "", IDEF_CDRECORDPATH, 19, 97, 132, 8, ES_MARGIN
+        PUSHBUTTON      " Suchen... ", IDPB_CDRECORDBROWSE, 159, 94, 52, 14
+        ENTRYFIELD      "", IDEF_CDRECORDOPTIONS, 19, 66, 187, 8, ES_MARGIN
+        AUTOCHECKBOX    "Verdeckt starten", IDCB_CDRSTARTHIDDEN, 17, 46, 191, 10
+        AUTOCHECKBOX    "Fenster nach Beendigung schlie·en", IDCB_CDRCLOSEWINDOW, 17, 32, 
+                        191, 10
+        PUSHBUTTON      "Widerrufen", IDPB_WIDERRUFEN, 15, 9, 53, 14
+        PUSHBUTTON      "Hilfe", IDPB_CDRECORDHELP, 95, 9, 53, 14, BS_HELP
+        LTEXT           " Enter the CDRecord/2 options i.e. dev=N,N,N", 307, 
+                        13, 79, 203, 8, NOT WS_GROUP
+        LTEXT           " Laufwerk:", 309, 13, 130, 88, 11, DT_VCENTER
+    END
+END
+
+
+DLGTEMPLATE ID_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", ID_DIALOG, 145, 64, 130, 122, NOT FS_DLGBORDER | NOT 
+            WS_SAVEBITS
+    BEGIN
+        PUSHBUTTON      "Brennen", IDPB_BURN, 42, 7, 40, 14
+        GROUPBOX        "Schreib-Optionen", 101, 16, 33, 93, 74
+        AUTOCHECKBOX    "Pad", IDCB_PAD, 24, 86, 64, 10
+        AUTOCHECKBOX    "Nicht Fixieren", IDCB_NOFIX, 24, 73, 69, 10
+        AUTOCHECKBOX    "Preemp.", IDCB_PREEMP, 24, 60, 60, 10
+        AUTOCHECKBOX    "Dummy", IDCB_DUMMY, 24, 38, 60, 10
+    END
+END
+
+DLGTEMPLATE IDDLG_CDRTOOLS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "CD-R/W-Tools", IDDLG_CDRTOOLS, 99, 21, 241, 210, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "CD-RW lîschen", 101, 15, 143, 204, 57
+        AUTORADIOBUTTON " Schnelles Lîschen ", RBID_FAST, 29, 180, 88, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " Alles", RBID_ALL, 29, 170, 88, 10, WS_TABSTOP
+        AUTORADIOBUTTON " Letzte Session ", RBID_LASTSESSION, 29, 160, 88, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " Letzte Session wieder îffnen ", RBID_UNCLOSE, 29, 150, 110, 
+                        10, WS_TABSTOP
+        PUSHBUTTON      " Lîschen ", PBID_BLANK, 159, 155, 40, 14
+        GROUPBOX        "CD abschlie·en", 108, 16, 96, 204, 42
+        PUSHBUTTON      " Abschlie·en ", PBID_FIX, 161, 103, 40, 14
+        LTEXT           " Warning! You can't append ", 110, 22, 117, 125, 8
+        LTEXT           " data to a fixed disk!", 111, 22, 105, 111, 8
+        GROUPBOX        "Sonstiges", 112, 15, 35, 204, 56
+        AUTORADIOBUTTON " CD laden ", RBID_LOADDISK, 29, 71, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " CD auswerfen ", RBID_UNLOADDISK, 29, 61, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON " Reset Brenner ", RBID_RESETDEVICE, 29, 51, 75, 10, 
+                        WS_TABSTOP
+        PUSHBUTTON      " AusfÅhren ", PBID_MISC, 160, 51, 40, 14
+        PUSHBUTTON      " Ende ", PBID_EXIT, 180, 9, 40, 14
+        AUTOCHECKBOX    " Dummy ", CBID_DUMMY, 160, 172, 53, 10
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        AUTOCHECKBOX    " Dummy ", CBID_FIXDUMMY, 161, 120, 53, 10
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+       ; PUSHBUTTON      "Settings", PBID_SETTINGS, 16, 9, 45, 14
+        AUTORADIOBUTTON " Inhaltsverzeichnis (TOC)", RBID_SHOWTOC, 29, 41, 129, 10, 
+                        WS_TABSTOP
+    END
+END
+      
+ICON ID_ICONAUDIOFOLDER "audiofolder.ico"
+;ICON ID_ICONWAVEFILE "WAVEFILE.ico"
+;ICON ID_ICONCDRDISK   "cdrdisk.ico"
+
+DLGTEMPLATE IDDLG_ABOUT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About *-CD-Creator", IDDLG_ABOUT, 89, 78, 208, 115, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "Ok", DID_OK, 83, 9, 40, 14
+        CTEXT           "Audio-CD-Creator V0.32", -1, 9, 95, 186, 12, 
+                        DT_VCENTER
+        CTEXT           "Data-CD-Creator V0.12", 352, 9, 81, 186, 12, 
+                        DT_VCENTER
+        CTEXT           "(C) Chris Wohlgemuth 1999", IDCB_CDRSTARTHIDDEN, 10, 
+                        60, 186, 12, DT_VCENTER
+        ICON            ID_ICONAUDIOFOLDER, ID_ICONWAVEFILE, 93, 30, 0, 0
+    END
+END
+
+DLGTEMPLATE IDDLG_GRABDIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDDLG_GRABDIALOG, 125, 10, 130, 166, NOT FS_DLGBORDER | NOT 
+            WS_SAVEBITS
+    BEGIN
+        PUSHBUTTON      "Grab", IDPB_GRAB, 44, 3, 40, 14
+        GROUPBOX        "Tracks", 101, 1, 23, 127, 135
+        PUSHBUTTON      "Select all", IDPB_SELECTALL, 36, 136, 57, 14
+        LISTBOX         IDLB_GRABTRACKS, 4, 45, 120, 89, LS_MULTIPLESEL | 
+                        LS_HORZSCROLL
+        PUSHBUTTON      "Refresh", IDPB_REFRESH, 44, 27, 40, 14
+    END
+END
+
+
+DLGTEMPLATE IDDLG_SELECTDLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDDLG_SELECTDLG, 110, 159, 273, 16, NOT FS_DLGBORDER
+    BEGIN
+        AUTORADIOBUTTON "Schreiben", IDRB_WRITE, 4, 3, 49, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Grabben", IDRB_GRAB, 49, 3, 44, 10, WS_TABSTOP
+        ENTRYFIELD      "", IDEF_TRACKNAME, 167, 4, 87, 8, ES_MARGIN
+        RTEXT           "Dateiname:", IDST_TRACKNAME, 103, 4, 58, 8, 
+                        DT_VCENTER
+    END
+END
+
+DLGTEMPLATE IDDLG_GRABBERSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Grabber Setup", IDDLG_GRABBERSETUP, 69, 46, 226, 153, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTROL         "", IDLB_DROPDOWN, 117, 87, 32, 51, WC_COMBOBOX, 
+                        CBS_DROPDOWN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        LTEXT           " Grabber Pfad: ", 301, 13, 104, 104, 10
+        ENTRYFIELD      "", IDEF_GRABBERPATH, 18, 90, 132, 8, ES_MARGIN
+        PUSHBUTTON      "Suchen...", IDPB_GRABBERBROWSE, 158, 87, 52, 14
+        ENTRYFIELD      "", IDEF_GRABBEROPTIONS, 19, 53, 187, 8, ES_MARGIN
+        AUTOCHECKBOX    "Add track numbers", IDCB_TRACKNUMBERS, 19, 33, 142, 
+                        10
+        PUSHBUTTON      "Widerrufen", IDPB_GRABBERUNDO, 18, 8, 53, 14
+        PUSHBUTTON      "Hilfe", IDPB_GRABBERHELP, 97, 8, 53, 14, BS_HELP
+        LTEXT           " Enter the Grabber options", 307, 13, 69, 203, 8
+        LTEXT           " Source CD-Rom drive", 803, 13, 129, 103, 8
+    END
+END
+
+
+DLGTEMPLATE IDDLG_GRABSTATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Track grabbing status", IDDLG_GRABSTATUS, 105, 97, 129, 32, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR | FCF_TASKLIST
+    BEGIN
+        GROUPBOX        "", 901, 4, 16, 121, 16
+        LTEXT           "Grabbing track 1 of 4", IDST_GRABSTATUS, 6, 18, 112, 
+                        8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "Abbrechen", IDPB_BREAK, 4, 2, 33, 11
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+;        PUSHBUTTON      "Abort", IDPB_ABORT, 41, 2, 33, 11
+;                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Hilfe", IDPB_HELP, 93, 2, 33, 11, BS_HELP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE IDDLG_WRITESTATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Track writing status", IDDLG_WRITESTATUS, 123, 117, 129, 32, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "", 901, 4, 16, 121, 16
+        LTEXT           "Schreibe Track 0 von 0", IDST_WRITESTATUS, 6, 18, 112, 
+                        8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "Abbrechen", IDPB_WRITEBREAK, 4, 2, 33, 11
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Hilfe", IDPB_WRITEHELP, 93, 2, 33, 11, BS_HELP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE IDDLG_STATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Status Dialog", IDDLG_STATUS, 147, 140, 148, 9, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "Total time: 0 min 0 sec", IDST_STATUSTOTALTIME, 3, 
+                        0, 438, 8, DT_VCENTER
+    END
+END
+
+DLGTEMPLATE IDDLG_MKISOFSSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Mkisofs Setup", IDDLG_MKISOFSSETUP, 69, 46, 226, 153, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           " Mkisofs path: ", -1, 13, 116, 104, 10
+        ENTRYFIELD      "", IDEF_MKISOFSPATH, 19, 105, 132, 8, ES_MARGIN
+        PUSHBUTTON      " Suchen... ", IDPB_MKISOFSBROWSE, 159, 102, 52, 14
+        ENTRYFIELD      "", IDEF_MKISOFSOPTIONS, 17, 75, 187, 8, ES_MARGIN
+        AUTOCHECKBOX    "Verdeckt starten", IDCB_MKISTARTHIDDEN, 15, 51, 191, 10
+        AUTOCHECKBOX    "Fenster nach Beendigung schlie·en", IDCB_MKICLOSEWINDOW, 15, 37, 
+                        191, 10
+        PUSHBUTTON      "Widerrufen", IDPB_MKISOFSUNDO, 18, 8, 53, 14
+        PUSHBUTTON      "Hilfe", IDPB_MKISOFSHELP, 97, 8, 53, 14, BS_HELP
+        LTEXT           " Enter the Mkisofs options", 307, 13, 88, 203, 8, 
+                        NOT WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDDLG_IMAGENAME LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDDLG_IMAGENAME, 120, 159, 263, 16, NOT FS_DLGBORDER
+    BEGIN
+        ENTRYFIELD      "", IDEF_IMAGENAME, 67, 4, 99, 8, ES_MARGIN
+        RTEXT           "Imagename:", IDST_IMAGENAME, 0, 4, 61, 8, DT_VCENTER
+        PUSHBUTTON      "Suchen...", IDPB_IMAGEBROWSE, 175, 1, 50, 14
+    END
+END
+
+
+DLGTEMPLATE IDDLG_CDDESCRIPTION LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Volume-Information", IDDLG_CDDESCRIPTION, 69, 46, 226, 153, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        PUSHBUTTON      "Undo", IDPB_VOLUMEUNDO, 18, 8, 53, 14
+        PUSHBUTTON      "Help", IDPB_VOLUMEHELP, 97, 8, 53, 14, BS_HELP
+        GROUPBOX        "Volume", 1803, 19, 27, 188, 116
+        LTEXT           "Volume-ID:", 1805, 27, 123, 173, 8, DT_VCENTER
+        ENTRYFIELD      "", IDEF_VOLUMEID, 29, 112, 169, 8, ES_MARGIN
+        LTEXT           "Volume Set:", 1707, 27, 98, 173, 8
+        ENTRYFIELD      "", IDEF_VOLUMESET, 29, 87, 169, 8, ES_MARGIN
+        LTEXT           "Volume set size:", 1709, 27, 73, 173, 8
+        ENTRYFIELD      "", IDEF_VOLSETSIZE, 29, 62, 169, 8, ES_MARGIN
+        LTEXT           "Volume set sequence number:", 1711, 27, 48, 172, 8
+        ENTRYFIELD      "", IDEF_VOLSETSEQNO, 29, 36, 169, 8, ES_MARGIN
+    END
+END
+
+
+DLGTEMPLATE IDDLG_AUTHOR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "CD-Author", IDDLG_AUTHOR, 69, 46, 226, 153, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        PUSHBUTTON      "Undo", IDPB_AUTHORUNDO, 18, 8, 53, 14
+        PUSHBUTTON      "Help", IDPB_AUTHORHELP, 97, 8, 53, 14, BS_HELP
+        GROUPBOX        "Author and Copyright", 1703, 19, 27, 188, 116
+        LTEXT           "Application:", 1705, 27, 123, 173, 8, DT_VCENTER
+        ENTRYFIELD      "", IDEF_APPLICATION, 29, 112, 169, 8, ES_MARGIN
+        LTEXT           "CD-Publisher:", 1707, 27, 98, 173, 8
+        ENTRYFIELD      "", IDEF_PUBLISHER, 29, 87, 169, 8, ES_MARGIN
+        LTEXT           "CD-Preparer:", 1709, 27, 73, 173, 8
+        ENTRYFIELD      "", IDEF_PREPARER, 29, 62, 169, 8, ES_MARGIN
+        ;LTEXT           "Copyright:", 1711, 27, 48, 172, 8
+        ;ENTRYFIELD      "", IDEF_COPYRIGHT, 29, 36, 169, 8, ES_MARGIN
+    END
+END
+
+DLGTEMPLATE IDDLG_FILENAMEOPTIONS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Filename options", IDDLG_FILENAMEOPTIONS, 69, 46, 226, 153, NOT 
+            FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        PUSHBUTTON      "Undo", IDPB_FILENAMEUNDO, 18, 8, 53, 14
+        PUSHBUTTON      "Help", IDPB_FILENAMEHELP, 97, 8, 53, 14, BS_HELP
+        GROUPBOX        "Options for filenames on the CD", 1409, 19, 29, 182, 
+                        113
+        AUTOCHECKBOX    "Allow 32 character filenames (-l)", 
+                        IDCB_ALLOW32CHARS, 26, 118, 171, 10
+        AUTOCHECKBOX    "Allow leading periods (-L)", IDCB_LEADINGPOINTS, 26, 
+                        98, 171, 10
+        AUTOCHECKBOX    "Generate Joliet filenames (-J)", IDCB_JOLIET, 26, 
+                        79, 171, 10
+        AUTOCHECKBOX    "Generate Rockridge extensions (-r)", IDCB_ROCKRIDGE, 
+                        26, 58, 171, 10
+        AUTOCHECKBOX    "Generate TRANS.TBL files (-T)", IDCB_TRANSTABLE, 26, 
+                        36, 171, 10
+    END
+END
+
+DLGTEMPLATE IDDLG_CDTYPE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "CD-Type", IDDLG_CDTYPE, 69, 46, 226, 153, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        AUTORADIOBUTTON "Multisession", IDRB_MULTISESSION, 3, 132, 82, 10, 
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Singlesession", IDRB_SINGLESESSION, 92, 132, 81, 10
+        AUTOCHECKBOX    "First Session", IDCB_FIRSTSESSION, 8, 105, 78, 10, 
+                        WS_GROUP
+        LTEXT           "Previous Session Info:", IDST_PREVIOUSINFO, 21, 95, 
+                        132, 8, NOT WS_GROUP
+        GROUPBOX        "Multisession options", 1803, 3, 29, 155, 98, NOT 
+                        WS_GROUP
+        SPINBUTTON      IDSB_PREVIOUSSTART, 20, 81, 41, 12, SPBS_NUMERICONLY
+        SPINBUTTON      IDSB_NEXTSTART, 65, 81, 41, 12, SPBS_NUMERICONLY
+        PUSHBUTTON      "Get it...", IDPB_GETMSINFO, 108, 79, 43, 14
+        AUTOCHECKBOX    "Use writer as source", IDCB_WRITERSOURCE, 20, 64, 
+                        124, 10, NOT WS_TABSTOP
+        LTEXT           "Source drive:", IDST_SOURCEDRIVE, 30, 48, 68, 11, 
+                        DT_VCENTER | NOT WS_GROUP
+        CONTROL         "", IDDD_SOURCEDRIVE, 98, 17, 35, 42, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_VISIBLE
+        GROUPBOX        "Tracktype", 1908, 162, 29, 58, 98
+        AUTORADIOBUTTON "data", IDRB_TRACKDATA, 167, 100, 47, 10, WS_TABSTOP
+        AUTORADIOBUTTON "mode2", IDRB_TRACKMODE2, 167, 86, 47, 10
+        AUTORADIOBUTTON "XA1", IDRB_TRACKXA1, 167, 72, 47, 10
+        AUTORADIOBUTTON "XA2", IDRB_TRACKXA2, 167, 58, 47, 10
+        AUTORADIOBUTTON "CDI", IDRB_TRACKCDI, 167, 43, 47, 10
+        PUSHBUTTON      "Undo", IDPB_CDTYPEUNDO, 18, 8, 53, 14, WS_GROUP
+        PUSHBUTTON      "Help", IDPB_CDTYPEHELP, 97, 8, 53, 14, BS_HELP | 
+                        NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDDLG_CREATION LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Creation", IDDLG_CREATION, 69, 46, 226, 153, NOT FS_DLGBORDER | 
+            WS_VISIBLE
+    BEGIN
+        GROUPBOX        "How to create the CD", 1409, 19, 29, 182, 113, NOT 
+                        WS_GROUP
+        AUTORADIOBUTTON "Create only the image file", IDRB_IMAGEONLY, 39, 
+                        113, 141, 10, WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Write image after creation", IDRB_WRITEIMAGE, 39, 
+                        94, 141, 10
+        AUTOCHECKBOX    "Ask for confirmation", IDCB_ASK, 52, 81, 108, 10
+        AUTORADIOBUTTON "Write on the fly", IDRB_ONTHEFLY, 39, 61, 141, 10
+        PUSHBUTTON      "Undo", IDPB_CREATEUNDO, 18, 8, 53, 14, WS_GROUP
+        PUSHBUTTON      "Help", IDPB_CREATEHELP, 97, 8, 53, 14, BS_HELP | 
+                        NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDDLG_CDDBSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "CDDB", IDDLG_CDDBSETUP, 25, 20, 226, 150, WS_VISIBLE, 
+            FCF_TITLEBAR
+    BEGIN
+        AUTOCHECKBOX    "Use CDDB", IDCB_USECDDB, 3, 131, 109, 10
+        GROUPBOX        "CDDB servers", 2502, 1, 65, 181, 58
+        LISTBOX         2503, 7, 72, 120, 40
+        PUSHBUTTON      "Add", IDPB_ADDSERVER, 135, 97, 40, 14
+        PUSHBUTTON      "Delete", IDPB_DELETESERVER, 135, 74, 40, 14
+        ENTRYFIELD      "", IDEF_EMAIL, 7, 39, 120, 8, ES_MARGIN
+        LTEXT           "E-Mail:", 2507, 6, 50, 52, 8
+    END
+END
+
+
+DLGTEMPLATE IDDLG_GETMSINFOSTATUS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Get msinfo", IDDLG_GETMSINFOSTATUS, 103, 145, 170, 11, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Please wait while quering previous session...", 
+                        IDST_MSINFOSTATUS, 4, 1, 162, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+
+STRINGTABLE
+BEGIN
+IDSTR_NOTRACKSSELECTEDTEXT "There are no tracks selected."
+IDSTR_NOTRACKSSELECTEDTITLE "Grab tracks message"
+IDSTR_NOTRACKNAMETEXT "You must specify a trackname."
+IDSTR_NOGRABSPACETEXT "Not enough free space on destination drive!"
+IDSTR_GRABBERERRORTEXT "Grabber returned Non-zero resultcode. The grabbed track is probably corrupted. Do you want to continue grabbing?"
+IDSTR_GRABBERERRORTITLE "Grabber error!"
+IDSTR_WRITEERRORTEXT "CDRecord/2 returned Non-zero resultcode. The written track is probably corrupted. Do you want to continue writing?"
+IDSTR_WRITEERRORTITLE "CD writing error!"
+END
+
+
+;----------------------------------
+
+MENU ID_MENUCDERASE
+BEGIN
+   MENUITEM "" , ID_MENUABOUT+5, MIS_SEPARATOR
+   MENUITEM "Erase CD-R/RW...",ID_CDERASEITEM   
+END
+
+
+
+; ******* These are the popup menues for the data-cd-creator
+; * image name dialog
+
+MENU IDM_IMAGENAME
+BEGIN
+        MENUITEM "Help for image name...",IDM_IMAGENAME       
+END
+
+MENU IDM_IMAGEBROWSE
+BEGIN
+        MENUITEM "Help for browse button...",IDM_IMAGEBROWSE       
+END
+
+
+
+; ******* These are the popup menues for the data-cd-creator
+; * main create dialog (frame extension)
+
+MENU IDM_IMAGEONLY
+BEGIN
+        MENUITEM "Help for image only...",IDM_IMAGEONLY       
+END
+
+MENU IDM_WRITEIMAGE
+BEGIN
+        MENUITEM "Help for write image...",IDM_WRITEIMAGE       
+END
+
+MENU IDM_ONTHEFLY
+BEGIN
+        MENUITEM "Help for on the fly...",IDM_ONTHEFLY       
+END
+
+MENU IDM_CHECKSIZE
+BEGIN
+        MENUITEM "Help for check size...",IDM_CHECKSIZE       
+END
+
+MENU IDM_MKISOFSSETTINGS
+BEGIN
+        MENUITEM "Help for CD-settings...",IDM_MKISOFSSETTINGS       
+END
+
+MENU IDM_WRITECD
+BEGIN
+        MENUITEM "Help for write CD...",IDM_WRITECD       
+END
+
+MENU IDM_CREATE
+BEGIN
+        MENUITEM "Help for create...",IDM_CREATE       
+END
+
+MENU IDM_MKISOFSDUMMY
+BEGIN
+        MENUITEM "Help for dummy...",IDM_MKISOFSDUMMY       
+END
+
+MENU IDM_DATADEFAULT
+BEGIN
+        MENUITEM "Help for main window...",IDM_DATADEFAULT       
+END
+
+MENU ID_MENUTOOLS
+BEGIN
+   MENUITEM  "" , ID_MENUTOOLS+5, MIS_SEPARATOR
+   MENUITEM "CD-R/W Tools...",ID_TOOLSITEM   
+   MENUITEM  "" , ID_MENUTOOLS+11, MIS_SEPARATOR
+END
+
+MENU ID_MENUABOUT
+BEGIN
+   MENUITEM  "" , ID_MENUABOUT+5, MIS_SEPARATOR
+   MENUITEM "About *-CD-Creator...",ID_ABOUTITEM   
+END
+
+MENU ID_TBMENUTOOLS
+BEGIN
+        MENUITEM "CD-R/W Tools...",ID_TOOLSITEM
+        MENUITEM "Check CD size",ID_CDSIZEITEM       
+END
+
+;****** These are the context menues for the grab dialog ******
+; (Frame extension)
+
+MENU IDM_GRABDEFAULTHELP
+BEGIN
+	MENUITEM "Grabber setup...",IDM_GRABBERSETUP
+        MENUITEM "Help for grabbing...",IDM_GRABDEFAULTHELP       
+END
+
+MENU IDM_GRABREFRESHHELP
+BEGIN
+        MENUITEM "Help for refresh...",IDM_GRABREFRESHHELP       
+END
+
+MENU IDM_GRABTRACKLISTHELP
+BEGIN
+	MENUITEM "Select all",IDPB_SELECTALL
+	MENUITEM "Refresh" , IDPB_REFRESH
+        MENUITEM "Help for tracklist...",IDM_GRABTRACKLISTHELP       
+END
+
+MENU IDM_GRABGRABHELP
+BEGIN
+        MENUITEM "Help for grab button...",IDM_GRABGRABHELP       
+END
+
+MENU IDM_GRABSELECTALLHELP
+BEGIN
+        MENUITEM "Help for select all...",IDM_GRABSELECTALLHELP       
+END
+
+;****** These are the context menues for the write dialog ******
+; (Frame extension)
+
+MENU IDM_WRITEDEFAULTHELP
+BEGIN
+	MENUITEM "CDRecord/2 setup...",IDM_CDRECORDSETUP
+        MENUITEM "Help for writing...",IDM_WRITEDEFAULTHELP       
+END
+
+MENU IDM_WRITEPADHELP
+BEGIN
+        MENUITEM "Help for pad...",IDM_WRITEPADHELP       
+END
+
+MENU IDM_WRITENOFIXHELP
+BEGIN
+        MENUITEM "Help for no fix...",IDM_WRITENOFIXHELP       
+END
+
+MENU IDM_WRITEPREEMPHELP
+BEGIN
+        MENUITEM "Help for preemp...",IDM_WRITEPREEMPHELP       
+END
+
+MENU IDM_WRITEDUMMYHELP
+BEGIN
+        MENUITEM "Help for dummy...",IDM_WRITEDUMMYHELP       
+END
+
+MENU IDM_WRITEBURNHELP
+BEGIN
+        MENUITEM "Help for write button...",IDM_WRITEBURNHELP       
+END
+
+;******  ******
+MENU IDM_DEFAULTHELP
+BEGIN
+        MENUITEM "Help for main window...",IDM_DEFAULTHELP       
+END
+
+MENU IDM_STATUSDEFAULTHELP
+BEGIN
+        MENUITEM "Help for status line...",IDM_STATUSDEFAULTHELP       
+END
+
+
+

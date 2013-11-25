@@ -1,0 +1,59 @@
+CDRTools V1.03
+-------------
+This simple GUI gives access to some
+basic tasks while working with
+CDRecord/2. I do not think, that you
+need further explanation after starting
+it the first time. There're no bells and
+whistles and if you do not understand
+it you're probably not able to install
+cdrecord/2 at all ;-).
+
+Licence
+------
+This Program is released under the
+Gnu Public Licence (GPL).
+See the file COPYING for further
+information.
+
+Compiling
+--------
+I included a makefile. just type 'make'. You
+need VAC++V3.00 but EMX probably will work,
+too.
+
+History
+------
+V1.00 25.11.98  
+First Version
+
+V1.01 12.12.98 
+Corrected a bug in blanking support. In V1.00
+blanking didn't work at all. Now it does.
+                  
+V1.02 07.01.98 
+Corrected a bug with the settings dialog. When 
+pressing 'Cancel' the cdrecord path was cleared
+even if it was valid.
+
+Confirmation dialog now pops up when choosing
+'Close' from the system menu, too.
+
+Cdrecord is started independent now. So you can
+close CDRTools without cdrecord getting killed.
+
+V1.03 13.Apr.2000
+Changed startData.InheritOpt to SSF_INHERTOPT_PARENT
+for DosStartSession() so modified environment by
+a skript is inherited. Needed when using e.g.
+BEGINLIBPATH.
+
+
+Author
+-----
+Chris Wohlgemuth
+
+http://www.os2world.com/cdwriting
+http://www.geocities.com/SiliconValley/Sector/5785/
+
+

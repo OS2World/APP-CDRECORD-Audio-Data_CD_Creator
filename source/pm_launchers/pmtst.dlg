@@ -1,0 +1,19 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "pmtst.h"
+
+DLGTEMPLATE IDDL_PMTST PRELOAD MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog test", IDDL_PMTST, 12, 6, 148, 84, NOT FS_DLGBORDER | 
+            FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR | 
+            FCF_MINBUTTON
+    BEGIN
+        PUSHBUTTON      "<<", IDPB_LEFT, 5, 68, 40, 14, WS_GROUP
+        DEFPUSHBUTTON   "~Close", DID_OK, 11, 3, 40, 14
+        CONTROL         "", IDST_TEXT, 4, 50, 141, 16, WC_STATIC, 
+                        SS_FGNDRECT | WS_VISIBLE
+        PUSHBUTTON      ">>", IDPB_RIGHT, 59, 68, 40, 14
+        PUSHBUTTON      "SIZE", IDPB_SIZE, 87, 2, 40, 14
+    END
+END

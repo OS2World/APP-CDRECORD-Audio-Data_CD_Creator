@@ -1,0 +1,9 @@
+#include "progfolder.h"
+
+POINTER IDPT_HAND  hand.ptr
+
+STRINGTABLE 
+BEGIN
+ID_FOLDERCLASSNAME "Support-Folder"
+END
+
